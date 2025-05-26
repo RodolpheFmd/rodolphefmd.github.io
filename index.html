@@ -16,8 +16,26 @@
     header {
       background: #0e5d5b;
       color: white;
-      padding: 2rem;
+      padding: 1rem;
       text-align: center;
+    }
+
+    nav {
+      background: #083f3d;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
     }
 
     main {
@@ -37,47 +55,57 @@
     }
 
     footer {
+      background: #083f3d;
+      color: white;
       text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      background: #eaeaea;
+      padding: 1.5rem 1rem;
+      font-size: 0.95rem;
       margin-top: 2rem;
     }
 
-    a {
-      color: #007acc;
+    footer a {
+      color: #aad6d3;
+      margin: 0 0.5rem;
       text-decoration: none;
     }
 
-    a:hover {
+    footer a:hover {
       text-decoration: underline;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Rodolphe Fremond</h1>
-    <p>ATM & UTM Researcher • ENAC Toulouse </p>
+    <h1>Rodolphe Frémond</h1>
+    <p>ATM & UTM Researcher • ENAC Toulouse</p>
   </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">News</a>
+    <a href="#">Publications</a>
+    <a href="#">CV</a>
+    <a href="#">Augmented</a>
+  </nav>
 
   <main>
     <h2>Welcome!</h2>
     <p>Hello! I'm a researcher working at the intersection of artificial intelligence, robotics, and aviation systems. I currently lead research activities at ENAC’s UTM Chair on tactical conflict resolution and adaptive airspace design.</p>
 
     <p>This site is under construction — soon you'll find blog posts, project updates, and resources about drones, reinforcement learning, and futuristic air traffic systems.</p>
-
-    <h3>Contact</h3>
-    <p>You can find me on:
-      <ul>
-        <li><a href="https://www.linkedin.com/in/rodolphe-fremond/" target="_blank">LinkedIn</a></li>
-        <li><a href="mailto:fremonro@personnel.interne.enac">Email</a></li>
-        <li><a href="https://github.com/fremond" target="_blank">GitHub</a></li>
-      </ul>
-    </p>
   </main>
 
   <footer>
-    &copy; 2025 Rodolphe Frémond · Powered by <a href="https://pages.github.com/">GitHub Pages</a>
+    &copy; 2025 Rodolphe Frémond · Connect with me:
+    <br><br>
+    <a href="https://www.linkedin.com/in/rodolphe-fremond-259b8a170/?originalSubdomain=fr" target="_blank">LinkedIn</a> |
+    <a href="https://github.com/RodolpheFmd" target="_blank">GitHub</a> |
+    <a href="https://www.youtube.com/channel/UCAgqkakxPxldc5MZ_H0Bscg" target="_blank">YouTube</a> |
+    <a href="https://orcid.org/0009-0008-1513-9597" target="_blank">ORCID</a> |
+    <a href="https://scholar.google.com/citations?user=9fWCURwAAAAJ&hl=en" target="_blank">Google Scholar</a> |
+    <a href="mailto:fremonro@personnel.interne.enac">Contact Me</a>
   </footer>
+
 </body>
 </html>
