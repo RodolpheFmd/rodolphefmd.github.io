@@ -2,41 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Rodolphe Frémond</title>
+  <title>News - Rodolphe Frémond</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    /* ===== Base Styles ===== */
-    html, body {
-      height: 100%;
-      margin: 0;
-    }
+  <link rel="stylesheet" href="style.css"> <!-- Optional if you separate CSS -->
 
+  <style>
+    /* ===== Reuse base styles from index.html for consistency ===== */
     body {
       font-family: "Segoe UI", Tahoma, sans-serif;
       background: #f4f4e8;
       color: #333;
+      margin: 0;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 1.2rem;
-      line-height: 1.6;
-    }
-
-    /* ===== Header ===== */
     header {
       display: flex;
       align-items: center;
@@ -54,10 +36,9 @@
     }
 
     .header-logo {
-      height: 180px;
+      height: 100px;
     }
 
-    /* ===== Navigation ===== */
     nav {
       background: #083f3d;
       display: flex;
@@ -70,21 +51,45 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
-      transition: all 0.3s;
+      transition: 0.3s;
     }
 
     nav a:hover {
-      text-decoration: none;
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
 
-    /* ===== Main Content ===== */
     main {
       flex: 1;
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem 2rem;
+    }
+
+    main h2 {
+      font-size: 2rem;
+      color: #155850;
       text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    /* ===== News Articles ===== */
+    .news-item {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .news-item h3 {
+      margin-top: 0;
+      color: #155850;
+    }
+
+    .news-item .date {
+      font-size: 0.9rem;
+      color: #777;
+      margin-bottom: 0.5rem;
     }
 
     /* ===== Footer ===== */
@@ -109,7 +114,7 @@
     }
 
     footer a img {
-      height: 48px;
+      height: 40px;
       vertical-align: middle;
       transition: all 0.3s;
     }
@@ -122,10 +127,10 @@
 </head>
 
 <body>
-  <!-- ===== Header ===== -->
+  <!-- Header -->
   <header>
     <div class="header-logo-left">
-      <img src="LogoRodolphe.png" alt="Logo" class="header-logo">
+      <img src="lOGOrODOLPHE.png" alt="Logo" class="header-logo">
     </div>
     <div>
       <h1>Rodolphe Frémond</h1>
@@ -133,27 +138,54 @@
     </div>
   </header>
 
-  <!-- ===== Navigation ===== -->
+  <!-- Navigation -->
   <nav>
-    <a href="#">🏠︎ Home</a>
-    <!--  <a href="news.html">📢 News</a>  -->
-    <a href="#">📢 News</a>
+    <a href="index.html">🏠︎ Home</a>
+    <a href="news.html">📢 News</a>
     <a href="#">📖 Publications</a>
     <a href="#">💼 CV</a>
-    <!-- <a href="augmented.html"><img src="AugmentedHomeLogo.png" alt="Augmented" style="height:18px; vertical-align:middle;"> Augmented</a> -->
     <a href="#"><img src="AugmentedHomeLogo.png" alt="Augmented" style="height:18px; vertical-align:middle;"> Augmented</a>
-
   </nav>
 
-  <!-- ===== Main Content ===== -->
+  <!-- Main Content -->
   <main>
-    <h2>Welcome!</h2>
-    <p>Hello! I'm a researcher working at the intersection of artificial intelligence, robotics, and aviation systems. I currently lead research activities at ENAC’s UTM Chair on tactical conflict resolution and adaptive airspace design.</p>
+    <h2>Latest News</h2>
 
-    <p>This site is under construction — soon you'll find blog posts, project updates, and resources about drones, reinforcement learning, and futuristic air traffic systems.</p>
+    <a href="News/dasc2025.html" class="news-link">
+        <div class="news-item">
+        <div class="date">July 2025</div>
+        <h3>Confirmed Participation at Digital Avionics Systems Conference 2025 (Montreal)</h3>
+        <p>
+            I will present three research contributions: two on airspace design using 
+            Reinforcement Learning and bio-inspired methods, and one on interoperability 
+            of collision avoidance systems.
+        </p>
+        </div>
+    </a>
+
+      
+    <div class="news-item">
+    <div class="date">May 2025</div>
+    <h3>Attending Airspace World 2025 (Lisbon)</h3>
+        <p>
+          Engaged with industry leaders to discuss future UTM solutions, airspace 
+          innovation, and the integration of AI into air traffic systems.
+        </p>
+      </div>
+      
+      <div class="news-item">
+        <div class="date">March 2025</div>
+        <h3>Ph.D. Defense Successfully Completed (Cranfield University)</h3>
+        <p>
+          I successfully defended my doctoral thesis at Cranfield University, focusing 
+          on tactical conflict resolution and adaptive urban airspace design.
+        </p>
+      </div>
+
+    <!-- Add more news items here -->
   </main>
-  
-  <!-- ===== Footer ===== -->
+
+  <!-- Footer -->
   <footer>
     <div class="footer-content">
       <div>© 2025 Rodolphe Frémond</div>

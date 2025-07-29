@@ -1,0 +1,187 @@
+/* ===== Base Styles ===== */
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background: #f4f4e8;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  h1, h2, h3 {
+    margin: 0;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  /* ===== Header ===== */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #155850;
+    color: white;
+    padding: 1rem;
+    position: relative;
+  }
+  
+  .header-logo-left {
+    position: absolute;
+    left: 1rem;
+  }
+  
+  .header-logo {
+    height: 180px;
+  }
+  
+  /* ===== Navigation ===== */
+  nav {
+    background: #083f3d;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+  }
+  
+  nav a:hover {
+    transform: scale(1.2);
+    text-decoration: none;
+  }
+  
+  /* ===== Hero Section ===== */
+  .hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(to right, #f4f4e8, #e8f4f4);
+  }
+  
+  .hero h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #155850;
+  }
+  
+  .hero p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    color: #155850;
+    margin: 0 auto 2rem auto;
+  }
+  
+  .hero-buttons a {
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    background: #0f3d39;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s;
+  }
+  
+  .hero-buttons a:hover {
+    background: #0f3d39;
+    transform: translateY(-3px);
+  }
+  
+  /* ===== News Page ===== */
+  main {
+    flex: 1;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+  }
+  
+  main h2 {
+    font-size: 2rem;
+    color: #155850;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  /* ===== News Items ===== */
+  .news-link {
+    text-decoration: none;
+    display: block;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .news-item {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .news-link:hover .news-item {
+    transform: scale(1.03);
+    box-shadow: 0 6px 18px rgba(21,88,80,0.4); /* Brand color glow */
+  }
+  
+  .news-item h3 {
+    color: #155850;
+    margin-top: 0;
+  }
+  
+  .news-item .date {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* ===== Footer ===== */
+  footer {
+    background: #083f3d;
+    color: white;
+    padding: 1.5rem 1rem;
+    font-size: 0.95rem;
+  }
+  
+  footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  footer a {
+    color: #aad6d3;
+    margin: 0 0.5rem;
+    text-decoration: none;
+  }
+  
+  footer a img {
+    height: 48px;
+    vertical-align: middle;
+    transition: all 0.3s;
+  }
+  
+  footer a:hover img {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  
