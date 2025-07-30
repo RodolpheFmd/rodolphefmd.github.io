@@ -4,147 +4,28 @@
   <meta charset="utf-8">
   <title>News - Rodolphe Frémond</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="style.css"> <!-- Optional if you separate CSS -->
-
-  <style>
-    /* ===== Reuse base styles from index.html for consistency ===== */
-    body {
-      font-family: "Segoe UI", Tahoma, sans-serif;
-      background: #f4f4e8;
-      color: #333;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background: #155850;
-      color: white;
-      padding: 1rem;
-      position: relative;
-    }
-
-    .header-logo-left {
-      position: absolute;
-      left: 1rem;
-    }
-
-    .header-logo {
-      height: 100px;
-    }
-
-    nav {
-      background: #083f3d;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem 0;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      transform: scale(1.1);
-    }
-
-    main {
-      flex: 1;
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 1rem 2rem;
-    }
-
-    main h2 {
-      font-size: 2rem;
-      color: #155850;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    /* ===== News Articles ===== */
-    .news-item {
-      background: white;
-      border-radius: 8px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-
-    .news-item h3 {
-      margin-top: 0;
-      color: #155850;
-    }
-
-    .news-item .date {
-      font-size: 0.9rem;
-      color: #777;
-      margin-bottom: 0.5rem;
-    }
-
-    /* ===== Footer ===== */
-    footer {
-      background: #083f3d;
-      color: white;
-      padding: 1.5rem 1rem;
-      font-size: 0.95rem;
-    }
-
-    footer .footer-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    footer a {
-      color: #aad6d3;
-      margin: 0 0.5rem;
-      text-decoration: none;
-    }
-
-    footer a img {
-      height: 40px;
-      vertical-align: middle;
-      transition: all 0.3s;
-    }
-
-    footer a:hover img {
-      transform: scale(1.1);
-      opacity: 0.8;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- Header -->
+  <!-- ===== Header ===== -->
   <header>
-    <div class="header-logo-left">
-      <img src="lOGOrODOLPHE.png" alt="Logo" class="header-logo">
+    <div class="header-logo">
+      <img src="logos/LogoRodolphe.png" alt="Logo">
     </div>
-    <div>
+    <div class="header-title">
       <h1>Rodolphe Frémond</h1>
       <p>ATM &amp; UTM Researcher • ENAC Toulouse</p>
     </div>
   </header>
 
-  <!-- Navigation -->
+  <!-- ===== Navigation ===== -->
   <nav>
     <a href="index.html">🏠︎ Home</a>
     <a href="news.html">📢 News</a>
-    <a href="#">📖 Publications</a>
-    <a href="#">💼 CV</a>
-    <a href="#"><img src="AugmentedHomeLogo.png" alt="Augmented" style="height:18px; vertical-align:middle;"> Augmented</a>
+    <a href="publications.html">📖 Publications</a>
+    <a href="resume.html">💼 CV</a>
+    <a href="augmented.html"><img src="logos/AugmentedHomeLogo.png" alt="Augmented" style="height:18px; vertical-align:middle;"> Augmented</a>
   </nav>
 
   <!-- Main Content -->
@@ -191,19 +72,19 @@
       <div>© 2025 Rodolphe Frémond</div>
       <div>
         <a href="https://www.linkedin.com/in/rodolphe-fremond-259b8a170/?originalSubdomain=fr" target="_blank">
-          <img src="LinkedInLogo.png" alt="LinkedIn">
+          <img src="logos/LinkedInLogo.png" alt="LinkedIn">
         </a>
         <a href="https://github.com/RodolpheFmd" target="_blank">
-          <img src="github-mark.png" alt="GitHub">
+          <img src="logos/github-mark.png" alt="GitHub">
         </a>
         <a href="https://www.youtube.com/channel/UCAgqkakxPxldc5MZ_H0Bscg" target="_blank">
-          <img src="YoutubeLogo.png" alt="YouTube">
+          <img src="logos/YoutubeLogo.png" alt="YouTube">
         </a>
         <a href="https://orcid.org/0009-0008-1513-9597" target="_blank">
-          <img src="ORCID_logo.png" alt="ORCID" style="height:37px;">
+          <img src="logos/ORCID_logo.png" alt="ORCID" style="height:37px;">
         </a>
         <a href="https://scholar.google.com/citations?user=9fWCURwAAAAJ&amp;hl=en" target="_blank">
-          <img src="GoogleScholarLogo.png" alt="Google Scholar">
+          <img src="logos/GoogleScholarLogo.png" alt="Google Scholar">
         </a>
         <a href="mailto:fremonro@personnel.interne.enac">Contact Me</a>
       </div>
