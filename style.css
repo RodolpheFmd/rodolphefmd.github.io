@@ -119,10 +119,12 @@ html, body {
   /* ===== News Page ===== */
   main {
       flex: 1;
-      padding: 2rem;
       max-width: 800px;
-      margin: auto;
       text-align: center;
+      font-size: 1.15rem;          /* ~18–19px depending on root */
+      line-height: 1.8;
+      margin: 3rem auto;           /* centered with vertical breathing */
+      padding: 0 2.25rem;          /* side padding for small screens */
     }
   
   main h2 {
@@ -130,6 +132,14 @@ html, body {
     color: #155850;
     text-align: center;
     margin-bottom: 2rem;
+  }
+
+  .hand {
+    font-family: "Caveat", "Bradley Hand", "Segoe Script", cursive;
+    font-size: 1.55em;      /* a touch larger for balance */
+    line-height: 1.6;
+    font-style: italic;
+    color: #155850;
   }
   
   /* ===== News Items ===== */
@@ -208,4 +218,8 @@ html, body {
     .header-title {
       margin: 0;
     }
+  }
+
+  @media (min-width: 1100px) {
+    main { max-width: 85ch; }
   }
