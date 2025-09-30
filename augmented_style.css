@@ -1,5 +1,5 @@
 .video-container video {
-  width: 400px;   /* adjust to your preferred width */
+  width: 950px;   /* adjust to your preferred width */
   height: auto;   /* keeps the aspect ratio */
   border-radius: 10px; /* optional */
 }

@@ -174,18 +174,3 @@ body:has(main h2:first-child:contains("Resume")) main {
   max-width: 1000px; /* wider to allow two boxes side by side */
   text-align: center;
 }
-
-.resume-container {
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-  flex-wrap: nowrap; /* prevent wrapping on desktop */
-}
-
-/* Ensure boxes shrink if screen is smaller */
-@media (max-width: 700px) {
-  .resume-container {
-    flex-wrap: wrap;  /* stack vertically on mobile */
-  }
-}
-
