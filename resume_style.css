@@ -7,6 +7,10 @@
   margin-bottom: 3rem;
 }
 
+main h1 {
+  color: #155850;
+}
+
 .cv-box {
   background: white;
   border-radius: 16px;
@@ -83,12 +87,13 @@
   font-weight: bold;
   font-size: 1.05rem;
   margin-bottom: 0.2rem;
+  color: #155850;
 }
 
 .distinction-details {
   display: block;
   font-style: italic;
-  color: #555;
+  color: #333;
 }
 
 /* ===== Mentors ===== */
@@ -98,6 +103,7 @@
   padding: 0;
   margin: 2rem auto 3rem auto;
   max-width: 900px;
+  color: #155850;
 }
 
 .mentors-list li {
@@ -114,7 +120,7 @@
   margin: 0 auto 1.5rem auto;
   font-style: italic;
   font-size: 1.15rem;
-  color: #444;
+  color: #155850;
   text-align: center;
   line-height: 1.6;
 }
@@ -128,7 +134,7 @@
 .mentor-info {
   display: block;
   font-style: italic;
-  color: #555;
+  color: #333;
 }
 
 .tooltip {

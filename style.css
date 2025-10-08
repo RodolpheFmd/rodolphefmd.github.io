@@ -48,9 +48,10 @@ html, body {
   }
 
   .header-title {
-    flex: 1;               /* take up all remaining space */
-    text-align: center;    /* keep the text centered in that space */
-    margin: 0 1rem;        /* give a little breathing room */
+    flex: 1.0;               /* take up all remaining space */
+    text-align: left;    /* keep the text centered in that space */
+
+    margin: 0 1rem 0 32.5rem; /* smaller left margin than right */
   }
 
   /* ===== Navigation ===== */
