@@ -95,6 +95,26 @@ body {
   z-index: 0;
 }
 
+.sparrow-video {
+  position: absolute; 
+  top: 3110px;
+  left: 0;
+  width: 100%;     
+  height: auto;  
+  z-index: 1;
+  -webkit-mask-image: linear-gradient(to bottom, 
+    transparent 0%, 
+    black 23%, 
+    black 77%, 
+    transparent 100%
+  );
+  mask-image: linear-gradient(to bottom, 
+    transparent 0%, 
+    black 4%, 
+    black 96%, 
+    transparent 100%
+  );
+}
 .top-banner {
   position: absolute;
   top: 0;
@@ -119,7 +139,6 @@ body {
   z-index: 1;
   pointer-events: none;
 
-  /* This creates a "sandwich" effect: transparent at edges, black in middle */
   -webkit-mask-image: linear-gradient(to bottom, 
     transparent 0%, 
     black 20%, 
@@ -273,6 +292,18 @@ body {
   color: white;
   font-family: 'Alata', sans-serif;
   line-height: 1.6;
+}
+
+.ending {
+  position: absolute;
+  left: 10%;
+  font-size: 80px;
+  top: 4200px;
+  width: 60%;
+  margin: 0 auto;
+  color: white;
+  font-family: 'Alata', sans-serif;
+  line-height: 1.;
 }
 
 h1 {
