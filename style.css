@@ -123,8 +123,8 @@ section {
 
 /* Le conteneur qui centre le texte */
 .content-wrapper {
-  width: 90%;
-  max-width: 1000px;
+  width: 85%;
+  max-width: 1800px;
   z-index: 2;
   position: relative;
 }
@@ -237,4 +237,61 @@ section {
 .ending {
   text-align: center;
   font-size: clamp(40px, 8vw, 80px);
+}
+
+/* --- NOUVEAU STYLE : SPLIT LAYOUT (Texte + Image) --- */
+
+/* On élargit un peu le conteneur pour que l'image et le texte respirent */
+.wide-wrapper {
+  max-width: 1400px; /* Plus large que les 1000px habituels */
+  width: 95%;
+}
+
+/* Le conteneur Flex qui met les éléments côte à côte */
+.split-layout {
+  display: flex;
+  flex-direction: row; /* Alignement horizontal */
+  align-items: center; /* Centré verticalement */
+  gap: 50px; /* Espace entre le texte et l'image */
+  justify-content: space-between;
+}
+
+/* Gestion de la colonne de texte */
+.split-text {
+  flex: 1; /* Prend 1 part de l'espace disponible */
+  min-width: 300px; /* Ne devient jamais plus petit que 300px */
+}
+
+/* Gestion de la colonne d'image */
+.split-image {
+  flex: 1; /* Prend 1 part de l'espace aussi (50/50 environ) */
+  display: flex;
+  justify-content: center;
+}
+
+/* Style de l'image elle-même */
+.content-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* Un petit arrondi sympa */
+  /* Optionnel : un peu d'ombre pour la faire ressortir du fond sombre */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
+}
+
+
+/* --- VERSION MOBILE --- */
+/* Quand l'écran est plus petit que 1024px (Tablettes et Mobiles) */
+@media (max-width: 1024px) {
+  .split-layout {
+    flex-direction: column; /* On passe en vertical */
+    gap: 30px;
+  }
+
+  .split-image {
+    width: 100%; /* L'image prend toute la largeur */
+    margin-top: 20px;
+  }
+  
+  /* On inverse l'ordre si vous voulez l'image au dessus du texte sur mobile.
+     Sinon, laissez comme ça, le texte sera au dessus. */
 }
