@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <link rel="icon" href="logos/AV.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <link rel="icon" href="logos/AV.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
   <title>Augmented xTM</title>
@@ -10,46 +10,79 @@
 </head>
 
 <body>
-  <img src="logos/Sky.png" class="top-banner" alt="">
-  <img src="logos/ATC_tower.png" class="atc-tower-pic" alt="">
-  <img src="logos/AugmentedGroundLogo.png" class="augmented-ground-pic" alt="">
-  <img src="logos/SparrowProcess.png" class="sparrow-process-pic" alt="">
-
-  <video class="top_logo" autoplay muted playsinline>
-    <source src="videos/AugmentedAnimationBlueBackground.mp4" type="video/mp4">
-  </video>
-
   <nav class="side-nav">
-    <a href="#sparrow" class="sparrow-link"><span class="first-letter">S</span>parrow</a>
-    <a href="#about">About Us</a>
-    <a href="#contact">Contact</a>
+    <div class="nav-links">
+      <a href="#sparrow" class="sparrow-link"><span class="first-letter">S</span>parrow</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+    </div>
   </nav>
 
-  <div class="intro-box">
-    The Digital Safety Net for Advanced Air Mobility
-  </div>
-  <div class="scroll-indicator">
-    <span>Learn more</span>
-    <div class="arrow"></div>
-  </div>
+  <section class="section-hero">
+    <img src="logos/Sky.png" class="bg-img top-banner" alt="">
+    
+    <div class="hero-content">
+      <video class="top_logo_video" autoplay muted playsinline loop>
+        <source src="videos/AugmentedAnimationBlueBackground.mp4" type="video/mp4">
+      </video>
+      
+      <div class="intro-box">
+        The Digital Safety Net for Advanced Air Mobility
+      </div>
 
-  <div class="mission-statement">
-    <h1>Mission Statement</h1>
-    <p>Augmented is on a mission to revolutionise air traffic safety for very low level operations through human-centric, AI-driven separation assurance. By leveraging Sparrow, the first but not the least breakthrough solver, we provide highly scalable, cloud-hosted safety nets designed to resolve complex multi-agent conflicts in real-time.</p>
-    <p>Our goal is to bridge the gap between academic excellence and industrial reality, reducing operator workload and facilitating a safe, transparent transition toward the future of autonomous aviation.</p>
-  </div>
+      <div class="scroll-indicator">
+        <span>Learn more</span>
+        <div class="arrow"></div>
+      </div>
+    </div>
+  </section>
 
-  <div class="opsenv-usecase">
-    <h1>Operational Environment and Use Cases</h1>
-    <h2>Mixed Airspace</h2>
-    <p>Supports decision-making for both UAS and UAM operations across Very Low Level, U-space, and "grey zones" between traditional and emerging airspace in urban, suburban, and rural settings.</p>
-    <h2>Diverse Traffic</h2>
-    <p>Designed for environments containing UAM/UAS operations but also Commercial Air Transport, and General Aviation with varying levels of cooperation.</p>
-    <h2>Aircraft Agnostic</h2>
-    <p>Supports heterogeneous vehicle categories, including fixed-wing aircraft, multirotor UAVs, and eVTOL platforms.</p>
-    <h2>Resilient Performance</h2>
-    <p>Maintains reliability despite dynamic traffic patterns or limited, delayed, human decision-making latency, and irregularly updated surveillance data.</p>
-  </div>
+  <section class="section-content" id="about">
+    <img src="logos/ATC_tower.png" class="bg-img atc-tower-pic" alt="">
+    
+    <div class="content-wrapper">
+      <div class="text-block">
+        <h1>Mission Statement</h1>
+        <p>Augmented is on a mission to revolutionise air traffic safety for very low level operations through human-centric, AI-driven separation assurance. By leveraging Sparrow, the first but not the least breakthrough solver, we provide highly scalable, cloud-hosted safety nets designed to resolve complex multi-agent conflicts in real-time.</p>
+        <p>Our goal is to bridge the gap between academic excellence and industrial reality, reducing operator workload and facilitating a safe, transparent transition toward the future of autonomous aviation.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-content">
+    <img src="logos/SparrowProcess.png" class="bg-img sparrow-process-pic" alt="">
+    <div class="spacer-box"></div> 
+  </section>
+
+  <section class="section-content">
+    <img src="logos/AugmentedGroundLogo.png" class="bg-img augmented-ground-pic" alt="">
+    
+    <div class="content-wrapper">
+      <div class="text-block">
+        <h1>Operational Environment and Use Cases</h1>
+        
+        <h2>Mixed Airspace</h2>
+        <p>Supports decision-making for both UAS and UAM operations across Very Low Level, U-space, and "grey zones" between traditional and emerging airspace in urban, suburban, and rural settings.</p>
+        
+        <h2>Diverse Traffic</h2>
+        <p>Designed for environments containing UAM/UAS operations but also Commercial Air Transport, and General Aviation with varying levels of cooperation.</p>
+        
+        <h2>Aircraft Agnostic</h2>
+        <p>Supports heterogeneous vehicle categories, including fixed-wing aircraft, multirotor UAVs, and eVTOL platforms.</p>
+        
+        <h2>Resilient Performance</h2>
+        <p>Maintains reliability despite dynamic traffic patterns or limited, delayed, human decision-making latency, and irregularly updated surveillance data.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-video-bottom">
+    <video class="sparrow-video" autoplay muted playsinline loop>
+       </video>
+    <div class="content-wrapper">
+        <h1 class="ending">Future is Now.</h1>
+    </div>
+  </section>
 
 </body>
 </html>
