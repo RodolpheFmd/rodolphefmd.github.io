@@ -22,7 +22,7 @@
     <img src="logos/Sky.png" class="bg-img top-banner" alt="">
     
     <div class="hero-content">
-      <video class="top_logo_video" autoplay muted playsinline loop>
+      <video class="top_logo_video" autoplay muted playsinline>
         <source src="videos/AugmentedAnimationBlueBackground.mp4" type="video/mp4">
       </video>
       
@@ -36,10 +36,9 @@
       </div>
     </div>
   </section>
-
+  
   <section class="section-content" id="about">
     <img src="logos/ATC_tower.png" class="bg-img atc-tower-pic" alt="">
-    
     <div class="content-wrapper">
       <div class="text-block">
         <h1>Mission Statement</h1>
@@ -85,6 +84,35 @@
         <h1 class="ending">Future is Now.</h1>
     </div>
   </section>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const video = document.querySelector(".top_logo_video");
+    
+    // On vérifie que la vidéo existe pour éviter les erreurs
+    if (!video) return;
+
+    // Création de l'observateur qui détecte la visibilité
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        // Si la vidéo entre dans l'écran (est visible)
+        if (entry.isIntersecting) {
+          video.currentTime = 0; // On rembobine au début
+          video.play();          // On lance la lecture
+        } else {
+          // Si la vidéo sort de l'écran
+          video.pause();         // On met en pause
+        }
+      });
+    }, {
+      threshold: 0.3 // La vidéo se lance quand 30% est visible
+    });
+
+    // On lance l'observation sur la vidéo
+    observer.observe(video);
+  });
+</script>
+</body>
 
 </body>
 </html>
