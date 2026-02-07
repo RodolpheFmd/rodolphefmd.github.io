@@ -3,9 +3,9 @@ body {
   margin: 0;
   font-family: 'Alata', sans-serif;
   background: linear-gradient(to bottom, #32465f 50%, #03989e 100%);
-  background-attachment: fixed; /* Le fond reste fixe quand on scroll */
+  background-attachment: fixed;
   color: white;
-  overflow-x: hidden; /* Empêche le scroll horizontal accidentel */
+  overflow-x: hidden;
 }
 
 @font-face {
@@ -17,7 +17,6 @@ h1 { font-size: 58px; margin-bottom: 28px; line-height: 1.1; }
 h2 { font-size: 34px; margin-bottom: 23px; color: #03989e; text-shadow: 1px 1px 2px black; }
 p { font-size: 24px; margin-bottom: 20px; line-height: 1.6; }
 
-/* Adaptation Mobile pour le texte */
 @media (max-width: 768px) {
   h1 { font-size: 40px; }
   h2 { font-size: 28px; }
@@ -32,19 +31,18 @@ p { font-size: 24px; margin-bottom: 20px; line-height: 1.6; }
   width: 90%;
   z-index: 1000;
   display: flex;
-  justify-content: flex-end; /* C'est ça qui pousse TOUT à droite */
-  pointer-events: none; /* Permet de cliquer à travers la barre vide */
+  justify-content: flex-end;
+  pointer-events: none;
 }
 
-/* On réactive les clics uniquement sur les liens */
 .side-nav a {
   pointer-events: auto;
 }
 
 .nav-links {
   display: flex;
-  gap: 40px; /* Espace entre Sparrow et les autres */
-  align-items: center; /* Centre verticalement les textes de tailles différentes */
+  gap: 40px;
+  align-items: center;
 }
 
 .side-nav a {
@@ -63,31 +61,28 @@ p { font-size: 24px; margin-bottom: 20px; line-height: 1.6; }
   transform: translateY(-2px);
 }
 
-/* Le soulignement au survol */
 .side-nav a::after {
   content: '';
   position: absolute;
   width: 0;
   height: 2px;
-  bottom: -5px; /* Ajustement pour être sous le texte */
+  bottom: -5px;
   left: 0;
   background-color: #03989e;
   transition: width 0.3s ease;
 }
 .side-nav a:hover::after { width: 100%; }
 
-
-/* Style spécifique Sparrow (inchangé, mais important) */
 .sparrow-link {
   font-family: 'Great Vibes', cursive;
-  font-size: 50px; /* Ajusté un peu plus petit pour s'aligner mieux */
+  font-size: 50px;
   color: #000000 !important; 
   text-decoration: none;
   font-weight: 600;
-  line-height: 1; /* Réduit la hauteur de ligne pour faciliter l'alignement */
+  line-height: 1;
   display: flex;
   align-items: baseline;
-  padding-bottom: 5px; /* Petit ajustement optique */
+  padding-bottom: 5px;
 }
 
 .sparrow-link .first-letter {
@@ -97,11 +92,11 @@ p { font-size: 24px; margin-bottom: 20px; line-height: 1.6; }
 }
 
 /* --- STRUCTURE DES SECTIONS --- */
-/* Chaque section prend toute la largeur et empile le contenu */
 section {
   position: relative;
   width: 100%;
-  min-height: 80vh; /* Chaque section fait au moins 80% de la hauteur de l'écran */
+  /* On garde le min-height par défaut pour Hero et autres */
+  min-height: 80vh; 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -109,19 +104,34 @@ section {
   padding: 50px 0;
 }
 
-/* Gestion des images de fond décoratives */
+/* --- REGLAGES SPECIFIQUES POUR RAPPROCHER LES DEUX BOITES --- */
+#about, #usecases {
+  min-height: auto; /* Annule la hauteur forcée */
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* On s'assure que About colle bien au bas */
+#about {
+  padding-bottom: 10px; /* Réduit l'espace sous la première boîte */
+}
+
+/* On s'assure que UseCases colle bien au haut */
+#usecases {
+  padding-top: 10px; /* Réduit l'espace au-dessus de la deuxième boîte */
+}
+
 .bg-img {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* L'image couvre la zone sans se déformer */
-  z-index: -1; /* Derrière le texte */
+  object-fit: cover;
+  z-index: -1;
   pointer-events: none;
 }
 
-/* Le conteneur qui centre le texte */
 .content-wrapper {
   width: 85%;
   max-width: 1800px;
@@ -129,18 +139,26 @@ section {
   position: relative;
 }
 
+/* S'assure que la largeur max est respectée pour les wrappers larges */
+.wide-wrapper {
+  max-width: 1400px;
+  width: 95%;
+}
+
 .text-block {
-  background: rgba(0,0,0, 0.3); /* Un fond léger pour lire le texte sur les images */
+  background: rgba(0,0,0, 0.3);
   padding: 40px;
   border-radius: 15px;
-  backdrop-filter: blur(2px); /* Effet flou moderne */
+  backdrop-filter: blur(2px);
+  width: 100%; /* Force le bloc à remplir le wrapper */
+  box-sizing: border-box; /* Empêche le padding d'élargir la boîte */
 }
 
 /* --- SECTION HERO SPECIFICS --- */
 .section-hero {
   min-height: 100vh;
   justify-content: flex-start;
-  padding-top: 150px; /* Espace pour le logo */
+  padding-top: 50px;
 }
 
 .hero-content {
@@ -163,14 +181,18 @@ section {
 .intro-box {
   margin-top: 165px;
   color: white;
-  font-size: clamp(24px, 5vw, 56px); /* Taille dynamique : min 24px, ideal 5vw, max 56px */
+  font-size: clamp(24px, 5vw, 56px);
   font-weight: bold;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.5); 
   padding: 55px 45px;
   border-radius: 8px;
-  width: fit-content;
+  
+  /* --- NOUVEAUX REGLAGES DE TAILLE --- */
+  width: 95%;             /* Prend 95% de la largeur de l'écran */
+  max-width: 1400px;      /* Ne dépasse pas 1400px (comme les autres blocs) */
+  box-sizing: border-box; /* Important : inclut le padding dans le calcul de la largeur */
 }
 
 .scroll-indicator {
@@ -199,7 +221,7 @@ section {
   animation: bounce 2s infinite; 
 }
 
-/* --- MASQUES & IMAGES SPECIFIQUES --- */
+/* --- MASQUES & IMAGES --- */
 .top-banner {
   opacity: 0.15;
   -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
@@ -209,17 +231,8 @@ section {
 
 .atc-tower-pic {
   opacity: 0.15;
-  /* Modification du mask pour qu'il s'adapte à la section */
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
   mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
-}
-
-.sparrow-process-pic {
-  position: relative; /* Plus absolute */
-  width: 100%;
-  max-width: 1400px;
-  opacity: 0.95;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
 }
 
 .augmented-ground-pic {
@@ -227,78 +240,123 @@ section {
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
 }
 
-/* Animation */
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% { transform: rotate(45deg) translate(0, 0); }
   40% { transform: rotate(45deg) translate(-10px, -10px); }
   60% { transform: rotate(45deg) translate(-5px, -5px); }
 }
 
-/* Ending */
 .ending {
   text-align: center;
   font-size: clamp(40px, 8vw, 80px);
 }
 
-/* --- NOUVEAU STYLE : SPLIT LAYOUT (Texte + Image) --- */
-
-/* On élargit un peu le conteneur pour que l'image et le texte respirent */
-.wide-wrapper {
-  max-width: 1400px; /* Plus large que les 1000px habituels */
-  width: 95%;
-}
-
-/* Le conteneur Flex qui met les éléments côte à côte */
+/* --- SPLIT LAYOUT (Texte + Image) --- */
 .split-layout {
   display: flex;
-  flex-direction: row; /* Alignement horizontal */
-  align-items: center; /* Centré verticalement */
-  gap: 50px; /* Espace entre le texte et l'image */
+  flex-direction: row;
+  align-items: center;
+  gap: 50px;
   justify-content: space-between;
 }
 
-/* Gestion de la colonne de texte */
 .split-text {
-  flex: 1; /* Prend 1 part de l'espace disponible */
-  min-width: 300px; /* Ne devient jamais plus petit que 300px */
+  flex: 1;
+  min-width: 300px;
 }
 
-/* Gestion de la colonne d'image */
 .split-image {
-  flex: 1; /* Prend 1 part de l'espace aussi (50/50 environ) */
+  flex: 1;
   display: flex;
   justify-content: center;
 }
 
-/* Style de l'image elle-même */
 .content-img {
   width: 100%;
   height: auto;
-  border-radius: 10px; /* Un petit arrondi sympa */
-  /* Optionnel : un peu d'ombre pour la faire ressortir du fond sombre */
+  border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
 }
 
-
 /* --- VERSION MOBILE --- */
-/* Quand l'écran est plus petit que 1024px (Tablettes et Mobiles) */
 @media (max-width: 1024px) {
   .split-layout {
-    flex-direction: column; /* On passe en vertical */
+    flex-direction: column;
     gap: 30px;
   }
-
   .split-image {
-    width: 100%; /* L'image prend toute la largeur */
+    width: 100%;
     margin-top: 20px;
   }
-  
-  /* On inverse l'ordre si vous voulez l'image au dessus du texte sur mobile.
-     Sinon, laissez comme ça, le texte sera au dessus. */
 }
 
-/* --- AJUSTEMENT SPECIFIQUE ABOUT --- */
-#about {
-  justify-content: flex-start; /* Aligne le contenu vers le haut au lieu du centre */
-  padding-top: 5px; /* Ajustez cette valeur pour éloigner/rapprocher le texte de la flèche */
+/* --- BURGER MENU STYLES --- */
+
+/* Par défaut (PC), on cache le burger */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  pointer-events: auto; /* Important car le parent a pointer-events: none */
+}
+
+.bar {
+  display: block;
+  width: 30px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: white; /* Couleur des barres */
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5); /* Ombre pour lisibilité sur fond clair */
+}
+
+/* --- MEDIA QUERY MOBILE (Max 768px) --- */
+@media (max-width: 768px) {
+  
+  /* On affiche le burger */
+  .hamburger {
+    display: block;
+    z-index: 2001; /* Doit être au-dessus du menu déroulant */
+    position: relative;
+  }
+
+  /* On transforme la liste des liens en menu plein écran ou latéral */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Caché hors de l'écran à droite */
+    height: 100vh;
+    width: 70%; /* Largeur du menu sur mobile */
+    background: rgba(3, 152, 158, 0.95); /* Couleur de fond (Teal foncé) */
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    transition: 0.4s ease;
+    z-index: 2000;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+  }
+
+  /* Quand on ajoute la classe 'active' via JS, le menu glisse vers la gauche */
+  .nav-links.active {
+    right: 0;
+  }
+
+  /* Style des liens dans le menu mobile */
+  .nav-links a {
+    font-size: 28px;
+    opacity: 1;
+  }
+  
+  /* Animation du Burger en Croix (X) quand actif */
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
 }

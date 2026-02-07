@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <link rel="icon" href="logos/AV.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" href="logos/AV.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
   <title>Augmented xTM</title>
@@ -11,6 +12,12 @@
 
 <body>
   <nav class="side-nav">
+    <div class="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+
     <div class="nav-links">
       <a href="#sparrow" class="sparrow-link"><span class="first-letter">S</span>parrow</a>
       <a href="#about">About Us</a>
@@ -39,7 +46,7 @@
   
   <section class="section-content" id="about">
     <img src="logos/ATC_tower.png" class="bg-img atc-tower-pic" alt="">
-    <div class="content-wrapper">
+    <div class="content-wrapper wide-wrapper">
       <div class="text-block">
         <h1>Mission Statement</h1>
         <p>Augmented is on a mission to revolutionise air traffic safety for very low level operations through human-centric, AI-driven separation assurance. By leveraging Sparrow, the first but not the least breakthrough solver, we provide highly scalable, cloud-hosted safety nets designed to resolve complex multi-agent conflicts in real-time.</p>
@@ -51,7 +58,8 @@
   <section class="section-content" id="usecases">
     <img src="logos/AugmentedGroundLogo.png" class="bg-img augmented-ground-pic" alt="">
     
-    <div class="content-wrapper wide-wrapper"> <div class="text-block split-layout">
+    <div class="content-wrapper wide-wrapper"> 
+      <div class="text-block split-layout">
         
         <div class="split-text">
           <h1>Operational Environment and Use Cases</h1>
@@ -89,30 +97,43 @@
   document.addEventListener("DOMContentLoaded", function() {
     const video = document.querySelector(".top_logo_video");
     
-    // On vérifie que la vidéo existe pour éviter les erreurs
     if (!video) return;
 
-    // Création de l'observateur qui détecte la visibilité
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        // Si la vidéo entre dans l'écran (est visible)
         if (entry.isIntersecting) {
-          video.currentTime = 0; // On rembobine au début
-          video.play();          // On lance la lecture
+          video.currentTime = 0;
+          video.play();
         } else {
-          // Si la vidéo sort de l'écran
-          video.pause();         // On met en pause
+          video.pause();
         }
       });
     }, {
-      threshold: 0.3 // La vidéo se lance quand 30% est visible
+      threshold: 0.3
     });
 
-    // On lance l'observation sur la vidéo
     observer.observe(video);
-  });
-</script>
-</body>
+    });
+  </script>
+  <script>
+    // Script pour le Burger Menu
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+    const links = document.querySelectorAll(".nav-links a");
 
+    // Ouvrir / Fermer au clic sur le burger
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navLinks.classList.toggle("active");
+    });
+
+    // Fermer le menu quand on clique sur un lien
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navLinks.classList.remove("active");
+      });
+    });
+  </script>
 </body>
 </html>
