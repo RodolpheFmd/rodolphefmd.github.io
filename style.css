@@ -313,43 +313,66 @@ section {
 /* --- MEDIA QUERY MOBILE (Max 768px) --- */
 @media (max-width: 768px) {
   
-  /* On affiche le burger */
+  /* 1. Positionnement du Burger Icon */
   .hamburger {
     display: block;
-    z-index: 2001; /* Doit être au-dessus du menu déroulant */
+    z-index: 2001; 
     position: relative;
+    /* On s'assure qu'il est bien à droite */
+    margin-left: auto; 
   }
 
-  /* On transforme la liste des liens en menu plein écran ou latéral */
+  /* 2. Le conteneur des liens (Invisible par défaut) */
   .nav-links {
     position: fixed;
-    top: 0;
-    right: -100%; /* Caché hors de l'écran à droite */
-    height: 100vh;
-    width: 70%; /* Largeur du menu sur mobile */
-    background: rgba(3, 152, 158, 0.95); /* Couleur de fond (Teal foncé) */
-    backdrop-filter: blur(10px);
+    top: 90px; /* Juste en dessous du bouton burger */
+    right: 5%; /* Aligné à droite */
+    height: auto;
+    width: auto;
+    background: transparent; /* Pas de fond global (pas de sidebar) */
+    box-shadow: none; /* Pas d'ombre globale */
+    
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    transition: 0.4s ease;
-    z-index: 2000;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+    align-items: flex-end; /* Aligne les bulles sur la droite */
+    gap: 15px; /* Espace entre les bulles */
+    
+    opacity: 0;
+    transform: translateY(-20px); /* Légèrement remonté pour l'animation */
+    pointer-events: none; /* On ne peut pas cliquer quand c'est caché */
+    transition: all 0.3s ease;
   }
 
-  /* Quand on ajoute la classe 'active' via JS, le menu glisse vers la gauche */
+  /* 3. Quand le menu est ouvert (Active) */
   .nav-links.active {
-    right: 0;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto; /* Réactive les clics */
   }
 
-  /* Style des liens dans le menu mobile */
+  /* 4. LE STYLE "BULLES" */
   .nav-links a {
-    font-size: 28px;
-    opacity: 1;
+    background-color: #03989e; /* Couleur Teal (vert-bleu) */
+    color: white !important;   /* Texte blanc forcé */
+    padding: 12px 25px;        /* Espace intérieur pour faire une bulle */
+    border-radius: 50px;       /* Bords très ronds (forme pilule/bulle) */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Ombre pour l'effet flottant */
+    font-size: 18px;
+    text-align: center;
+    width: fit-content;        /* La bulle s'adapte à la taille du mot */
+  }
+
+  /* Ajustement spécifique pour le lien "Sparrow" dans la bulle */
+  .sparrow-link {
+    font-family: 'Great Vibes', cursive;
+    font-size: 24px !important; /* Un peu plus grand pour la police cursive */
   }
   
-  /* Animation du Burger en Croix (X) quand actif */
+  /* On force la première lettre de Sparrow en blanc aussi */
+  .sparrow-link .first-letter {
+    color: white !important;
+  }
+
+  /* Animation du Burger en Croix (X) */
   .hamburger.active .bar:nth-child(2) {
     opacity: 0;
   }
