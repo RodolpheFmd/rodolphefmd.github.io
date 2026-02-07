@@ -135,5 +135,58 @@
       });
     });
   </script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    
+    // --- GESTION VIDEO ---
+    const video = document.querySelector(".top_logo_video");
+    if (video) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            video.currentTime = 0;
+            video.play();
+          } else {
+            video.pause();
+          }
+        });
+      }, { threshold: 0.3 });
+      observer.observe(video);
+    }
+
+    // --- GESTION MENU BURGER ---
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+    const links = document.querySelectorAll(".nav-links a");
+
+    // 1. Ouvrir / Fermer au clic sur le burger
+    hamburger.addEventListener("click", (e) => {
+      // Empêche le clic de se propager au document (sinon ça fermerait tout de suite)
+      e.stopPropagation(); 
+      hamburger.classList.toggle("active");
+      navLinks.classList.toggle("active");
+    });
+
+    // 2. Fermer quand on clique sur un lien
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navLinks.classList.remove("active");
+      });
+    });
+
+    // 3. FERMER AU CLIC EN DEHORS (Le code ajouté est ici)
+    document.addEventListener("click", (e) => {
+      // Si le menu est ouvert...
+      if (navLinks.classList.contains("active")) {
+        // ...et que le clic n'est NI sur le menu NI sur le bouton burger
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+          hamburger.classList.remove("active");
+          navLinks.classList.remove("active");
+        }
+      }
+    });
+    });
+  </script>
 </body>
 </html>
