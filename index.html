@@ -12,6 +12,13 @@
 
 <body>
   <nav class="side-nav">
+    
+    <div class="lang-switch">
+      <span class="lang-btn" data-lang="en">EN</span>
+      <span>|</span>
+      <span class="lang-btn" data-lang="fr">FR</span>
+    </div>
+
     <div class="hamburger">
       <span class="bar"></span>
       <span class="bar"></span>
@@ -19,9 +26,19 @@
     </div>
 
     <div class="nav-links">
-      <a href="#sparrow" class="sparrow-link"><span class="first-letter">S</span>parrow</a>
-      <a href="#about">About Us</a>
-      <a href="#contact">Contact</a>
+      <a href="#sparrow" class="sparrow-link">
+        <span class="first-letter">S</span>parrow
+      </a>
+      
+      <a href="#about">
+        <span class="lang-en">About Us</span>
+        <span class="lang-fr">À Propos</span>
+      </a>
+      
+      <a href="#contact">
+        <span class="lang-en">Contact</span>
+        <span class="lang-fr">Contact</span>
+      </a>
     </div>
   </nav>
 
@@ -34,11 +51,13 @@
       </video>
       
       <div class="intro-box">
-        The Digital Safety Net for Advanced Air Mobility
+        <span class="lang-en">The Digital Safety Net for Advanced Air Mobility</span>
+        <span class="lang-fr">Le filet de sécurité numérique pour la mobilité aérienne avancée</span>
       </div>
 
       <div class="scroll-indicator">
-        <span>Learn more</span>
+        <span class="lang-en">Learn more</span>
+        <span class="lang-fr">En savoir plus</span>
         <div class="arrow"></div>
       </div>
     </div>
@@ -48,9 +67,73 @@
     <img src="logos/ATC_tower.png" class="bg-img atc-tower-pic" alt="">
     <div class="content-wrapper wide-wrapper">
       <div class="text-block">
-        <h1>Mission Statement</h1>
-        <p>Augmented is on a mission to revolutionise air traffic safety for very low level operations through human-centric, AI-driven separation assurance. By leveraging Sparrow, the first but not the least breakthrough solver, we provide highly scalable, cloud-hosted safety nets designed to resolve complex multi-agent conflicts in real-time.</p>
-        <p>Our goal is to bridge the gap between academic excellence and industrial reality, reducing operator workload and facilitating a safe, transparent transition toward the future of autonomous aviation.</p>
+        <h1>
+          <span class="lang-en">Mission Statement</span>
+          <span class="lang-fr">Notre Mission</span>
+        </h1>
+        
+        <div class="lang-en">
+            <p>Augmented is on a mission to revolutionise air traffic safety for very low level operations through human-centric, AI-driven separation assurance. By leveraging Sparrow, the first but not the least breakthrough solver, we provide highly scalable, cloud-hosted safety nets designed to resolve complex multi-agent conflicts in real-time.</p>
+            <p>Our goal is to bridge the gap between academic excellence and industrial reality, reducing operator workload and facilitating a safe, transparent transition toward the future of autonomous aviation.</p>
+        </div>
+
+        <div class="lang-fr">
+            <p>Augmented a pour mission de révolutionner la sécurité du trafic aérien pour les opérations à très basse altitude grâce à une assurance de séparation centrée sur l'humain et pilotée par l'IA. Grâce à Sparrow, notre solveur de rupture, nous fournissons des filets de sécurité hébergés dans le cloud, hautement évolutifs et conçus pour résoudre des conflits multi-agents complexes en temps réel.</p>
+            <p>Notre objectif est de combler le fossé entre l'excellence académique et la réalité industrielle, en réduisant la charge de travail des opérateurs et en facilitant une transition sûre et transparente vers l'avenir de l'aviation autonome.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section-content" id="smarter-way">
+    <div class="content-wrapper wide-wrapper">
+      <div class="text-block">
+        
+        <h1>
+            <span class="lang-en">The Smarter Way to Manage Airspace</span>
+            <span class="lang-fr">Une gestion plus intelligente de l'espace aérien</span>
+        </h1>
+        
+        <div class="lang-en">
+            <p>We built Augmented to solve a specific problem: existing aviation tools were too slow, too expensive, and too opaque.</p>
+            <p style="margin-bottom: 40px; font-weight: bold; color: #03989e;">We do things differently:</p>
+        </div>
+        <div class="lang-fr">
+            <p>Nous avons créé Augmented pour résoudre un problème précis : les outils actuels sont trop lents, trop chers et trop opaques.</p>
+            <p style="margin-bottom: 40px; font-weight: bold; color: #03989e;">Nous faisons les choses différemment :</p>
+        </div>
+
+        <div class="values-grid">
+          
+          <div class="value-item">
+            <h2>
+                <span class="lang-en">We are faster</span>
+                <span class="lang-fr">Plus rapides</span>
+            </h2>
+            <p class="lang-en">Our Sparrow solver handles high-density traffic and resolves conflicts in milliseconds.</p>
+            <p class="lang-fr">Notre solveur Sparrow gère un trafic dense et résout les conflits en quelques millisecondes.</p>
+          </div>
+
+          <div class="value-item">
+            <h2>
+                <span class="lang-en">We are open</span>
+                <span class="lang-fr">Transparents</span>
+            </h2>
+            <p class="lang-en">We reject "black box" outcomes. We prove our safety through peer-reviewed scientific publications.</p>
+            <p class="lang-fr">Nous rejetons les résultats "boîte noire". Nous prouvons notre sécurité via des publications scientifiques évaluées par des pairs.</p>
+          </div>
+
+          <div class="value-item">
+            <h2>
+                <span class="lang-en">We are accessible</span>
+                <span class="lang-fr">Accessibles</span>
+            </h2>
+            <p class="lang-en">From research labs to large fleet operators, we provide top-tier digital transformation tools without the bloat and cost of traditional incumbents.</p>
+            <p class="lang-fr">Des laboratoires de recherche aux grands opérateurs, nous fournissons des outils de pointe sans la lourdeur ni les coûts des acteurs traditionnels.</p>
+          </div>
+
+        </div>
       </div>
     </div>
   </section>
@@ -62,19 +145,38 @@
       <div class="text-block split-layout">
         
         <div class="split-text">
-          <h1>Operational Environment and Use Cases</h1>
+          <h1>
+            <span class="lang-en">Operational Environment and Use Cases</span>
+            <span class="lang-fr">Environnement Opérationnel et Cas d'Usage</span>
+          </h1>
           
-          <h2>Mixed Airspace</h2>
-          <p>Supports decision-making for both UAS and UAM operations across Very Low Level, U-space, and "grey zones" between traditional and emerging airspace.</p>
+          <h2>
+              <span class="lang-en">Mixed Airspace</span>
+              <span class="lang-fr">Espace Aérien Mixte</span>
+          </h2>
+          <p class="lang-en">Supports decision-making for both UAS and UAM operations across Very Low Level, U-space, and "grey zones" between traditional and emerging airspace.</p>
+          <p class="lang-fr">Aide à la décision pour les opérations UAS et UAM à très basse altitude, U-space et les "zones grises" entre l'espace aérien traditionnel et émergent.</p>
           
-          <h2>Diverse Traffic</h2>
-          <p>Designed for environments containing UAM/UAS operations but also Commercial Air Transport, and General Aviation.</p>
+          <h2>
+              <span class="lang-en">Diverse Traffic</span>
+              <span class="lang-fr">Trafic Diversifié</span>
+          </h2>
+          <p class="lang-en">Designed for environments containing UAM/UAS operations but also Commercial Air Transport, and General Aviation.</p>
+          <p class="lang-fr">Conçu pour les environnements comprenant des opérations UAM/UAS, mais aussi le transport aérien commercial et l'aviation générale.</p>
           
-          <h2>Aircraft Agnostic</h2>
-          <p>Supports heterogeneous vehicle categories, including fixed-wing aircraft, multirotor UAVs, and eVTOL platforms.</p>
+          <h2>
+              <span class="lang-en">Aircraft Agnostic</span>
+              <span class="lang-fr">Agnostique</span>
+          </h2>
+          <p class="lang-en">Supports heterogeneous vehicle categories, including fixed-wing aircraft, multirotor UAVs, and eVTOL platforms.</p>
+          <p class="lang-fr">Prend en charge des catégories de véhicules hétérogènes : avions à voilure fixe, drones multirotors et plateformes eVTOL.</p>
           
-          <h2>Resilient Performance</h2>
-          <p>Maintains reliability despite dynamic traffic patterns or limited latency.</p>
+          <h2>
+              <span class="lang-en">Resilient Performance</span>
+              <span class="lang-fr">Performance Résiliente</span>
+          </h2>
+          <p class="lang-en">Maintains reliability despite dynamic traffic patterns or limited latency.</p>
+          <p class="lang-fr">Maintient la fiabilité malgré des schémas de trafic dynamiques ou une latence limitée.</p>
         </div>
 
         <div class="split-image">
@@ -89,55 +191,31 @@
     <video class="sparrow-video" autoplay muted playsinline loop>
        </video>
     <div class="content-wrapper">
-        <h1 class="ending">Future is Now.</h1>
+        <h1 class="ending">
+            <span class="lang-en">Future is Now.</span>
+            <span class="lang-fr">Le Futur, c'est Maintenant.</span>
+        </h1>
     </div>
   </section>
 
   <script>
   document.addEventListener("DOMContentLoaded", function() {
-    const video = document.querySelector(".top_logo_video");
     
-    if (!video) return;
+    // --- GESTION LANGUE ---
+    const langBtns = document.querySelectorAll(".lang-btn");
+    const htmlTag = document.documentElement;
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          video.currentTime = 0;
-          video.play();
+    langBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const lang = btn.getAttribute("data-lang");
+        if (lang === "fr") {
+          htmlTag.classList.add("fr-mode");
         } else {
-          video.pause();
+          htmlTag.classList.remove("fr-mode");
         }
       });
-    }, {
-      threshold: 0.3
     });
 
-    observer.observe(video);
-    });
-  </script>
-  <script>
-    // Script pour le Burger Menu
-    const hamburger = document.querySelector(".hamburger");
-    const navLinks = document.querySelector(".nav-links");
-    const links = document.querySelectorAll(".nav-links a");
-
-    // Ouvrir / Fermer au clic sur le burger
-    hamburger.addEventListener("click", () => {
-      hamburger.classList.toggle("active");
-      navLinks.classList.toggle("active");
-    });
-
-    // Fermer le menu quand on clique sur un lien
-    links.forEach(link => {
-      link.addEventListener("click", () => {
-        hamburger.classList.remove("active");
-        navLinks.classList.remove("active");
-      });
-    });
-  </script>
-  <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    
     // --- GESTION VIDEO ---
     const video = document.querySelector(".top_logo_video");
     if (video) {
@@ -159,15 +237,12 @@
     const navLinks = document.querySelector(".nav-links");
     const links = document.querySelectorAll(".nav-links a");
 
-    // 1. Ouvrir / Fermer au clic sur le burger
     hamburger.addEventListener("click", (e) => {
-      // Empêche le clic de se propager au document (sinon ça fermerait tout de suite)
       e.stopPropagation(); 
       hamburger.classList.toggle("active");
       navLinks.classList.toggle("active");
     });
 
-    // 2. Fermer quand on clique sur un lien
     links.forEach(link => {
       link.addEventListener("click", () => {
         hamburger.classList.remove("active");
@@ -175,18 +250,16 @@
       });
     });
 
-    // 3. FERMER AU CLIC EN DEHORS (Le code ajouté est ici)
     document.addEventListener("click", (e) => {
-      // Si le menu est ouvert...
       if (navLinks.classList.contains("active")) {
-        // ...et que le clic n'est NI sur le menu NI sur le bouton burger
-        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+        // On autorise le clic sur le switcher de langue sans fermer le menu
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target) && !e.target.classList.contains('lang-btn')) {
           hamburger.classList.remove("active");
           navLinks.classList.remove("active");
         }
       }
     });
-    });
-  </script>
+  });
+</script>
 </body>
 </html>

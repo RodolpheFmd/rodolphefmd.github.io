@@ -31,7 +31,7 @@ p { font-size: 24px; margin-bottom: 20px; line-height: 1.6; }
   width: 90%;
   z-index: 1000;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   pointer-events: none;
 }
 
@@ -381,5 +381,101 @@ section {
   }
   .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+/* --- STYLE POUR LA SECTION "SMARTER WAY" --- */
+
+#smarter-way {
+  min-height: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Grille pour les 3 points (Faster, Open, Accessible) */
+.values-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Espace égal entre les colonnes */
+  gap: 40px; /* Espace entre chaque bloc */
+  margin-top: 20px;
+}
+
+.value-item {
+  flex: 1; /* Chaque colonne prend la même largeur */
+}
+
+/* Ajustement des titres dans les colonnes */
+.value-item h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid rgba(255,255,255,0.2); /* Petit trait de séparation stylé */
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+/* --- ADAPTATION MOBILE --- */
+@media (max-width: 1024px) {
+  .values-grid {
+    flex-direction: column; /* On empile les colonnes sur mobile */
+    gap: 30px;
+  }
+  
+  .value-item {
+    width: 100%;
+    text-align: left; /* Ou center si vous préférez */
+  }
+}
+/* --- GESTION DES LANGUES (EN / FR) --- */
+
+/* Par défaut (Anglais actif), on cache tout ce qui est français */
+html:not(.fr-mode) .lang-fr {
+  display: none !important;
+}
+
+/* Si le mode Français est actif, on cache tout ce qui est anglais */
+html.fr-mode .lang-en {
+  display: none !important;
+}
+
+/* Style du sélecteur de langue */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 2002;
+  
+  /* AJOUTS IMPORTANTS */
+  pointer-events: auto; /* Rend le bouton cliquable ! */
+  margin-right: 0;      /* Plus besoin de marge */
+}
+
+.lang-btn {
+  opacity: 0.5;
+  transition: opacity 0.3s;
+  font-weight: bold;
+}
+
+.lang-btn:hover {
+  opacity: 1;
+}
+
+/* La langue active est en pleine opacité et en couleur Teal */
+html:not(.fr-mode) .lang-btn[data-lang="en"],
+html.fr-mode .lang-btn[data-lang="fr"] {
+  opacity: 1;
+  color: #03989e;
+  text-decoration: underline;
+}
+
+/* --- ADAPTATION MOBILE DU SELECTEUR --- */
+@media (max-width: 768px) {
+  .lang-switch {
+    position: fixed;
+    top: 30px;
+    left: 5%; /* En haut à gauche sur mobile */
+    margin-right: 0;
   }
 }
