@@ -11,8 +11,10 @@
 </head>
 
 <body>
+  <a href="#" class="sticky-logo">
+    <img src="logos/AV.png" alt="Augmented Vision">
+  </a>
   <nav class="side-nav">
-    
     <div class="lang-switch">
       <span class="lang-btn" data-lang="en">EN</span>
       <span>|</span>
@@ -187,14 +189,25 @@
     </div>
   </section>
 
-  <section class="section-video-bottom">
-    <video class="sparrow-video" autoplay muted playsinline loop>
-       </video>
-    <div class="content-wrapper">
-        <h1 class="ending">
-            <span class="lang-en">Future is Now.</span>
-            <span class="lang-fr">Le Futur, c'est Maintenant.</span>
-        </h1>
+  <section class="section-video-bottom" id="contact">
+    <div class="content-wrapper footer-layout">
+        
+        <div class="footer-left">
+            <h2 class="contact-title">
+                <span class="lang-en">Contact Us</span>
+                <span class="lang-fr">Contactez-nous</span>
+            </h2>
+            <a href="mailto:contact@augmentedxtm.com" class="email-link">
+                contact@augmentedxtm.com
+            </a>
+        </div>
+
+        <div class="footer-right">
+             <a href="https://www.linkedin.com/company/augmentedxtm" target="_blank">
+                <img src="logos/LinkedInLogo.png" alt="LinkedIn" class="linkedin-icon">
+             </a>
+        </div>
+
     </div>
   </section>
 
@@ -259,6 +272,83 @@
         }
       }
     });
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    
+    // --- GESTION LANGUE ---
+    const langBtns = document.querySelectorAll(".lang-btn");
+    const htmlTag = document.documentElement;
+
+    langBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const lang = btn.getAttribute("data-lang");
+        if (lang === "fr") {
+          htmlTag.classList.add("fr-mode");
+        } else {
+          htmlTag.classList.remove("fr-mode");
+        }
+      });
+    });
+
+    // --- GESTION VIDEO ---
+    const video = document.querySelector(".top_logo_video");
+    if (video) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            video.currentTime = 0;
+            video.play();
+          } else {
+            video.pause();
+          }
+        });
+      }, { threshold: 0.3 });
+      observer.observe(video);
+    }
+
+    // --- GESTION MENU BURGER ---
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+    const links = document.querySelectorAll(".nav-links a");
+
+    hamburger.addEventListener("click", (e) => {
+      e.stopPropagation(); 
+      hamburger.classList.toggle("active");
+      navLinks.classList.toggle("active");
+    });
+
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navLinks.classList.remove("active");
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (navLinks.classList.contains("active")) {
+        // On autorise le clic sur le switcher de langue sans fermer le menu
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target) && !e.target.classList.contains('lang-btn')) {
+          hamburger.classList.remove("active");
+          navLinks.classList.remove("active");
+        }
+      }
+    });
+
+    // --- STICKY LOGO MANAGEMENT (NEW CODE HERE) ---
+    const stickyLogo = document.querySelector(".sticky-logo");
+
+    if (stickyLogo) { // Check if element exists to avoid errors
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 100) {
+                stickyLogo.classList.add("visible");
+            } else {
+                stickyLogo.classList.remove("visible");
+            }
+        });
+    }
+
   });
 </script>
 </body>
