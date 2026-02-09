@@ -445,7 +445,7 @@ html.fr-mode .lang-en {
   gap: 10px;
   font-size: 18px;
   cursor: pointer;
-  z-index: 2002;
+  z-index: 0;
   
   /* AJOUTS IMPORTANTS */
   pointer-events: auto; /* Rend le bouton cliquable ! */
@@ -487,7 +487,7 @@ html.fr-mode .lang-btn[data-lang="fr"] {
   right: 40px;
   width: 60px; /* Adjust size as needed */
   height: auto;
-  z-index: 3000; /* Must be higher than nav and burger */
+  z-index: 0; /* Must be higher than nav and burger */
   
   /* Initial State: Hidden */
   opacity: 0;
