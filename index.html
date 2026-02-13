@@ -335,101 +335,33 @@
   revealElements.forEach(el => revealObserver.observe(el));
   });
 </script>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    
-    // --- GESTION LANGUE ---
-    const langBtns = document.querySelectorAll(".lang-btn");
-    const htmlTag = document.documentElement;
 
-    langBtns.forEach(btn => {
-      btn.addEventListener("click", () => {
-        const lang = btn.getAttribute("data-lang");
-        if (lang === "fr") {
-          htmlTag.classList.add("fr-mode");
-        } else {
-          htmlTag.classList.remove("fr-mode");
-        }
-      });
-    });
-
-    // --- GESTION VIDEO ---
-    const video = document.querySelector(".top_logo_video");
-    if (video) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            video.currentTime = 0;
-            video.play();
-          } else {
-            video.pause();
-          }
-        });
-      }, { threshold: 0.3 });
-      observer.observe(video);
-    }
-
-    // --- GESTION MENU BURGER ---
-    const hamburger = document.querySelector(".hamburger");
-    const navLinks = document.querySelector(".nav-links");
-    const links = document.querySelectorAll(".nav-links a");
-
-    hamburger.addEventListener("click", (e) => {
-      e.stopPropagation(); 
-      hamburger.classList.toggle("active");
-      navLinks.classList.toggle("active");
-    });
-
-    links.forEach(link => {
-      link.addEventListener("click", () => {
-        hamburger.classList.remove("active");
-        navLinks.classList.remove("active");
-      });
-    });
-
-    document.addEventListener("click", (e) => {
-      if (navLinks.classList.contains("active")) {
-        // On autorise le clic sur le switcher de langue sans fermer le menu
-        if (!navLinks.contains(e.target) && !hamburger.contains(e.target) && !e.target.classList.contains('lang-btn')) {
-          hamburger.classList.remove("active");
-          navLinks.classList.remove("active");
-        }
-      }
-    });
-
-    // --- STICKY LOGO MANAGEMENT (NEW CODE HERE) ---
-    const stickyLogo = document.querySelector(".sticky-logo");
-
-    if (stickyLogo) { // Check if element exists to avoid errors
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 100) {
-                stickyLogo.classList.add("visible");
-            } else {
-                stickyLogo.classList.remove("visible");
-            }
-        });
-    }
-
-  });
-</script>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     
     // --- ELEMENTS ---
     const leftPanel = document.getElementById("dynamic-left-panel");
-    const scrollWindow = document.querySelector(".scrolling-window"); // The container that scrolls
-    const listTrack = document.querySelector(".scrolling-track");     // The list inside
-    const listItems = document.querySelectorAll(".clickable-item");
+    const scrollWindow = document.querySelector(".scrolling-window"); 
+    const listTrack = document.querySelector(".scrolling-track");
+    
+    // --- SETUP: AUTOMATICALLY DUPLICATE LIST FOR INFINITE SCROLL ---
+    // We clone the items so we have [List A] + [List A Copy]
+    // This allows us to scroll through A, and when we hit Copy, we jump back to start.
+    const originalItems = Array.from(listTrack.children);
+    originalItems.forEach(item => {
+        const clone = item.cloneNode(true);
+        listTrack.appendChild(clone);
+    });
 
     // --- VARIABLES ---
-    const originalContent = leftPanel.innerHTML;
+    // We save the original content of the left panel to restore it later
+    const originalLeftContent = leftPanel.innerHTML;
     let activeItem = null;
     let isHovering = false;
-    let autoScrollSpeed = 1.0; // Pixels per frame (Adjust speed here)
+    let autoScrollSpeed = 1.0; // Adjust speed (pixels per frame)
     
-    // --- CALCULATE LOOP HEIGHT ---
-    // We assume the list is duplicated exactly once. 
-    // The loop point is half the total height.
+    // Calculate the "Jump Point" (Height of one full set of items)
+    // Since we just doubled the list, the jump point is exactly half the total height.
     let loopHeight = listTrack.scrollHeight / 2;
 
     // Recalculate on window resize (in case text wraps)
@@ -439,15 +371,13 @@
 
     // --- AUTO SCROLL LOOP ---
     function autoScroll() {
-      // Only scroll if:
-      // 1. User is NOT hovering
-      // 2. User has NOT selected an item (activeItem is null)
+      // Run only if user is NOT hovering and NO item is clicked
       if (!isHovering && !activeItem) {
         
         scrollWindow.scrollTop += autoScrollSpeed;
 
-        // If we reach the loop point (end of the first set), snap back to top
-        // This creates the illusion of infinite scrolling
+        // THE MAGIC: If we have scrolled past the first set, jump back to 0 instantly.
+        // Because the second set is identical, the user sees no jump.
         if (scrollWindow.scrollTop >= loopHeight) {
            scrollWindow.scrollTop -= loopHeight;
         }
@@ -460,59 +390,64 @@
     requestAnimationFrame(autoScroll);
 
 
-    // --- USER INTERACTION (PAUSE LOGIC) ---
+    // --- PAUSE ON HOVER ---
     scrollWindow.addEventListener("mouseenter", () => isHovering = true);
     scrollWindow.addEventListener("mouseleave", () => isHovering = false);
-    
-    // For touch devices
     scrollWindow.addEventListener("touchstart", () => isHovering = true);
     scrollWindow.addEventListener("touchend", () => isHovering = false);
 
 
-    // --- CLICK LOGIC (DASHBOARD) ---
-    listItems.forEach(item => {
-      item.addEventListener("click", (e) => {
-        e.stopPropagation();
+    // --- CLICK LOGIC (EVENT DELEGATION) ---
+    // We attach the click listener to the container (listTrack) instead of individual items
+    // This ensures it works for the original items AND the clones we created.
+    listTrack.addEventListener("click", (e) => {
+      // Find the closest clickable item (in case they clicked a span or div inside)
+      const item = e.target.closest(".clickable-item");
+      if (!item) return; // Clicked on empty space
 
-        if (activeItem === item) {
-            resetView();
-        } else {
-            activateItem(item);
-        }
-      });
+      e.stopPropagation();
+
+      if (activeItem === item) {
+          resetView();
+      } else {
+          activateItem(item);
+      }
     });
 
     function activateItem(item) {
+        // Remove active class from previous
         if (activeItem) activeItem.classList.remove("active-selected");
         
+        // Add active class to new
         item.classList.add("active-selected");
-        activeItem = item;
-        
-        // Note: activeItem being set stops the autoScroll loop automatically above.
+        activeItem = item; // This stops the autoScroll (see the 'if' in autoScroll)
 
-        // Swap Content
-        const newContent = item.querySelector(".details-content").innerHTML;
-        leftPanel.style.opacity = 0;
-        setTimeout(() => {
-            leftPanel.innerHTML = newContent;
-            leftPanel.style.opacity = 1;
-        }, 300);
+        // Swap Content on the Left
+        // We look for the .details-content inside the clicked item
+        const detailSource = item.querySelector(".details-content");
+        if(detailSource) {
+            const newContent = detailSource.innerHTML;
+            leftPanel.style.opacity = 0;
+            setTimeout(() => {
+                leftPanel.innerHTML = newContent;
+                leftPanel.style.opacity = 1;
+            }, 300);
+        }
     }
 
     function resetView() {
         if (activeItem) activeItem.classList.remove("active-selected");
-        activeItem = null; 
-        // Note: activeItem being null will RESUME the autoScroll loop above.
+        activeItem = null; // This RESUMES the autoScroll
 
-        // Restore Original
+        // Restore Original Title
         leftPanel.style.opacity = 0;
         setTimeout(() => {
-            leftPanel.innerHTML = originalContent;
+            leftPanel.innerHTML = originalLeftContent;
             leftPanel.style.opacity = 1;
         }, 300);
     }
     
-    // Reset on outside click
+    // Click outside to reset
     document.addEventListener("click", (e) => {
         if (!e.target.closest(".split-container") && activeItem) {
             resetView();

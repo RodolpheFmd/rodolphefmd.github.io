@@ -494,242 +494,55 @@ html.fr-mode .lang-btn[data-lang="fr"] {
 
 /* --- END SAFETY NETS IMAGE STYLING --- */
 
-/* --- WHY AUGMENTED ROLLING SECTION --- */
+/* --- WHY AUGMENTED SECTION (CLEAN VERSION) --- */
 
-/* Layout: Flexbox to put Title Left and List Right */
+/* 1. MAIN LAYOUT (Split Screen) */
 .split-container {
   display: flex;
-  align-items: center; /* Center vertically */
+  align-items: center; /* Vertically center content */
   justify-content: space-between;
   gap: 50px;
-  overflow: hidden; /* Keeps content inside rounded corners */
+  min-height: 400px; /* Ensures the area is big enough */
+  overflow: hidden; 
 }
 
+/* 2. LEFT SIDE (Dynamic Title Area) */
 .split-left {
   flex: 1;
   text-align: left;
   padding-right: 20px;
-  border-right: 2px solid rgba(255, 255, 255, 0.2); /* Optional divider line */
+  border-right: 2px solid rgba(255, 255, 255, 0.1); /* Subtle divider line */
+  transition: opacity 0.3s ease; /* Smooth fade effect for JS swapping */
 }
 
+/* Typography for the Left Side */
 .split-left h1 {
   margin-bottom: 10px;
 }
-
 .split-left .subtitle {
   font-size: 20px;
   color: #03989e;
   opacity: 0.9;
 }
-
-/* The Right Side Container */
-.split-right {
-  flex: 1;
-  height: 300px; /* Height of the visible window */
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* The Window the text scrolls through */
-.scrolling-window {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-  /* Mask to fade text out at top and bottom */
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
-  mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
-}
-
-/* The Track that actually moves */
-.scrolling-track {
-  display: flex;
-  flex-direction: column;
-  /* The animation moves it up by 50% (the height of one list) */
-  animation: scroll-vertical 15s linear infinite;
-}
-
-/* Pause scrolling on hover for readability */
-.scrolling-track:hover {
-  animation-play-state: paused;
-}
-
-@keyframes scroll-vertical {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-50%); }
-}
-
-/* Styling the List Items */
-.benefit-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  /* Ensure the list height matches the animation logic */
-  height: auto; 
-}
-
-.benefit-list li {
-  font-size: 28px;
-  font-weight: bold;
-  text-align: center;
-  padding: 20px 0;
-  color: white;
-  text-shadow: 0 0 10px rgba(3, 152, 158, 0.5); /* Glow effect matching your theme */
-}
-
-/* MOBILE RESPONSIVENESS */
-@media (max-width: 900px) {
-  .split-container {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .split-left {
-    border-right: none;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-    padding-right: 0;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-  }
-
-  .split-right {
-    height: 250px; /* Smaller window on mobile */
-    width: 100%;
-  }
-}
-
-/* --- CLICKABLE LIST STYLES --- */
-.clickable-item {
-  cursor: pointer;
-  transition: transform 0.2s, color 0.3s;
-}
-
-.clickable-item:hover .item-title {
-  color: #03989e; /* Highlight color */
-  text-decoration: underline;
-  text-underline-offset: 5px;
-}
-
-/* Hide the details content inside the list (it only shows in the modal) */
-.details-content {
-  display: none;
-}
-
-/* Pause animation when hovering over the list so users can click easily */
-.scrolling-track:hover {
-  animation-play-state: paused;
-}
-
-/* --- MODAL / POPUP STYLES --- */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8); /* Dark background dimming */
-  backdrop-filter: blur(5px);
-  z-index: 3000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.modal-overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.modal-window {
-  background: linear-gradient(135deg, #32465f 0%, #1b2838 100%);
-  border: 1px solid #03989e;
-  padding: 40px;
-  border-radius: 15px;
-  width: 90%;
-  max-width: 600px;
-  position: relative;
-  box-shadow: 0 0 30px rgba(3, 152, 158, 0.3);
-  transform: translateY(20px);
-  transition: transform 0.3s ease;
-}
-
-.modal-overlay.active .modal-window {
-  transform: translateY(0);
-}
-
-.modal-close {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 30px;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-.modal-close:hover {
-  color: #03989e;
-}
-
-/* Modal Typography */
-#modal-text-container h3 {
-  color: #03989e;
-  margin-top: 0;
-  font-size: 32px;
-  margin-bottom: 20px;
-}
-
-#modal-text-container p {
-  font-size: 20px;
-  line-height: 1.6;
-  color: #e0e0e0;
-}
-
-/* --- SPLIT LAYOUT (Why Augmented) --- */
-.split-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 50px;
-  min-height: 400px; /* Ensures space for content */
-}
-
-.split-left {
-  flex: 1;
-  text-align: left;
-  padding-right: 20px;
-  border-right: 2px solid rgba(255, 255, 255, 0.1);
-  transition: opacity 0.3s ease; /* Smooth fade when text changes */
-}
-
-/* Style for the Dynamic Details when they appear */
+/* Typography for the "Details" when clicked */
 .split-left h2 {
-    color: #03989e;
-    margin-bottom: 15px;
-    font-size: 38px;
+  color: #03989e;
+  margin-bottom: 15px;
+  font-size: 38px;
+  text-shadow: 1px 1px 2px black;
 }
 .split-left p {
-    font-size: 22px;
-    line-height: 1.5;
+  font-size: 22px;
+  line-height: 1.5;
 }
 
-/* --- ROLLING LIST --- */
-/* --- ROLLING LIST CONTAINER --- */
+
+/* 3. RIGHT SIDE (The Scrolling Window) */
 .split-right {
   flex: 1;
-  height: 350px;
+  height: 350px; /* The visible height of the list */
   position: relative;
-  /* We keep the mask for the cool fade effect */
+  /* Top/Bottom Fade Mask */
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
   mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
 }
@@ -737,15 +550,16 @@ html.fr-mode .lang-btn[data-lang="fr"] {
 .scrolling-window {
   width: 100%;
   height: 100%;
-  overflow-y: auto; /* ENABLE MANUAL SCROLL */
+  overflow-y: auto;   /* ENABLE MANUAL SCROLL */
   overflow-x: hidden;
-  
-  /* Scrollbar Styling (Optional: makes it thin and subtle) */
+  position: relative;
+
+  /* Thin Scrollbar Styling */
   scrollbar-width: thin; 
   scrollbar-color: rgba(3, 152, 158, 0.5) transparent;
 }
 
-/* For Chrome/Safari/Edge Scrollbars */
+/* Webkit Scrollbar (Chrome/Safari/Edge) */
 .scrolling-window::-webkit-scrollbar {
   width: 6px;
 }
@@ -757,68 +571,65 @@ html.fr-mode .lang-btn[data-lang="fr"] {
   border-radius: 20px;
 }
 
-/* --- THE TRACK (Formerly Animated) --- */
+/* 4. THE LIST TRACK */
 .scrolling-track {
   display: flex;
   flex-direction: column;
   padding: 0;
   margin: 0;
-  /* REMOVED: animation: scroll-vertical ... */
-  /* REMOVED: @keyframes ... */
+  /* No CSS animation here anymore - handled by JS for smoother control */
 }
 
-/* Pause animation when hovering the LIST, or when an item is ACTIVE */
-.scrolling-track:hover,
-.scrolling-track.paused {
-  animation-play-state: paused;
-}
-
-@keyframes scroll-vertical {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-50%); } /* Adjust based on your list doubling */
-}
-
-/* --- LIST ITEMS --- */
+/* 5. LIST ITEMS */
 .benefit-list li {
   list-style: none;
   font-size: 26px;
   font-weight: bold;
   text-align: center;
   padding: 25px 0;
-  color: rgba(255,255,255, 0.6); /* Dimmed by default */
+  color: rgba(255, 255, 255, 0.6); /* Dimmed by default */
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .benefit-list li:hover {
   color: white;
-  text-shadow: 0 0 10px rgba(255,255,255,0.5);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-/* The Active State (Selected Item) */
+/* The Active State (When clicked) */
 .benefit-list li.active-selected {
-  color: #03989e; /* Theme Color */
+  color: #03989e; /* Theme Blue */
   transform: scale(1.1);
   text-shadow: 0 0 15px rgba(3, 152, 158, 0.8);
   opacity: 1;
 }
 
-/* Hide detail content inside the list (it only shows on the left) */
+/* Hide the details text inside the list (it only appears on the left) */
 .details-content {
   display: none;
 }
 
-/* MOBILE RESPONSIVE */
+
+/* 6. MOBILE RESPONSIVENESS */
 @media (max-width: 900px) {
   .split-container {
     flex-direction: column;
     text-align: center;
   }
+  
   .split-left {
     border-right: none;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-right: 0;
     padding-bottom: 30px;
     margin-bottom: 20px;
-    min-height: 200px; /* Keep space so it doesn't jump */
+    min-height: 200px; /* Prevent layout jumping */
+  }
+
+  .split-right {
+    height: 250px; /* Smaller window on mobile */
+    width: 100%;
   }
 }
+/* --- WHY AUGMENTED SECTION END --- */
