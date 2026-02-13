@@ -97,13 +97,13 @@
         <div class="lang-en">
           <p>Aviation is the safest mode of transportation. As we introduce new operations in low-level airspace over urban, suburban, and rural areas, we must not only comply with this standard but improve it.</p>
           <p>Safety nets play a major role after departure in preventing imminent or actual hazardous situations. They are a critical link in the global safety chain. In current Air Traffic Management, systems like the Short-Term Conflict Alert support controllers by warning of potential conflicts.</p>
-          <p>Augmented takes this further. We are developing a tool that does not just alert, but actively proposes solutions. Designed for increasingly complex environments, it features a real-time interface with trajectory preview to ensure total situational awareness.</p>
+          <p>Augmented takes this further. We are developing a tool that does not just alert, but actively proposes solutions up to 2 minutes before hazards. Designed for increasingly complex environments, it features a real-time interface with trajectory preview to ensure total situational awareness.</p>
         </div>
 
         <div class="lang-fr">
           <p>L'aviation est le moyen de transport le plus sûr. L'introduction de nouvelles opérations à basse altitude au-dessus des zones urbaines, périurbaines et rurales doit non seulement respecter cette norme, mais l'améliorer.</p>
           <p>Les Safety Nets jouent un rôle majeur après le décollage pour prévenir les situations dangereuses imminentes ou réelles. Ils constituent un maillon essentiel de la chaîne de sécurité. Dans la gestion actuelle du trafic aérien, des outils comme l'Alerte de Conflit à Court Terme (STCA) assistent les contrôleurs en signalant les conflits potentiels ou avérés.</p>
-          <p>Augmented va plus loin. Nous développons un outil qui ne se contente pas d'alerter, mais qui propose des solutions. Conçu pour des environnements de plus en plus complexes, il offre une interface temps réel avec prévisualisation des trajectoires.</p>
+          <p>Augmented va plus loin. Nous développons un outil qui ne se contente pas d'alerter, mais qui propose des solutions jusqu'à 2 min avant l'incident. Conçu pour des environnements de plus en plus complexes, il offre une interface temps réel avec prévisualisation des trajectoires.</p>
         </div>
         <img src="pics/AugmentedSafetyNetsTImeline.png" alt="Safety Nets Timeline" class="timeline-img">
       </div>
@@ -234,7 +234,6 @@
               </ul>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -372,32 +371,43 @@
     const listTrack = document.querySelector(".scrolling-track");
     
     // --- VARIABLES ---
-    // We save the original content of the left panel to restore it later
     const originalLeftContent = leftPanel.innerHTML;
     let activeItem = null;
     let isHovering = false;
-    let autoScrollSpeed = 0.5; // Adjust speed (pixels per frame)
+    let autoScrollSpeed = 1; 
     
-    // Calculate the "Jump Point" (Height of one full set of items)
-    // Since we just doubled the list, the jump point is exactly half the total height.
-    let loopHeight = listTrack.scrollHeight / 2;
+    // NEW: Control variables for direction and pausing
+    let direction = 1;   // 1 for down, -1 for up
+    let isPaused = false;
 
-    // Recalculate on window resize (in case text wraps)
-    window.addEventListener('resize', () => {
-        loopHeight = listTrack.scrollHeight / 2;
-    });
-
-    // --- AUTO SCROLL LOOP ---
+    // --- AUTO SCROLL YO-YO LOGIC ---
     function autoScroll() {
-      if (!isHovering && !activeItem) {
-        scrollWindow.scrollTop += autoScrollSpeed;
+      // Only move if not hovering, no item is selected, and not in a pause state
+      if (!isHovering && !activeItem && !isPaused) {
+        scrollWindow.scrollTop += autoScrollSpeed * direction;
 
-        // If we hit the bottom, snap back to the top
-        if (scrollWindow.scrollTop >= (listTrack.scrollHeight - scrollWindow.clientHeight)) {
-          scrollWindow.scrollTop = 0;
+        const currentScroll = scrollWindow.scrollTop;
+        const maxScroll = listTrack.scrollHeight - scrollWindow.clientHeight;
+
+        // Check if we hit the bottom while moving down
+        if (direction === 1 && currentScroll >= maxScroll) {
+          pauseAndReverse(-1);
+        } 
+        // Check if we hit the top while moving up
+        else if (direction === -1 && currentScroll <= 0) {
+          pauseAndReverse(1);
         }
       }
       requestAnimationFrame(autoScroll);
+    }
+
+    // NEW: Function to handle the 1-second wait
+    function pauseAndReverse(newDirection) {
+      isPaused = true;
+      setTimeout(() => {
+        direction = newDirection;
+        isPaused = false;
+      }, 1000); // 1000ms = 1 second
     }
 
     // Start the loop
