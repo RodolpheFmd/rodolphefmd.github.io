@@ -293,6 +293,7 @@ html.fr-mode .lang-en { display: none !important; }
   font-size: 18px;
   cursor: pointer;
   pointer-events: auto;
+  z-index: -1;
 }
 
 .lang-btn { opacity: 0.5; transition: opacity 0.3s; font-weight: bold; }
@@ -535,12 +536,12 @@ html.fr-mode .lang-btn[data-lang="fr"] {
   
   /* Center the logo */
   top: 50%;
-  left: 30%;
+  left: 50%;
   transform: translate(-50%, -50%);
   
   /* Size and Image */
-  width: 150%;  /* Adjust this percentage to make the logo bigger/smaller */
-  height: 150%;
+  width: 100%;  /* Adjust this percentage to make the logo bigger/smaller */
+  height: 100%;
   background-image: url('logos/AV.png'); 
   background-size: contain;
   background-repeat: no-repeat;
@@ -670,4 +671,456 @@ html.fr-mode .lang-btn[data-lang="fr"] {
     width: 100%;
   }
 }
+/* Container for the content injected by JavaScript */
+#dynamic-left-panel {
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 400px;
+}
+
+/* Style for the logo/image when it appears in the panel */
+#dynamic-left-panel img {
+  max-width: 80px; /* Constrains the AV logo */
+  height: auto;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 0 10px rgba(3, 152, 158, 0.4));
+}
+
+/* Style for the selected content (Details) */
+#dynamic-left-panel h2 {
+  font-size: 2.5rem;
+  color: #03989e;
+  margin-top: 0;
+  border-left: 4px solid #03989e;
+  padding-left: 20px;
+}
+
+#dynamic-left-panel p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  animation: fadeInSlide 0.5s ease forwards;
+}
+
+@keyframes fadeInSlide {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 /* --- WHY AUGMENTED SECTION END --- */
+
+
+/* --- FOR WHOM SECTION --- */
+#interactive-ecosystem {
+  position: relative;
+  width: 100%;
+  /* Limite la largeur pour les grands écrans */
+  max-width: 1400px; 
+  margin: 60px auto;
+  height: 700px; /* Hauteur fixe pour le cadre */
+  overflow: hidden; /* Important: cache ce qui dépasse lors du zoom */
+  border-radius: 16px;
+  background: #0a0a0a;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+  border: 1px solid rgba(0, 242, 255, 0.1);
+}
+
+/* --- TITRE EN SURIMPRESSION --- */
+.ecosystem-title {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  color: #fff;
+  font-family: 'Orbitron', sans-serif; /* Utilise ta typo futuriste si tu en as une */
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 10px rgba(0, 242, 255, 0.5);
+  pointer-events: none; /* Permet de cliquer au travers */
+  transition: opacity 0.5s ease;
+}
+
+/* Cache le titre quand on zoome pour ne pas gêner */
+#interactive-ecosystem.active-view .ecosystem-title {
+  opacity: 0;
+}
+
+/* --- VIEWPORT & IMAGE (Mécanique du Zoom) --- */
+.viewport {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* La magie du zoom fluide se passe ici */
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  transform-origin: center center; /* Sera modifié par le JS */
+}
+
+#eco-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Remplit le cadre */
+  transition: filter 0.8s ease;
+}
+
+/* État Zoomé : on floute et assombrit l'image */
+.viewport.zoomed #eco-image {
+  filter: blur(5px) brightness(0.4);
+  transform: scale(1.02); /* Petit hack pour éviter les bords blancs au flou */
+}
+
+/* --- HOTSPOTS (Les points cliquables) --- */
+.eco-hotspot {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  /* Le centre du point correspond à la coordonnée */
+  transform: translate(-50%, -50%); 
+  background: rgba(0, 242, 255, 0.2);
+  border: 2px solid #00f2ff;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 5;
+  transition: all 0.3s ease;
+}
+
+/* Animation de pulsation */
+.eco-hotspot::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  border: 1px solid #00f2ff;
+  animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+  0% { width: 30px; height: 30px; opacity: 1; }
+  100% { width: 80px; height: 80px; opacity: 0; }
+}
+
+/* Le label sous le hotspot */
+.hotspot-label {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #00f2ff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.eco-hotspot:hover {
+  background: #00f2ff;
+  box-shadow: 0 0 20px #00f2ff;
+}
+.eco-hotspot:hover .hotspot-label { opacity: 1; }
+
+/* Cache les autres hotspots quand on zoome */
+.viewport.zoomed .eco-hotspot {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* --- MODAL POP-UP (Glassmorphism) --- */
+.modal-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  display: flex;
+  align-items: center; /* Centre verticalement */
+  justify-content: flex-end; /* Place la boîte sur la droite */
+  padding-right: 5%; /* Marge à droite */
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.6s ease 0.2s; /* Petit délai d'apparition */
+  z-index: 20;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.glass-panel {
+  background: rgba(13, 20, 28, 0.85); /* Fond sombre semi-transparent */
+  backdrop-filter: blur(15px); /* Effet verre dépoli */
+  -webkit-backdrop-filter: blur(15px); /* Support Safari */
+  border: 1px solid rgba(0, 242, 255, 0.3);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 450px;
+  text-align: left;
+  transform: translateX(50px); /* Position de départ pour l'anim */
+  transition: transform 0.6s ease-out;
+}
+
+.modal-overlay.active .glass-panel {
+  transform: translateX(0); /* Arrive à sa place */
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  color: #00f2ff;
+  font-size: 1.8rem;
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0, 242, 255, 0.2);
+  padding-bottom: 10px;
+}
+
+.modal-body-content p {
+  color: #e0e0e0;
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.close-hint {
+  margin-top: 30px;
+  font-size: 0.85rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+}
+.close-hint::before {
+  content: '←';
+  margin-right: 10px;
+  color: #00f2ff;
+}
+
+/* Le titre au dessus de l'image */
+.section-title-overlay {
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  font-family: 'Alata', sans-serif;
+  font-size: 3.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  text-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+  pointer-events: none;
+}
+#for-whom-immersive {
+  position: relative;
+  width: 100vw;
+  height: 850px;
+  overflow: hidden;
+}
+
+.immersive-viewport {
+  opacity: 0.95;
+  width: 100%;
+  height: 100%;
+  -webkit-mask-image: linear-gradient(to bottom, 
+      transparent 0%, 
+      black 15%, 
+      black 85%, 
+      transparent 100%
+  );
+  mask-image: linear-gradient(to bottom, 
+      transparent 0%, 
+      black 15%, 
+      black 85%, 
+      transparent 100%
+  );
+}
+
+#imm-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+  transition: filter 0.8s ease, opacity 0.8s ease;
+}
+
+/* --- HOTSPOTS --- */
+.imm-hotspot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #00f2ff;
+  border-radius: 50%;
+  opacity: 0.95;
+  cursor: pointer;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 15px #00f2ff;
+}
+
+.imm-hotspot::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 100%; height: 100%;
+  border: 2px solid #00f2ff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: imm-pulse 2s infinite;
+}
+
+@keyframes imm-pulse {
+  0% { width: 20px; height: 20px; opacity: 1; }
+  100% { width: 150px; height: 150px; opacity: 0; }
+}
+/* --- UPDATED LABELS --- */
+.imm-label {
+  position: absolute;
+  top: 40px;            /* Position below the dot */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: all 0.4s ease;
+  pointer-events: none;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 450px;         /* Prevents the description from being too wide */
+  text-shadow: 0 2px 10px rgba(0,0,0,0.9);
+}
+
+/* Hover trigger */
+.imm-hotspot:hover .imm-label {
+  opacity: 1;
+  transform: translateX(-50%) translateY(10px); /* Slight slide down effect */
+}
+
+.imm-title {
+  color: #00f2ff;
+  font-size: 2.0rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+.imm-desc {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.5rem;
+  line-height: 1.4;
+  text-align: left;
+  
+  /* THE VERTICAL BAR */
+  border-left: 3px solid #00f2ff; 
+  padding-left: 15px;
+  
+  /* Glassmorphism background for better legibility over the image */
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 0 4px 4px 0;
+}
+/* --- ÉTAT ZOOMÉ --- */
+.zoomed #imm-image {
+  filter: blur(8px) brightness(0.3);
+  opacity: 0.5;
+}
+
+.zoomed .imm-hotspot { opacity: 0; pointer-events: none; }
+
+/* --- MODAL --- */
+.imm-modal-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 200;
+  transition: opacity 0.5s;
+}
+
+.imm-modal-overlay.active { opacity: 1; pointer-events: auto; }
+
+.imm-modal-content {
+  max-width: 500px;
+  padding: 40px;
+  background: rgba(10, 15, 20, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 242, 255, 0.3);
+  border-radius: 2px; /* Style architectural droit */
+  text-align: left;
+}
+
+.imm-modal-content h3 { color: #00f2ff; font-size: 2rem; margin-bottom: 20px; }
+.imm-modal-content p { font-size: 1.1rem; line-height: 1.6; color: #eee; }
+.imm-close-hint { margin-top: 20px; color: #666; font-size: 0.8rem; cursor: pointer; }
+/* --- FOR WHOM SECTION END --- */
+
+/* L'arrière-plan du modal (couche qui couvre tout le cadre) */
+.imm-modal-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2); /* Très léger voile noir */
+  opacity: 0;
+  pointer-events: none; /* Invisible et non-cliquable par défaut */
+  transition: opacity 0.4s ease;
+  z-index: 200;
+}
+
+/* Quand le modal est actif */
+.imm-modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* La boîte de contenu (Glassmorphism) */
+.imm-modal-content {
+  background: rgba(20, 30, 40, 0.7); /* Bleu nuit très transparent */
+  backdrop-filter: blur(15px); /* EFFET CLÉ : Floute ce qui est derrière */
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(0, 242, 255, 0.3); /* Bordure "électrique" fine */
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 450px;
+  width: 80%;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  transform: translateY(20px);
+  transition: transform 0.4s ease;
+}
+
+.imm-modal-overlay.active .imm-modal-content {
+  transform: translateY(0); /* Petit effet de montée à l'apparition */
+}
+
+/* Textes dans le modal */
+#imm-modal-title {
+  color: #00f2ff;
+  margin-top: 0;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+
+#imm-modal-body {
+  color: #ffffff;
+  line-height: 1.5;
+  font-size: 1.1rem;
+}
+
+.imm-close-hint {
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+}
