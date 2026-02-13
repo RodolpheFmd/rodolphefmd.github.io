@@ -514,7 +514,45 @@ html.fr-mode .lang-btn[data-lang="fr"] {
   border-right: 2px solid rgba(255, 255, 255, 0.1); /* Subtle divider line */
   transition: opacity 0.3s ease; /* Smooth fade effect for JS swapping */
 }
+/* --- Add this inside the WHY AUGMENTED section in style.css --- */
 
+/* 1. Ensure the container can hold the background image */
+#why_augmented .split-left {
+  position: relative; /* Necessary for positioning the logo */
+  z-index: 1;         /* Ensures text stays on top */
+  /* Keep your existing styles below this line */
+  flex: 1;
+  text-align: left;
+  padding-right: 20px;
+  border-right: 2px solid rgba(255, 255, 255, 0.1);
+  transition: opacity 0.3s ease;
+}
+
+/* 2. Create the transparent logo layer */
+#why_augmented .split-left::before {
+  content: "";
+  position: absolute;
+  
+  /* Center the logo */
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  
+  /* Size and Image */
+  width: 150%;  /* Adjust this percentage to make the logo bigger/smaller */
+  height: 150%;
+  background-image: url('logos/AV.png'); 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+  /* Transparency */
+  opacity: 0.1; /* 0.1 is faint, 0.2 is more visible. Adjust to taste. */
+  
+  /* Send to back */
+  z-index: -1; 
+  pointer-events: none; /* Ensures clicks pass through to the text/buttons */
+}
 /* Typography for the Left Side */
 .split-left h1 {
   margin-bottom: 10px;
