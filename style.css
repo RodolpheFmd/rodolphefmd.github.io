@@ -8,11 +8,6 @@ body {
   overflow-x: hidden;
 }
 
-@font-face {
-  font-family: 'Brittany';
-  src: url('fonts/brittany.ttf') format('truetype'); 
-}
-
 h1 { font-size: 58px; margin-bottom: 28px; line-height: 1.1; }
 h2 { font-size: 34px; margin-bottom: 23px; color: #03989e; text-shadow: 1px 1px 2px black; }
 p { font-size: 24px; margin-bottom: 20px; line-height: 1.6; }
@@ -37,15 +32,6 @@ p { font-size: 24px; margin-bottom: 20px; line-height: 1.6; }
 
 .side-nav a {
   pointer-events: auto;
-}
-
-.nav-links {
-  display: flex;
-  gap: 40px;
-  align-items: center;
-}
-
-.side-nav a {
   color: white;
   text-decoration: none;
   font-size: 20px;
@@ -53,6 +39,12 @@ p { font-size: 24px; margin-bottom: 20px; line-height: 1.6; }
   transition: all 0.3s ease;
   position: relative;
   opacity: 0.9;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  align-items: center;
 }
 
 .side-nav a:hover {
@@ -91,34 +83,16 @@ p { font-size: 24px; margin-bottom: 20px; line-height: 1.6; }
   margin-right: -1px;
 }
 
-/* --- STRUCTURE DES SECTIONS --- */
+/* --- SECTIONS --- */
 section {
   position: relative;
   width: 100%;
-  /* On garde le min-height par défaut pour Hero et autres */
   min-height: 80vh; 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 50px 0;
-}
-
-/* --- REGLAGES SPECIFIQUES POUR RAPPROCHER LES DEUX BOITES --- */
-#about, #usecases {
-  min-height: auto; /* Annule la hauteur forcée */
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-/* On s'assure que About colle bien au bas */
-#about {
-  padding-bottom: 10px; /* Réduit l'espace sous la première boîte */
-}
-
-/* On s'assure que UseCases colle bien au haut */
-#usecases {
-  padding-top: 10px; /* Réduit l'espace au-dessus de la deuxième boîte */
 }
 
 .bg-img {
@@ -139,7 +113,6 @@ section {
   position: relative;
 }
 
-/* S'assure que la largeur max est respectée pour les wrappers larges */
 .wide-wrapper {
   max-width: 1400px;
   width: 95%;
@@ -150,11 +123,11 @@ section {
   padding: 40px;
   border-radius: 15px;
   backdrop-filter: blur(2px);
-  width: 100%; /* Force le bloc à remplir le wrapper */
-  box-sizing: border-box; /* Empêche le padding d'élargir la boîte */
+  width: 100%; 
+  box-sizing: border-box; 
 }
 
-/* --- SECTION HERO SPECIFICS --- */
+/* --- HERO SPECIFICS --- */
 .section-hero {
   min-height: 100vh;
   justify-content: flex-start;
@@ -188,11 +161,9 @@ section {
   border: 1px solid rgba(255, 255, 255, 0.5); 
   padding: 55px 45px;
   border-radius: 8px;
-  
-  /* --- NOUVEAUX REGLAGES DE TAILLE --- */
-  width: 95%;             /* Prend 95% de la largeur de l'écran */
-  max-width: 1400px;      /* Ne dépasse pas 1400px (comme les autres blocs) */
-  box-sizing: border-box; /* Important : inclut le padding dans le calcul de la largeur */
+  width: 95%;             
+  max-width: 1400px;      
+  box-sizing: border-box; 
 }
 
 .scroll-indicator {
@@ -221,82 +192,48 @@ section {
   animation: bounce 2s infinite; 
 }
 
-/* --- MASQUES & IMAGES --- */
-.top-banner {
-  opacity: 0.15;
-  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-  z-index: 1;
-}
-
-.atc-tower-pic {
-  opacity: 0.15;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
-  mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
-}
-
-.augmented-ground-pic {
-  opacity: 0.15;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
-}
-
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% { transform: rotate(45deg) translate(0, 0); }
   40% { transform: rotate(45deg) translate(-10px, -10px); }
   60% { transform: rotate(45deg) translate(-5px, -5px); }
 }
 
-.ending {
-  text-align: center;
-  font-size: clamp(40px, 8vw, 80px);
-}
-
-/* --- SPLIT LAYOUT (Texte + Image) --- */
-.split-layout {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 50px;
-  justify-content: space-between;
-}
-
-.split-text {
-  flex: 1;
-  min-width: 300px;
-}
-
-.split-image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.content-img {
+/* --- BACKGROUND PICTURES HERE --- */
+.independent-bg {
+  position: absolute;
+  top: 100vh;
+  left: 0;
   width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
+  height: 100vh; 
+  object-fit: cover;
+  z-index: -1; 
+  margin-top: 120px; 
+}
+.sky-pic {
+  opacity: 0.15;
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  z-index: 1;
+}
+.atctower-pic {
+  opacity: 0.15;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
 }
 
-/* --- VERSION MOBILE --- */
-@media (max-width: 1024px) {
-  .split-layout {
-    flex-direction: column;
-    gap: 30px;
-  }
-  .split-image {
-    width: 100%;
-    margin-top: 20px;
-  }
+.atctower-pic {
+  opacity: 0.15;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
 }
+/* --- BACKGROUND END --- */
 
-/* --- BURGER MENU STYLES --- */
 
-/* Par défaut (PC), on cache le burger */
+/* --- BURGER MENU --- */
 .hamburger {
   display: none;
   cursor: pointer;
-  pointer-events: auto; /* Important car le parent a pointer-events: none */
+  pointer-events: auto;
 }
 
 .bar {
@@ -305,164 +242,61 @@ section {
   height: 3px;
   margin: 5px auto;
   transition: all 0.3s ease-in-out;
-  background-color: white; /* Couleur des barres */
+  background-color: white;
   border-radius: 3px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.5); /* Ombre pour lisibilité sur fond clair */
 }
 
-/* --- MEDIA QUERY MOBILE (Max 768px) --- */
 @media (max-width: 768px) {
-  
-  /* 1. Positionnement du Burger Icon */
-  .hamburger {
-    display: block;
-    z-index: 2001; 
-    position: relative;
-    /* On s'assure qu'il est bien à droite */
-    margin-left: auto; 
-  }
+  .hamburger { display: block; z-index: 2001; margin-left: auto; }
 
-  /* 2. Le conteneur des liens (Invisible par défaut) */
   .nav-links {
     position: fixed;
-    top: 90px; /* Juste en dessous du bouton burger */
-    right: 5%; /* Aligné à droite */
-    height: auto;
-    width: auto;
-    background: transparent; /* Pas de fond global (pas de sidebar) */
-    box-shadow: none; /* Pas d'ombre globale */
-    
+    top: 90px;
+    right: 5%;
     flex-direction: column;
-    align-items: flex-end; /* Aligne les bulles sur la droite */
-    gap: 15px; /* Espace entre les bulles */
-    
+    align-items: flex-end;
+    gap: 15px;
     opacity: 0;
-    transform: translateY(-20px); /* Légèrement remonté pour l'animation */
-    pointer-events: none; /* On ne peut pas cliquer quand c'est caché */
+    transform: translateY(-20px);
+    pointer-events: none;
     transition: all 0.3s ease;
   }
 
-  /* 3. Quand le menu est ouvert (Active) */
-  .nav-links.active {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto; /* Réactive les clics */
-  }
+  .nav-links.active { opacity: 1; transform: translateY(0); pointer-events: auto; }
 
-  /* 4. LE STYLE "BULLES" */
   .nav-links a {
-    background-color: #03989e; /* Couleur Teal (vert-bleu) */
-    color: white !important;   /* Texte blanc forcé */
-    padding: 12px 25px;        /* Espace intérieur pour faire une bulle */
-    border-radius: 50px;       /* Bords très ronds (forme pilule/bulle) */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Ombre pour l'effet flottant */
-    font-size: 18px;
-    text-align: center;
-    width: fit-content;        /* La bulle s'adapte à la taille du mot */
-  }
-
-  /* Ajustement spécifique pour le lien "Sparrow" dans la bulle */
-  .sparrow-link {
-    font-family: 'Great Vibes', cursive;
-    font-size: 24px !important; /* Un peu plus grand pour la police cursive */
-  }
-  
-  /* On force la première lettre de Sparrow en blanc aussi */
-  .sparrow-link .first-letter {
+    background-color: #03989e;
     color: white !important;
+    padding: 12px 25px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    font-size: 18px;
+    width: fit-content;
   }
 
-  /* Animation du Burger en Croix (X) */
-  .hamburger.active .bar:nth-child(2) {
-    opacity: 0;
-  }
-  .hamburger.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-  .hamburger.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
+  .sparrow-link { font-size: 24px !important; }
+  .sparrow-link .first-letter { color: white !important; }
+
+  .hamburger.active .bar:nth-child(2) { opacity: 0; }
+  .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 }
 
-/* --- STYLE POUR LA SECTION "SMARTER WAY" --- */
+/* --- LANGUAGE SWITCHER --- */
+html:not(.fr-mode) .lang-fr,
+html.fr-mode .lang-en { display: none !important; }
 
-#smarter-way {
-  min-height: auto;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-/* Grille pour les 3 points (Faster, Open, Accessible) */
-.values-grid {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between; /* Espace égal entre les colonnes */
-  gap: 40px; /* Espace entre chaque bloc */
-  margin-top: 20px;
-}
-
-.value-item {
-  flex: 1; /* Chaque colonne prend la même largeur */
-}
-
-/* Ajustement des titres dans les colonnes */
-.value-item h2 {
-  font-size: 28px;
-  margin-bottom: 15px;
-  border-bottom: 2px solid rgba(255,255,255,0.2); /* Petit trait de séparation stylé */
-  padding-bottom: 10px;
-  display: inline-block;
-}
-
-/* --- ADAPTATION MOBILE --- */
-@media (max-width: 1024px) {
-  .values-grid {
-    flex-direction: column; /* On empile les colonnes sur mobile */
-    gap: 30px;
-  }
-  
-  .value-item {
-    width: 100%;
-    text-align: left; /* Ou center si vous préférez */
-  }
-}
-/* --- GESTION DES LANGUES (EN / FR) --- */
-
-/* Par défaut (Anglais actif), on cache tout ce qui est français */
-html:not(.fr-mode) .lang-fr {
-  display: none !important;
-}
-
-/* Si le mode Français est actif, on cache tout ce qui est anglais */
-html.fr-mode .lang-en {
-  display: none !important;
-}
-
-/* Style du sélecteur de langue */
 .lang-switch {
   display: flex;
   align-items: center;
   gap: 10px;
   font-size: 18px;
   cursor: pointer;
-  z-index: 0;
-  
-  /* AJOUTS IMPORTANTS */
-  pointer-events: auto; /* Rend le bouton cliquable ! */
-  margin-right: 0;      /* Plus besoin de marge */
+  pointer-events: auto;
 }
 
-.lang-btn {
-  opacity: 0.5;
-  transition: opacity 0.3s;
-  font-weight: bold;
-}
+.lang-btn { opacity: 0.5; transition: opacity 0.3s; font-weight: bold; }
 
-.lang-btn:hover {
-  opacity: 1;
-}
-
-/* La langue active est en pleine opacité et en couleur Teal */
 html:not(.fr-mode) .lang-btn[data-lang="en"],
 html.fr-mode .lang-btn[data-lang="fr"] {
   opacity: 1;
@@ -470,140 +304,521 @@ html.fr-mode .lang-btn[data-lang="fr"] {
   text-decoration: underline;
 }
 
-/* --- ADAPTATION MOBILE DU SELECTEUR --- */
 @media (max-width: 768px) {
-  .lang-switch {
-    position: fixed;
-    top: 30px;
-    left: 5%; /* En haut à gauche sur mobile */
-    margin-right: 0;
-  }
+  .lang-switch { position: fixed; top: 30px; left: 5%; }
 }
 
-/* --- STICKY TOP-RIGHT LOGO --- */
+/* --- STICKY LOGO --- */
 .sticky-logo {
   position: fixed;
   top: 25px;
   right: 40px;
-  width: 60px; /* Adjust size as needed */
-  height: auto;
-  z-index: 0; /* Must be higher than nav and burger */
-  
-  /* Initial State: Hidden */
+  width: 60px;
+  z-index: 2000;
   opacity: 0;
-  transform: translateY(-20px); /* Slightly moves it up when hidden */
-  pointer-events: none; /* Prevents clicking when invisible */
-  
-  /* Smooth Animation */
+  transform: translateY(-20px);
+  pointer-events: none;
   transition: all 0.4s ease;
 }
 
-.sticky-logo img {
-  width: 100%;
-  display: block;
+.sticky-logo img { width: 100%; display: block; }
+.sticky-logo.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+
+@media (max-width: 768px) {
+  .sticky-logo { width: 40px; top: 15px; right: 60px; }
 }
 
-/* Visible State (toggled by JS) */
-.sticky-logo.visible {
+/* --- FOOTER --- */
+.main-footer {
+  position: relative;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 60px 0 20px 0;
+  margin-top: 50px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+.footer-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+.footer-col { flex: 1; }
+.left-col { text-align: left; }
+.contact-title {
+  font-size: 32px;
+  margin: 0 0 15px 0;
+  color: #03989e;
+  line-height: 1.2;
+}
+.email-link {
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.email-link:hover { color: #03989e; border-color: #03989e; }
+.linkedin-icon-link img { width: 150px; height: auto; transition: transform 0.3s ease; }
+.linkedin-icon-link:hover img { transform: scale(1.1); }
+.mid-col { display: flex; justify-content: center; align-items: center; }
+.scroll-top-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.arrow-up {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 6px;
+  transform: rotate(-135deg);
+  margin-top: 8px;
+}
+.right-col {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.footer-logo { width: 120px; height: auto; margin-bottom: 15px; }
+.footer-tagline {
+  font-size: 22px;
+  opacity: 0.9;
+  max-width: 280px;
+  line-height: 1.4;
+  margin: 0;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin: 40px auto 0 auto;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.6;
+  width: 95%;
+  max-width: 1600px;
+}
+@media (max-width: 900px) {
+  .footer-flex { flex-direction: column; text-align: center; gap: 40px; }
+  .left-col, .right-col { text-align: center; align-items: center; }
+  .mid-col { order: 3; }
+}
+/* --- END FOOTER --- */
+
+/* --- MISSION STATEMENT OVERRIDES --- */
+#mission_statement {
+  min-height: auto !important; 
+  justify-content: flex-start !important; 
+  padding-top: 0 !important; 
+  margin-top: 0px; 
+}
+
+#mission_statement .text-block {
+  background: transparent;
+  backdrop-filter: none;
+  padding: 0;
+  box-shadow: none;
+  padding-top: 0;
+  margin-top: 0;
+  text-align: center; /* Centers the text since the box is gone */
+}
+/* Custom Light Underline for the H1 in this section */
+#mission_statement h1 {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 40px; /* Space between underline and text */
+}
+#mission_statement h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px; /* Distance from text */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px; /* Fixed width for a stylish look */
+  height: 1px; /* Very thin line */
+  background: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+}
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(40px); /* Starts slightly lower */
+  transition: all 1s ease-out; /* Smooth fade and slide up */
+}
+.reveal-on-scroll.visible {
   opacity: 1;
   transform: translateY(0);
-  pointer-events: auto; /* Re-enable clicking */
+}
+/* --- END MISSION STATEMENT OVERRIDES --- */
+
+/* --- SAFETY NETS IMAGE STYLING --- */
+/* --- SAFETY NETS IMAGE STYLING --- */
+.timeline-img {
+  display: block;
+  width: 100%;
+  max-width: 1200px;
+  
+  /* CROP SETTINGS */
+  height: 350px;           /* Set a fixed height to define the "window" */
+  object-fit: cover;       /* Scales the image to fill the box, cropping edges */
+  object-position: center; /* Ensures the middle of the timeline stays visible */
+  
+  margin: 20px auto 10px auto;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+/* Optional: Slight hover effect to make it feel interactive */
+.timeline-img:hover {
+  transform: scale(1.01);
 }
 
-/* --- MOBILE ADJUSTMENT --- */
 @media (max-width: 768px) {
-  .sticky-logo {
-    width: 40px;       /* Smaller on mobile */
-    top: 15px;
-    right: 60px;       /* Moved left to avoid overlapping the Hamburger menu */
+  .timeline-img {
+    padding: 10px;
+    margin-top: 25px;
   }
 }
 
-/* --- FOOTER / CONTACT SECTION --- */
 
-/* Ensure the video covers the area (if not already set) */
-.section-video-bottom {
+/* --- END SAFETY NETS IMAGE STYLING --- */
+
+/* --- WHY AUGMENTED ROLLING SECTION --- */
+
+/* Layout: Flexbox to put Title Left and List Right */
+.split-container {
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: space-between;
+  gap: 50px;
+  overflow: hidden; /* Keeps content inside rounded corners */
+}
+
+.split-left {
+  flex: 1;
+  text-align: left;
+  padding-right: 20px;
+  border-right: 2px solid rgba(255, 255, 255, 0.2); /* Optional divider line */
+}
+
+.split-left h1 {
+  margin-bottom: 10px;
+}
+
+.split-left .subtitle {
+  font-size: 20px;
+  color: #03989e;
+  opacity: 0.9;
+}
+
+/* The Right Side Container */
+.split-right {
+  flex: 1;
+  height: 300px; /* Height of the visible window */
   position: relative;
-  min-height: 50vh; /* Adjust height if needed */
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 
-.sparrow-video {
-  position: absolute;
+/* The Window the text scrolls through */
+.scrolling-window {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  /* Mask to fade text out at top and bottom */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+}
+
+/* The Track that actually moves */
+.scrolling-track {
+  display: flex;
+  flex-direction: column;
+  /* The animation moves it up by 50% (the height of one list) */
+  animation: scroll-vertical 15s linear infinite;
+}
+
+/* Pause scrolling on hover for readability */
+.scrolling-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-vertical {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+/* Styling the List Items */
+.benefit-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  /* Ensure the list height matches the animation logic */
+  height: auto; 
+}
+
+.benefit-list li {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px 0;
+  color: white;
+  text-shadow: 0 0 10px rgba(3, 152, 158, 0.5); /* Glow effect matching your theme */
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 900px) {
+  .split-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .split-left {
+    border-right: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-right: 0;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+
+  .split-right {
+    height: 250px; /* Smaller window on mobile */
+    width: 100%;
+  }
+}
+
+/* --- CLICKABLE LIST STYLES --- */
+.clickable-item {
+  cursor: pointer;
+  transition: transform 0.2s, color 0.3s;
+}
+
+.clickable-item:hover .item-title {
+  color: #03989e; /* Highlight color */
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+/* Hide the details content inside the list (it only shows in the modal) */
+.details-content {
+  display: none;
+}
+
+/* Pause animation when hovering over the list so users can click easily */
+.scrolling-track:hover {
+  animation-play-state: paused;
+}
+
+/* --- MODAL / POPUP STYLES --- */
+.modal-overlay {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
-
-/* Layout for Email (Left) and Logo (Right) */
-.footer-layout {
+  background: rgba(0, 0, 0, 0.8); /* Dark background dimming */
+  backdrop-filter: blur(5px);
+  z-index: 3000;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 90%;
-  max-width: 1200px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* --- Left Side: Email --- */
-.footer-left {
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-window {
+  background: linear-gradient(135deg, #32465f 0%, #1b2838 100%);
+  border: 1px solid #03989e;
+  padding: 40px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  box-shadow: 0 0 30px rgba(3, 152, 158, 0.3);
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-window {
+  transform: translateY(0);
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.modal-close:hover {
+  color: #03989e;
+}
+
+/* Modal Typography */
+#modal-text-container h3 {
+  color: #03989e;
+  margin-top: 0;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+#modal-text-container p {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+/* --- SPLIT LAYOUT (Why Augmented) --- */
+.split-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  min-height: 400px; /* Ensures space for content */
+}
+
+.split-left {
+  flex: 1;
+  text-align: left;
+  padding-right: 20px;
+  border-right: 2px solid rgba(255, 255, 255, 0.1);
+  transition: opacity 0.3s ease; /* Smooth fade when text changes */
+}
+
+/* Style for the Dynamic Details when they appear */
+.split-left h2 {
+    color: #03989e;
+    margin-bottom: 15px;
+    font-size: 38px;
+}
+.split-left p {
+    font-size: 22px;
+    line-height: 1.5;
+}
+
+/* --- ROLLING LIST --- */
+/* --- ROLLING LIST CONTAINER --- */
+.split-right {
+  flex: 1;
+  height: 350px;
+  position: relative;
+  /* We keep the mask for the cool fade effect */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+}
+
+.scrolling-window {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto; /* ENABLE MANUAL SCROLL */
+  overflow-x: hidden;
+  
+  /* Scrollbar Styling (Optional: makes it thin and subtle) */
+  scrollbar-width: thin; 
+  scrollbar-color: rgba(3, 152, 158, 0.5) transparent;
+}
+
+/* For Chrome/Safari/Edge Scrollbars */
+.scrolling-window::-webkit-scrollbar {
+  width: 6px;
+}
+.scrolling-window::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrolling-window::-webkit-scrollbar-thumb {
+  background-color: rgba(3, 152, 158, 0.5);
+  border-radius: 20px;
+}
+
+/* --- THE TRACK (Formerly Animated) --- */
+.scrolling-track {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  padding: 0;
+  margin: 0;
+  /* REMOVED: animation: scroll-vertical ... */
+  /* REMOVED: @keyframes ... */
 }
 
-.contact-title {
-  font-size: 40px;
-  margin: 0 0 10px 0;
-  color: #03989e; /* Teal color */
-  text-shadow: 1px 1px 2px black;
+/* Pause animation when hovering the LIST, or when an item is ACTIVE */
+.scrolling-track:hover,
+.scrolling-track.paused {
+  animation-play-state: paused;
 }
 
-.email-link {
-  font-size: 30px;
-  color: white;
-  text-decoration: none;
+@keyframes scroll-vertical {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); } /* Adjust based on your list doubling */
+}
+
+/* --- LIST ITEMS --- */
+.benefit-list li {
+  list-style: none;
+  font-size: 26px;
   font-weight: bold;
-  border-bottom: 2px solid transparent;
+  text-align: center;
+  padding: 25px 0;
+  color: rgba(255,255,255, 0.6); /* Dimmed by default */
+  cursor: pointer;
   transition: all 0.3s ease;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
-.email-link:hover {
-  color: #03989e;
-  border-bottom: 2px solid #03989e;
+.benefit-list li:hover {
+  color: white;
+  text-shadow: 0 0 10px rgba(255,255,255,0.5);
 }
 
-/* --- Right Side: LinkedIn Icon --- */
-.linkedin-icon {
-  width: 150px; /* Adjust size of the logo */
-  height: auto;
-  transition: transform 0.3s ease;
-  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5)); /* Adds depth */
+/* The Active State (Selected Item) */
+.benefit-list li.active-selected {
+  color: #03989e; /* Theme Color */
+  transform: scale(1.1);
+  text-shadow: 0 0 15px rgba(3, 152, 158, 0.8);
+  opacity: 1;
 }
 
-.linkedin-icon:hover {
-  transform: scale(1.1); /* Slight zoom on hover */
+/* Hide detail content inside the list (it only shows on the left) */
+.details-content {
+  display: none;
 }
 
-/* --- Mobile Adaptation --- */
-@media (max-width: 768px) {
-  .footer-layout {
+/* MOBILE RESPONSIVE */
+@media (max-width: 900px) {
+  .split-container {
     flex-direction: column;
-    gap: 40px;
     text-align: center;
   }
-
-  .footer-left {
-    align-items: center;
-  }
-  
-  .email-link {
-    font-size: 20px; /* Smaller font on mobile */
+  .split-left {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+    min-height: 200px; /* Keep space so it doesn't jump */
   }
 }
