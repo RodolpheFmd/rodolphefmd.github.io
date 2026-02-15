@@ -107,14 +107,14 @@ section {
 }
 
 .content-wrapper {
-  width: 85%;
-  max-width: 1800px;
+  width: 95%;
+  max-width: 1600px;
   z-index: 2;
   position: relative;
 }
 
 .wide-wrapper {
-  max-width: 1400px;
+  max-width: 1600px;
   width: 95%;
 }
 
@@ -315,7 +315,7 @@ html.fr-mode .lang-btn[data-lang="fr"] {
   top: 25px;
   right: 40px;
   width: 60px;
-  z-index: 2000;
+  z-index: -1;
   opacity: 0;
   transform: translateY(-20px);
   pointer-events: none;
@@ -466,15 +466,15 @@ html.fr-mode .lang-btn[data-lang="fr"] {
 /* --- SAFETY NETS IMAGE STYLING --- */
 .timeline-img {
   display: block;
-  width: 100%;
-  max-width: 1200px;
-  
-  /* CROP SETTINGS */
-  height: 350px;           /* Set a fixed height to define the "window" */
-  object-fit: cover;       /* Scales the image to fill the box, cropping edges */
-  object-position: center; /* Ensures the middle of the timeline stays visible */
-  
-  margin: 20px auto 10px auto;
+  /* Change width to 95% to match the wrapper's responsive width */
+  width: 95%; 
+  /* Increase max-width to 1600px to match the text blocks */
+  max-width: 1600px; 
+  /* Keep the rest as is */
+  height: 350px;
+  object-fit: cover;
+  object-position: center;
+  margin: 10px auto 10px auto;
   background: rgba(255, 255, 255, 0.05);
   padding: 10px;
   border-radius: 10px;
@@ -495,220 +495,94 @@ html.fr-mode .lang-btn[data-lang="fr"] {
 
 /* --- END SAFETY NETS IMAGE STYLING --- */
 
-/* --- WHY AUGMENTED SECTION (CLEAN VERSION) --- */
-
-/* 1. MAIN LAYOUT (Split Screen) */
+/* --- WHY AUGMENTED SECTION (Redesigned) --- */
 .split-container {
   display: flex;
-  align-items: center; /* Vertically center content */
+  align-items: center; 
   justify-content: space-between;
   gap: 50px;
-  min-height: 400px; /* Ensures the area is big enough */
-  overflow: hidden; 
+  min-height: 400px;
+  /* Removed overflow:hidden so content can flow naturally */
 }
 
-/* 2. LEFT SIDE (Dynamic Title Area) */
 .split-left {
   flex: 1;
   text-align: left;
   padding-right: 20px;
   border-right: 2px solid rgba(255, 255, 255, 0.1); /* Subtle divider line */
-  transition: opacity 0.3s ease; /* Smooth fade effect for JS swapping */
-}
-/* --- Add this inside the WHY AUGMENTED section in style.css --- */
-
-/* 1. Ensure the container can hold the background image */
-#why_augmented .split-left {
-  position: relative; /* Necessary for positioning the logo */
-  z-index: 1;         /* Ensures text stays on top */
-  /* Keep your existing styles below this line */
-  flex: 1;
-  text-align: left;
-  padding-right: 20px;
-  border-right: 2px solid rgba(255, 255, 255, 0.1);
   transition: opacity 0.3s ease;
 }
 
-/* 2. Create the transparent logo layer */
-#why_augmented .split-left::before {
-  content: "";
-  position: absolute;
-  
-  /* Center the logo */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  
-  /* Size and Image */
-  width: 100%;  /* Adjust this percentage to make the logo bigger/smaller */
-  height: 100%;
-  background-image: url('logos/AV.png'); 
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  
-  /* Transparency */
-  opacity: 0.1; /* 0.1 is faint, 0.2 is more visible. Adjust to taste. */
-  
-  /* Send to back */
-  z-index: -1; 
-  pointer-events: none; /* Ensures clicks pass through to the text/buttons */
-}
-/* Typography for the Left Side */
-.split-left h1 {
-  margin-bottom: 10px;
-}
-.split-left .subtitle {
-  font-size: 20px;
-  color: #03989e;
-  opacity: 0.9;
-}
-/* Typography for the "Details" when clicked */
-.split-left h2 {
-  color: #03989e;
-  margin-bottom: 15px;
-  font-size: 38px;
-  text-shadow: 1px 1px 2px black;
-}
-.split-left p {
-  font-size: 22px;
-  line-height: 1.5;
-}
-
-
-/* 3. RIGHT SIDE (The Scrolling Window) */
 .split-right {
   flex: 1;
-  height: 350px; /* The visible height of the list */
+  height: auto; /* Allow full height - NO SCROLLING */
   position: relative;
-  /* Top/Bottom Fade Mask */
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
-  mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+}
+
+/* NEW: Pulsing Hint Text */
+.interaction-hint {
+  text-align: center;
+  color: #03989e; 
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  opacity: 0.9;
+  animation: pulse-hint 2s infinite;
+}
+
+@keyframes pulse-hint {
+  0% { opacity: 0.6; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(3px); }
+  100% { opacity: 0.6; transform: translateY(0); }
 }
 
 .scrolling-window {
   width: 100%;
-  height: 100%;
-  overflow-y: auto;   /* ENABLE MANUAL SCROLL */
-  overflow-x: hidden;
-  position: relative;
-
-  /* Thin Scrollbar Styling */
-  scrollbar-width: thin; 
-  scrollbar-color: rgba(3, 152, 158, 0.5) transparent;
+  height: auto; /* Full height */
+  overflow: visible; /* Disable scrollbars */
 }
 
-/* Webkit Scrollbar (Chrome/Safari/Edge) */
-.scrolling-window::-webkit-scrollbar {
-  width: 6px;
-}
-.scrolling-window::-webkit-scrollbar-track {
-  background: transparent;
-}
-.scrolling-window::-webkit-scrollbar-thumb {
-  background-color: rgba(3, 152, 158, 0.5);
-  border-radius: 20px;
-}
-
-/* 4. THE LIST TRACK */
-.scrolling-track {
-  display: flex;
-  flex-direction: column;
+.benefit-list {
+  list-style: none;
   padding: 0;
   margin: 0;
-  /* No CSS animation here anymore - handled by JS for smoother control */
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Spacing between items */
 }
 
-/* 5. LIST ITEMS */
-.benefit-list li {
-  list-style: none;
-  font-size: 26px;
-  font-weight: bold;
-  text-align: center;
-  padding: 25px 0;
-  color: rgba(255, 255, 255, 0.6); /* Dimmed by default */
+.clickable-item {
+  padding: 15px 20px;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.05); /* Slight background for visibility */
 }
 
-.benefit-list li:hover {
-  color: white;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+.clickable-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(5px); /* Slide effect on hover */
 }
 
-/* The Active State (When clicked) */
-.benefit-list li.active-selected {
-  color: #03989e; /* Theme Blue */
-  transform: scale(1.1);
-  text-shadow: 0 0 15px rgba(3, 152, 158, 0.8);
-  opacity: 1;
+.clickable-item.active-selected {
+  background: rgba(3, 152, 158, 0.2);
+  border-color: #03989e;
+  box-shadow: 0 0 15px rgba(3, 152, 158, 0.3);
 }
 
-/* Hide the details text inside the list (it only appears on the left) */
+.item-title {
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+}
+
+/* Hide the deep details inside the list items (they will appear in the left panel) */
 .details-content {
   display: none;
 }
-
-
-/* 6. MOBILE RESPONSIVENESS */
-@media (max-width: 900px) {
-  .split-container {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .split-left {
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-right: 0;
-    padding-bottom: 30px;
-    margin-bottom: 20px;
-    min-height: 200px; /* Prevent layout jumping */
-  }
-
-  .split-right {
-    height: 250px; /* Smaller window on mobile */
-    width: 100%;
-  }
-}
-/* Container for the content injected by JavaScript */
-#dynamic-left-panel {
-  transition: all 0.4s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 400px;
-}
-
-/* Style for the logo/image when it appears in the panel */
-#dynamic-left-panel img {
-  max-width: 80px; /* Constrains the AV logo */
-  height: auto;
-  margin-bottom: 1.5rem;
-  filter: drop-shadow(0 0 10px rgba(3, 152, 158, 0.4));
-}
-
-/* Style for the selected content (Details) */
-#dynamic-left-panel h2 {
-  font-size: 2.5rem;
-  color: #03989e;
-  margin-top: 0;
-  border-left: 4px solid #03989e;
-  padding-left: 20px;
-}
-
-#dynamic-left-panel p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.9);
-  animation: fadeInSlide 0.5s ease forwards;
-}
-
-@keyframes fadeInSlide {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-/* --- WHY AUGMENTED SECTION END --- */
 
 
 /* --- FOR WHOM SECTION --- */
@@ -1123,4 +997,123 @@ html.fr-mode .lang-btn[data-lang="fr"] {
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.4);
   text-transform: uppercase;
+}
+
+/* --- SPARROW SECTION STYLES --- */
+
+#sparrow {
+  padding-bottom: 80px;
+}
+
+.sparrow-intro {
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 4px solid #03989e;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Card Base Style */
+.spec-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.spec-card:hover {
+  transform: translateY(-5px);
+}
+
+/* "What is Sparrow" - Teal Theme */
+.spec-card.is-sparrow {
+  border: 1px solid rgba(3, 152, 158, 0.3);
+  box-shadow: 0 10px 30px rgba(3, 152, 158, 0.1);
+}
+
+.spec-card.is-sparrow h3 {
+  color: #03989e;
+  border-bottom: 2px solid #03989e;
+}
+
+/* "What is NOT" - Orange/Red Theme */
+.spec-card.is-not-sparrow {
+  border: 1px solid rgba(255, 87, 87, 0.3);
+  box-shadow: 0 10px 30px rgba(255, 87, 87, 0.1);
+}
+
+.spec-card.is-not-sparrow h3 {
+  color: #ff6b6b;
+  border-bottom: 2px solid #ff6b6b;
+}
+
+.spec-card h3 {
+  font-size: 1.8rem;
+  margin-top: 0;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* List Styles */
+.spec-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.spec-list li {
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #dcdcdc;
+}
+
+/* Icons for the lists */
+.spec-list li::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.is-sparrow .spec-list li::before {
+  content: "✓";
+  color: #03989e;
+}
+
+.is-not-sparrow .spec-list li::before {
+  content: "×";
+  color: #ff6b6b;
+}
+
+/* Highlight key phrases in the list */
+.spec-list strong {
+  color: white;
+  font-weight: 600;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
 }
