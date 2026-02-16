@@ -1117,3 +1117,24 @@ html.fr-mode .lang-btn[data-lang="fr"] {
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 768px) {
+  .split-container {
+    flex-direction: column; /* Stacks items vertically */
+    height: auto; /* Removes fixed height constraints */
+  }
+
+  .split-left, .split-right {
+    width: 100%; /* Forces full width */
+    padding: 0;
+    border-right: none; /* Removes the desktop divider line */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Adds a horizontal divider instead */
+  }
+}
+
+@media (max-width: 768px) {
+  .intro-box {
+    margin-top: 100px; /* Reduces the gap */
+    padding: 30px 20px; /* Reduces the internal padding to save space */
+  }
+}
