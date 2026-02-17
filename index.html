@@ -247,54 +247,56 @@
   </section>
 
   <section id="for-whom-immersive">
-    <h1>
-      <span class="lang-en">For Whom?</span>
-      <span class="lang-fr">Pour Qui?</span>
-    </h1>
-    <div class="immersive-viewport" id="imm-viewport">
-      <img src="pics/ForWhom.jpg" id="imm-image" alt="Augmented Airspace">
-      <div class="imm-hotspot" style="top: 50%; left: 18%;" data-target="institutions">
-        <div class="imm-label">
-          <div class="imm-title">Institutions</div>
-          <div class="imm-desc">
-            <span class="lang-en">Supporting regulatory bodies with data-driven safety experience, recommendations, and policy validation.</span>
-            <span class="lang-fr">Soutenir les organismes de réglementation grâce à une expertise en matière de sécurité basée sur les données, des recommandations et la validation des propositions.</span>   
-          </div>
+  <h1>
+    <span class="lang-en">For Whom?</span>
+    <span class="lang-fr">Pour Qui?</span>
+  </h1>
+  <div class="immersive-viewport" id="imm-viewport">
+    <img src="pics/ForWhom.jpg" id="imm-image" alt="Augmented Airspace">
+    
+    <div class="imm-hotspot" style="top: 50%; left: 18%;" data-target="institutions"></div>
+    <div class="imm-hotspot" style="top: 30%; left: 50%;" data-target="ats"></div>
+    <div class="imm-hotspot" style="top: 70%; left: 80.5%;" data-target="academia"></div>
+    <div class="imm-hotspot" style="top: 79%; left: 88.3%;" data-target="labs"></div>
+
+    <div id="imm-details-display" class="imm-details-box">
+      <div class="detail-content active" id="default-text">
+        <span class="lang-en">Hover over a point to learn more.</span>
+        <span class="lang-fr">Survolez un point pour en savoir plus.</span>
+      </div>
+
+      <div class="detail-content" id="desc-institutions">
+        <div class="imm-title">Institutions</div>
+        <div class="imm-desc">
+          <span class="lang-en">Supporting regulatory bodies with data-driven safety experience, recommendations, and policy validation.</span>
+          <span class="lang-fr">Soutenir les organismes de réglementation grâce à une expertise en matière de sécurité basée sur les données...</span>   
         </div>
       </div>
-      <div class="imm-hotspot" style="top: 30%; left: 50%;" data-target="institutions">
-        <div class="imm-label">
-          <div class="imm-title">
-            <span class="lang-en">Air Traffic Services</span>
-            <span class="lang-fr">Services du Trafic Aérien</span>
-          </div>
-          <div class="imm-desc">
-            <span class="lang-en">Empowering future controllers with AI-driven conflict resolution for high-density, heterogeneous, noisy, and non-cooperative traffic environment.</span>
-            <span class="lang-fr">Offrir aux futurs contrôleurs une résolution de conflit basée sur l'IA pour les environnements de trafic denses et hétérogènes.</span>
-          </div>
+
+      <div class="detail-content" id="desc-ats">
+        <div class="imm-title">
+          <span class="lang-en">Air Traffic Services</span>
+          <span class="lang-fr">Services du Trafic Aérien</span>
+        </div>
+        <div class="imm-desc">
+          <span class="lang-en">Empowering future controllers with AI-driven conflict resolution for high-density traffic.</span>
+          <span class="lang-fr">Offrir aux futurs contrôleurs une résolution de conflit basée sur l'IA...</span>
         </div>
       </div>
-      <div class="imm-hotspot" style="top: 70%; left: 80.5%;" data-target="academia">
-        <div class="imm-label">
-          <div class="imm-title"> <span class="lang-en">Academia</span>
-            <span class="lang-fr">Monde Académique</span>
-          </div>
-          <div class="imm-desc">
-            <span class="lang-en">Providing a benchmark for comparing new algorithms, a high-performance platform for trajectory-related simulation, and a ready-to-use, high-quality user interface to support human factors studies.</span>
-            <span class="lang-fr">Fournir une base de référence pour comparer de nouveaux algorithmes, une plateforme haute performance pour la simulation de trajectoires, et une interface utilisateur de haute qualité, prête à l’emploi, pour soutenir les études sur les facteurs humains.</span>
-          </div>
+
+      <div class="detail-content" id="desc-academia">
+        <div class="imm-title">Academia</div>
+        <div class="imm-desc">
+          <span class="lang-en">Providing a benchmark for comparing new algorithms and high-performance simulation.</span>
+          <span class="lang-fr">Fournir une base de référence pour comparer de nouveaux algorithmes...</span>
         </div>
       </div>
-      <div class="imm-hotspot" style="top: 79%; left: 88.3%;" data-target="labs">
-        <div class="imm-label">
-          <div class="imm-title">
-            <span class="lang-en">Laboratories R&D</span>
-            <span class="lang-fr">Laboratoires R&D</span>
-          </div>
-          <div class="imm-desc">
-            <span class="lang-en">Complementing existing systems or services as a headless module to support safe operations for projects and real-world experimentation.</span>
-            <span class="lang-fr">Compléter les systèmes ou services existants en tant que module autonome (headless) pour soutenir la sécurité des opérations dans le cadre de projets et d’expérimentations en conditions réelles.</span>
-          </div>
+
+      <div class="detail-content" id="desc-labs">
+        <div class="imm-title">Laboratories R&D</div>
+        <div class="imm-desc">
+          <span class="lang-en">Complementing existing systems as a headless module for real-world experimentation.</span>
+          <span class="lang-fr">Compléter les systèmes existants en tant que module autonome...</span>
         </div>
       </div>
     </div>
@@ -416,60 +418,63 @@
   <section class="section-content" id="sparrow">
     <div class="content-wrapper wide-wrapper">
         <h1>Sparrow</h1>
-        <div class="lang-en">
-          <p class="lang-en">Sparrow is our first prototype and initial service offering. It demonstrates breakthrough innovation using AI and forward-thinking design. Despite being an MVP, it showcases high-quality UI, rigor, and agility, proving that deep expertise allows even a small entity to deliver a ready-to-use system.</p>
-          <p class="lang-fr">Sparrow est notre premier prototype et offre de service initiale. Il démontre une innovation de rupture grâce à l'IA et une conception avant-gardiste. Bien qu'étant un MVP, il présente une interface de haute qualité, prouvant que l'expertise permet de livrer un système prêt à l'emploi avec rigueur et agilité.</p>
+        
+        <div class="description-container">
+            <p class="lang-en">Sparrow is our first prototype and initial service offering. It demonstrates breakthrough innovation using AI and forward-thinking design. Despite being an MVP, it showcases high-quality UI, rigor, and agility, proving that deep expertise allows even a small entity to deliver a ready-to-use system.</p>
+            <p class="lang-fr">Sparrow est notre premier prototype et notre offre de service initiale. Il démontre une innovation de rupture grâce à l'IA et une conception avant-gardiste. Bien qu'étant un MVP, il présente une interface de haute qualité, prouvant que l'expertise permet de livrer un système prêt à l'emploi avec rigueur et agilité.</p>
 
-      <div class="comparison-grid">
-        <div class="spec-card is-sparrow reveal-on-scroll">
-          <h3 class="lang-en">What is Sparrow</h3>
-          <h3 class="lang-fr">Ce qu'est Sparrow</h3>
-          <ul class="spec-list">
-            <li>
-              <span class="lang-en"><strong>AI Safety Net:</strong> Cloud-based tactical conflict resolution to prevent NMAC during cruise phase (Mixed UTM/ATM).</span>
-              <span class="lang-fr"><strong>Filet de Sécurité IA :</strong> Résolution tactique de conflits basée sur le cloud pour prévenir les NMAC en croisière (Mixte UTM/ATM).</span>
-            </li>
-            <li>
-              <span class="lang-en"><strong>Full Loop Support:</strong> Handles conflict detection and resolution internally, or operates "headless" with external detection.</span>
-              <span class="lang-fr"><strong>Boucle Complète :</strong> Gère la détection et la résolution en interne, ou fonctionne en mode "headless" avec une détection externe.</span>
-            </li>
-            <li>
-              <span class="lang-en"><strong>Research Ready:</strong> Ideal for U3 service trials, SESAR-type projects, and industry experimentation.</span>
-              <span class="lang-fr"><strong>Prêt pour la Recherche :</strong> Idéal pour les essais de services U3, les projets SESAR et l'expérimentation industrielle.</span>
-            </li>
-            <li>
-              <span class="lang-en"><strong>Human-Centric Advisory:</strong> Reduces cognitive stress and workload by providing clear, predictable resolutions.</span>
-              <span class="lang-fr"><strong>Support Décisionnel :</strong> Réduit la charge cognitive en fournissant des résolutions claires et prévisibles.</span>
-            </li>
-            <li>
-              <span class="lang-en"><strong>Resilient Design:</strong> Works with heterogeneous data and ensures service up to 25s after disconnection.</span>
-              <span class="lang-fr"><strong>Conception Résiliente :</strong> Fonctionne avec des données hétérogènes et assure le service jusqu'à 25s après déconnexion.</span>
-            </li>
-          </ul>
+            <div class="comparison-grid">
+                <div class="spec-card is-sparrow reveal-on-scroll">
+                    <h3 class="lang-en">What is Sparrow</h3>
+                    <h3 class="lang-fr">Ce qu'est Sparrow</h3>
+                    <ul class="spec-list">
+                        <li>
+                            <span class="lang-en"><strong>AI Safety Net:</strong> Cloud-based tactical conflict resolution to prevent NMAC during cruise phase (Mixed UTM/ATM).</span>
+                            <span class="lang-fr"><strong>Filet de sécurité IA :</strong> Résolution tactique des conflits sur le cloud pour prévenir les NMAC en phase de croisière (Mixte UTM/ATM).</span>
+                        </li>
+                        <li>
+                            <span class="lang-en"><strong>Full Loop Support:</strong> Handles conflict detection and resolution internally, or operates "headless" with external detection.</span>
+                            <span class="lang-fr"><strong>Boucle complète :</strong> Gère la détection et la résolution en interne, ou fonctionne en mode "headless" avec une détection externe.</span>
+                        </li>
+                        <li>
+                            <span class="lang-en"><strong>Research Ready:</strong> Ideal for U3 service trials, SESAR-type projects, and industry experimentation.</span>
+                            <span class="lang-fr"><strong>Prêt pour la recherche :</strong> Idéal pour les essais de services U3, les projets de type SESAR et l'expérimentation industrielle.</span>
+                        </li>
+                        <li>
+                            <span class="lang-en"><strong>Human-Centric Advisory:</strong> Reduces cognitive stress and workload by providing clear, predictable resolutions.</span>
+                            <span class="lang-fr"><strong>Conseil centré sur l'humain :</strong> Réduit le stress cognitif et la charge de travail en fournissant des résolutions claires et prévisibles.</span>
+                        </li>
+                        <li>
+                            <span class="lang-en"><strong>Resilient Design:</strong> Works with heterogeneous data and ensures service up to 25s after disconnection.</span>
+                            <span class="lang-fr"><strong>Conception résiliente :</strong> Fonctionne avec des données hétérogènes et assure le service jusqu'à 25s après une déconnexion.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="spec-card is-not-sparrow reveal-on-scroll">
+                    <h3 class="lang-en">What it is NOT</h3>
+                    <h3 class="lang-fr">Ce qu'il n'est PAS</h3>
+                    <ul class="spec-list">
+                        <li>
+                            <span class="lang-en"><strong>Not a Human Replacement:</strong> Does not replace pilots, ATCOs, or assume operational decision-making.</span>
+                            <span class="lang-fr"><strong>Pas un remplacement humain :</strong> Ne remplace pas les pilotes, les contrôleurs aériens (ATCO) et n'assume pas la prise de décision opérationnelle.</span>
+                        </li>
+                        <li>
+                            <span class="lang-en"><strong>No Terminal Operations:</strong> Does not address takeoff, approach, landing, or vertiport operations.</span>
+                            <span class="lang-fr"><strong>Pas d'opérations terminales :</strong> Ne traite pas le décollage, l'approche, l'atterrissage ou les opérations de vertiport.</span>
+                        </li>
+                        <li>
+                            <span class="lang-en"><strong>Not Certified (Yet):</strong> When used with external detection, performance depends on input data quality.</span>
+                            <span class="lang-fr"><strong>Pas encore certifié :</strong> En cas d'utilisation avec une détection externe, la performance dépend de la qualité des données d'entrée.</span>
+                        </li>
+                        <li>
+                            <span class="lang-en"><strong>Not a U-Space Provider:</strong> Does not deliver regulated U-space services or assume legal responsibility for separation.</span>
+                            <span class="lang-fr"><strong>Pas un fournisseur U-Space :</strong> Ne fournit pas de services U-Space réglementés et n'assume pas la responsabilité légale de la séparation.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="spec-card is-not-sparrow reveal-on-scroll">
-          <h3 class="lang-en">What it is NOT</h3>
-          <h3 class="lang-fr">Ce qu'il n'est PAS</h3>
-          <ul class="spec-list">
-            <li>
-              <span class="lang-en"><strong>Not a Human Replacement:</strong> Does not replace pilots, ATCOs, or assume operational decision-making.</span>
-              <span class="lang-fr"><strong>Pas de Remplacement Humain :</strong> Ne remplace pas les pilotes ni les contrôleurs et n'assume pas la décision opérationnelle.</span>
-            </li>
-            <li>
-              <span class="lang-en"><strong>No Terminal Operations:</strong> Does not address takeoff, approach, landing, or vertiport operations.</span>
-              <span class="lang-fr"><strong>Pas d'Opérations Terminales :</strong> Ne traite pas le décollage, l'approche, l'atterrissage ou les opérations de vertiport.</span>
-            </li>
-            <li>
-              <span class="lang-en"><strong>Not Certified (Yet):</strong> When used with external detection, performance depends on input data quality.</span>
-              <span class="lang-fr"><strong>Non Certifié (Pour l'instant) :</strong> En détection externe, la performance dépend de la qualité des données d'entrée.</span>
-            </li>
-            <li>
-              <span class="lang-en"><strong>Not a U-Space Provider:</strong> Does not deliver regulated U-space services or assume legal responsibility for separation.</span>
-              <span class="lang-fr"><strong>Pas un Fournisseur U-Space :</strong> Ne fournit pas de services régulés U-space et n'assume pas la responsabilité légale de séparation.</span>
-            </li>
-          </ul>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -668,6 +673,29 @@
       });
     });
 
+  });
+  // --- IMMERSIVE HOTSPOTS HOVER LOGIC ---
+  const hotspots = document.querySelectorAll('.imm-hotspot');
+  const details = document.querySelectorAll('.detail-content');
+  const defaultText = document.getElementById('default-text');
+
+  hotspots.forEach(spot => {
+    spot.addEventListener('mouseenter', () => {
+      const target = spot.getAttribute('data-target');
+      
+      // Hide all
+      details.forEach(d => d.classList.remove('active'));
+      
+      // Show the matching one
+      const activeDetail = document.getElementById(`desc-${target}`);
+      if (activeDetail) activeDetail.classList.add('active');
+    });
+
+    spot.addEventListener('mouseleave', () => {
+      // Return to default text or hide all
+      details.forEach(d => d.classList.remove('active'));
+      defaultText.classList.add('active');
+    });
   });
 </script>
 
