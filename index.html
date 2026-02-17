@@ -43,23 +43,19 @@
       <span>|</span>
       <span class="lang-btn" data-lang="fr" role="button" tabindex="0">FR</span>
     </div>
-
     <div class="hamburger">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
     </div>
-
     <div class="nav-links">
       <a href="#sparrow" class="sparrow-link">
         <span class="first-letter">S</span>parrow
       </a>
-      
       <a href="#about">
         <span class="lang-en">About Us</span>
         <span class="lang-fr">À Propos</span>
       </a>
-      
       <a href="#contact">
         <span class="lang-en">Contact</span>
         <span class="lang-fr">Contact</span>
@@ -88,7 +84,6 @@
     </div>
   </section>
 
-
   <img src="pics/background/ATC_tower.png" class="bg-img atctower-pic independent-bg" alt="">
   
   <section class="section-content" id="mission_statement">
@@ -100,7 +95,7 @@
         </h1>
         <div class="lang-en">
           <p>Augmented is on a mission to revolutionise air traffic safety for new drones and eVTOL operators in the low airspace through human-centric, AI-driven separation assurance. By leveraging Sparrow, the first but not the least breakthrough solver, we provide highly scalable, cloud-hosted safety net designed to resolve complex conflicts in real-time.</p>
-          <p>Our goal is to bridge the gap between academic excellence and industrial reality, reducing operator workload and facilitating a safe, transparent transition toward the future of autonomous aviation.</p>
+          <p>Our goal is to bridge the gap between academic excellence and industrial reality, reducing operator workload and facilitating a safe, transparent transition toward the future of digital aviation.</p>
       </div>
         <div class="lang-fr">
           <p>Augmented a pour mission de révolutionner la sécurité du trafic aérien pour les opérations émergentes à très basse altitude grâce à une assurance de séparation centrée sur l'humain et pilotée par l'IA. Grâce à Sparrow, notre solveur révolutionnaire, nous fournissons un Safety Net hébergé dans le cloud, hautement évolutifs et conçus pour résoudre des conflits multi-agents complexes en temps réel.</p>
@@ -128,44 +123,186 @@
           <p>Les Safety Nets jouent un rôle majeur après le décollage pour prévenir les situations dangereuses imminentes ou réelles. Ils constituent un maillon essentiel de la chaîne de sécurité. Dans la gestion actuelle du trafic aérien, des outils comme l'Alerte de Conflit à Court Terme (STCA) assistent les contrôleurs en signalant les conflits potentiels ou avérés.</p>
           <p>Augmented va plus loin. Nous développons un outil qui ne se contente pas d'alerter, mais qui propose des solutions jusqu'à 2 min avant l'incident. Conçu pour des environnements de plus en plus complexes, il offre une interface temps réel avec prévisualisation des trajectoires.</p>
         </div>
+
+        <div class="timeline-container">
+          <div class="timeline-step">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"/>
+                <path d="M12 12L15.5 8.5"/>
+                <path d="M12 2C9 2 6 3 4 5"/>
+                <path d="M20 5C18 3 15 2 12 2"/>
+              </svg>
+            </div>
+            <div class="step-content">
+              <h3 class="lang-en">Conflict Detection</h3>
+              <h3 class="lang-fr">Détection de Conflit</h3>
+              <div class="step-detail">
+                <p class="lang-en">Continuous monitoring of trajectories to identify potential separation losses up to 2 minutes before a potential hazard. Data are filtered and compared with previous states to minimise false alerts and maximise both conflict detection accuracy.</p>
+                <p class="lang-fr">Surveillance continue des trajectoires pour identifier les pertes de séparation jusqu'à 2 minutes avant un danger potentiel. Les données sont filtrées et comparées aux états précédents afin de minimiser les fausses alertes tout en maximisant la précision de détection.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-arrow">→</div>
+
+          <div class="timeline-step">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
+                <rect x="9" y="9" width="6" height="6" />
+                <path d="M9 1L9 4" /> <path d="M15 1L15 4" />
+                <path d="M9 20L9 23" /> <path d="M15 20L15 23" />
+                <path d="M20 9L23 9" /> <path d="M20 14L23 14" />
+                <path d="M1 9L4 9" /> <path d="M1 14L4 14" />
+              </svg>
+            </div>
+            <div class="step-content">
+              <h3 class="lang-en">Process</h3>
+              <h3 class="lang-fr">Traitement</h3>
+              <div class="step-detail">
+                <p class="lang-en">Sparrow computes conflict states in milliseconds, handling multiple global or localised encounters simultaneously. It aggregates data over a 25-second window to maintain detection and decision-making capabilities, even during traffic communication losses or brief service interruptions.</p>
+                <p class="lang-fr">Sparrow calcule les situations de conflit en quelques millisecondes, qu'il s'agisse de rencontres multiples, globales ou localisées. Il agrège les données sur une fenêtre de 25 secondes pour assurer la continuité de la détection et de la prise de décision, même en cas de perte de communication avec le trafic ou de brève interruption du service.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-arrow">→</div>
+
+          <div class="timeline-step">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 21h18"/>
+                <path d="M12 3v18"/>
+                <path d="M6 12l-3-3 3-3"/>
+                <path d="M18 12l3-3-3-3"/>
+              </svg>
+            </div>
+            <div class="step-content">
+              <h3 class="lang-en">Decision Making</h3>
+              <h3 class="lang-fr">Prise de Décision</h3>
+              <div class="step-detail">
+                <p class="lang-en">Sparrow proposes a solution with visual support, a deconfliction preview, and humanly-sound instructions.</p>
+                <p class="lang-fr">Sparrow propose une solution avec support visuel, prévisualisation de la résolution et instructions adaptées à l'opérateur.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-arrow">→</div>
+
+          <div class="timeline-step">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+              </svg>
+            </div>
+            <div class="step-content">
+              <h3 class="lang-en">Instruction</h3>
+              <h3 class="lang-fr">Instruction</h3>
+              <div class="step-detail">
+                <p class="lang-en">Sparrow accounts for manoeuvre latency due to human cognition, decision-making, and instruction execution using an operational time window and a predictive trajectory cone. At any time, the user may resend a request and repeat the previous step.</p>
+                <p class="lang-fr">Sparrow prend en compte la latence de manœuvre liée à la cognition, à la décision et à l'exécution des instructions via une fenêtre opérationnelle et un cône de trajectoire prédictif. À tout moment, l'utilisateur peut relancer une requête et réitérer l'étape précédente.</p>
+            </div>
+            </div>
+          </div>
+          <div class="timeline-arrow">→</div>
+            <div class="timeline-step">
+              <div class="step-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M2 12h20"/>
+                  <path d="M18 8l4 4-4 4"/>
+                  <path d="M12 16l-4 4"/>
+                  <path d="M12 8l-4-4"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <h3 class="lang-en">Manoeuvre</h3>
+                <h3 class="lang-fr">Manœuvre</h3>
+                <div class="step-detail">
+                  <p class="lang-en">The user interface shows real-time deconfliction and the status of the conflict, in addition to monitoring any deviation from the decision.</p>
+                  <p class="lang-fr">L'interface utilisateur affiche la résolution en temps réel et le statut du conflit, tout en surveillant les éventuels écarts par rapport à la décision prise.</p>
+                </div>
+              </div>
+            </div>
+
+          <div class="timeline-arrow">→</div>
+            <div class="timeline-step">
+              <div class="step-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </div>
+              <div class="step-content">
+                <h3 class="lang-en">Follow-up<br><span style="font-size:0.8em; font-weight:normal;">(Real-time Preview)</span></h3>
+                <div class="step-detail">
+                  <p class="lang-en">Real-time confirmation of full conflict resolution.</p>
+                  <p class="lang-fr">Confirmation en temps réel de la résolution totale du conflit.</p>
+                </div>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
-    <img src="pics/AugmentedSafetyNetsTImeline.png" alt="Safety Nets Timeline" class="timeline-img">
   </section>
 
   <section id="for-whom-immersive">
-    <h2 class="section-title-overlay">For Whom?</h2>
+    <h1>
+      <span class="lang-en">For Whom?</span>
+      <span class="lang-fr">Pour Qui?</span>
+    </h1>
     <div class="immersive-viewport" id="imm-viewport">
       <img src="pics/ForWhom.jpg" id="imm-image" alt="Augmented Airspace">
       <div class="imm-hotspot" style="top: 50%; left: 18%;" data-target="institutions">
         <div class="imm-label">
           <div class="imm-title">Institutions</div>
-          <div class="imm-desc">Supporting regulatory bodies with data-driven safety insights and policy validation.</div>
+          <div class="imm-desc">
+            <span class="lang-en">Supporting regulatory bodies with data-driven safety experience, recommendations, and policy validation.</span>
+            <span class="lang-fr">Soutenir les organismes de réglementation grâce à une expertise en matière de sécurité basée sur les données, des recommandations et la validation des propositions.</span>   
+          </div>
         </div>
       </div>
-      <div class="imm-hotspot" style="top: 30%; left: 50%;" data-target="ats">
+      <div class="imm-hotspot" style="top: 30%; left: 50%;" data-target="institutions">
         <div class="imm-label">
-          <div class="imm-title">Air Traffic Services</div>
-          <div class="imm-desc">Empowering controllers with AI-driven conflict resolution for high-density traffic.</div>
+          <div class="imm-title">
+            <span class="lang-en">Air Traffic Services</span>
+            <span class="lang-fr">Services du Trafic Aérien</span>
+          </div>
+          <div class="imm-desc">
+            <span class="lang-en">Empowering future controllers with AI-driven conflict resolution for high-density, heterogeneous, noisy, and non-cooperative traffic environment.</span>
+            <span class="lang-fr">Offrir aux futurs contrôleurs une résolution de conflit basée sur l'IA pour les environnements de trafic denses et hétérogènes.</span>
+          </div>
         </div>
       </div>
       <div class="imm-hotspot" style="top: 70%; left: 80.5%;" data-target="academia">
         <div class="imm-label">
-          <div class="imm-title">Academia</div>
-          <div class="imm-desc"></div>
+          <div class="imm-title"> <span class="lang-en">Academia</span>
+            <span class="lang-fr">Monde Académique</span>
+          </div>
+          <div class="imm-desc">
+            <span class="lang-en">Providing a benchmark for comparing new algorithms, a high-performance platform for trajectory-related simulation, and a ready-to-use, high-quality user interface to support human factors studies.</span>
+            <span class="lang-fr">Fournir une base de référence pour comparer de nouveaux algorithmes, une plateforme haute performance pour la simulation de trajectoires, et une interface utilisateur de haute qualité, prête à l’emploi, pour soutenir les études sur les facteurs humains.</span>
+          </div>
         </div>
       </div>
       <div class="imm-hotspot" style="top: 79%; left: 88.3%;" data-target="labs">
         <div class="imm-label">
-          <div class="imm-title">Laboratories</div>
-          <div class="imm-desc"></div>
+          <div class="imm-title">
+            <span class="lang-en">Laboratories R&D</span>
+            <span class="lang-fr">Laboratoires R&D</span>
+          </div>
+          <div class="imm-desc">
+            <span class="lang-en">Complementing existing systems or services as a headless module to support safe operations for projects and real-world experimentation.</span>
+            <span class="lang-fr">Compléter les systèmes ou services existants en tant que module autonome (headless) pour soutenir la sécurité des opérations dans le cadre de projets et d’expérimentations en conditions réelles.</span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </div>  
   </section>
-  
+
   <section class="section-content" id="why_augmented">
+    <img src="pics/background/AugmentedGroundLogo.png" class="bg-img AVground-pic" alt="">
     <div class="content-wrapper wide-wrapper">
       <div class="text-block split-container">
         <div class="split-left" id="dynamic-left-panel">
@@ -278,10 +415,7 @@
 
   <section class="section-content" id="sparrow">
     <div class="content-wrapper wide-wrapper">
-        <h1>
-          <span class="lang-en">Sparrow</span>
-          <span class="lang-fr">Sparrow</span>
-        </h1>
+        <h1>Sparrow</h1>
         <div class="lang-en">
           <p class="lang-en">Sparrow is our first prototype and initial service offering. It demonstrates breakthrough innovation using AI and forward-thinking design. Despite being an MVP, it showcases high-quality UI, rigor, and agility, proving that deep expertise allows even a small entity to deliver a ready-to-use system.</p>
           <p class="lang-fr">Sparrow est notre premier prototype et offre de service initiale. Il démontre une innovation de rupture grâce à l'IA et une conception avant-gardiste. Bien qu'étant un MVP, il présente une interface de haute qualité, prouvant que l'expertise permet de livrer un système prêt à l'emploi avec rigueur et agilité.</p>
@@ -356,11 +490,6 @@
           contact@augmentedxtm.com
         </a>
       </div>
-      <div class="footer-col mid-col">
-        <a href="#" class="scroll-top-btn" aria-label="Back to Top">
-          <span class="arrow-up"></span>
-        </a>
-      </div>
       <div class="footer-col right-col">
         <img src="logos/AV.png" alt="Augmented Vision" class="footer-logo">
         <p class="footer-tagline">
@@ -384,6 +513,25 @@
     const navLinks = document.querySelector(".nav-links");
     const logoVideo = document.querySelector(".top_logo_video");
     const stickyLogo = document.querySelector(".sticky-logo");
+
+    // --- NEW: Sticky Logo Click Behavior ---
+    if (stickyLogo) {
+      stickyLogo.addEventListener("click", (e) => {
+        e.preventDefault(); // Prevent default jump
+        
+        // 1. Scroll to top smoothly
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+
+        // 2. Refresh/Restart the top video
+        if (logoVideo) {
+          logoVideo.currentTime = 0;
+          logoVideo.play();
+        }
+      });
+    }
 
     hamburger.addEventListener("click", () => {
       hamburger.classList.toggle("active");
