@@ -33,7 +33,7 @@
     </script>
 </head>
 
-<body id="top">
+<body>
   <a href="#" class="sticky-logo">
     <img src="logos/AV.png" alt="Augmented Vision">
   </a>
@@ -49,7 +49,9 @@
       <span class="bar"></span>
     </div>
     <div class="nav-links">
-      <a href="#sparrow">Sparrow</a>
+      <a href="#sparrow" class="sparrow-link">
+        <span class="first-letter">S</span>parrow
+      </a>
       <a href="#about">
         <span class="lang-en">About Us</span>
         <span class="lang-fr">À Propos</span>
@@ -74,13 +76,11 @@
         <span class="lang-fr">Le Safety Net digital pour la mobilité aérienne avancée</span>
       </div>
 
-      <a href="#mission_statement" class="scroll-link">
-        <div class="scroll-indicator">
-          <span class="lang-en">Learn more</span>
-          <span class="lang-fr">En savoir plus</span>
-          <div class="arrow"></div>
-        </div>
-      </a>
+      <div class="scroll-indicator">
+        <span class="lang-en">Learn more</span>
+        <span class="lang-fr">En savoir plus</span>
+        <div class="arrow"></div>
+      </div>
     </div>
   </section>
 
@@ -254,10 +254,10 @@
   <div class="immersive-viewport" id="imm-viewport">
     <img src="pics/ForWhom.jpg" id="imm-image" alt="Augmented Airspace">
     
-    <div class="imm-hotspot" data-target="institutions"></div>
-    <div class="imm-hotspot" data-target="ats"></div>
-    <div class="imm-hotspot" data-target="academia"></div>
-    <div class="imm-hotspot" data-target="labs"></div>
+    <div class="imm-hotspot" style="top: 50%; left: 18%;" data-target="institutions"></div>
+    <div class="imm-hotspot" style="top: 30%; left: 50%;" data-target="ats"></div>
+    <div class="imm-hotspot" style="top: 70%; left: 80.5%;" data-target="academia"></div>
+    <div class="imm-hotspot" style="top: 79%; left: 88.3%;" data-target="labs"></div>
 
     <div id="imm-details-display" class="imm-details-box">
       <div class="detail-content active" id="default-text">
@@ -418,18 +418,17 @@
   <section class="section-content" id="sparrow">
     <div class="content-wrapper wide-wrapper">
         <h1>Sparrow</h1>
+        
         <div class="description-container">
             <p class="lang-en">Sparrow is our first prototype and initial service offering. It demonstrates breakthrough innovation using AI and forward-thinking design. Despite being an MVP, it showcases high-quality UI, rigor, and agility, proving that deep expertise allows even a small entity to deliver a ready-to-use system.</p>
             <p class="lang-fr">Sparrow est notre premier prototype et notre offre de service initiale. Il démontre une innovation de rupture grâce à l'IA et une conception avant-gardiste. Bien qu'étant un MVP, il présente une interface de haute qualité, prouvant que l'expertise permet de livrer un système prêt à l'emploi avec rigueur et agilité.</p>
 
             <div class="comparison-grid">
                 <div class="spec-card is-sparrow reveal-on-scroll">
+                    <img src="logos/sparrow-icon.svg" alt="Sparrow" class="sparrow-icon">
                     <h3 class="lang-en">What is Sparrow</h3>
                     <h3 class="lang-fr">Ce qu'est Sparrow</h3>
                     <ul class="spec-list">
-                        <div class="sparrow-bg-icon">
-                          <img src="logos/sparrow-icon.svg" alt="">
-                        </div>
                         <li>
                             <span class="lang-en"><strong>AI Safety Net:</strong> Cloud-based tactical conflict resolution to prevent NMAC during cruise phase (Mixed UTM/ATM).</span>
                             <span class="lang-fr"><strong>Filet de sécurité IA :</strong> Résolution tactique des conflits sur le cloud pour prévenir les NMAC en phase de croisière (Mixte UTM/ATM).</span>
@@ -482,37 +481,32 @@
 
  <!-- My footer :) -->
  <footer id="contact" class="main-footer">
-  <div class="content-wrapper footer-flex">
-    <div class="social-wrapper">
-      <a href="https://www.linkedin.com/company/augmentedxtm" target="_blank" class="linkedin-icon-link">
-          <img src="logos/LinkedIn.png" alt="LinkedIn">
-      </a>
-    </div>
-    <div class="footer-col left-col">
-      <h2 class="contact-title">
-        <span class="lang-en">Let's get in touch</span>
-        <span class="lang-fr">Contactez-nous</span>
-      </h2>
-      <a href="mailto:contact@augmentedxtm.com" class="email-link">
-        contact@augmentedxtm.com
-      </a>
-    </div>
-
-    <div class="footer-col mid-col">
-      <a href="#top" class="scroll-top-btn" aria-label="Back to top">
-        <div class="arrow-up"></div>
-      </a>
-    </div>
-
-    <div class="footer-col right-col">
-      <a href="#top" class="footer-logo-link">
+    <div class="content-wrapper footer-flex">
+      <div class="social-wrapper">
+        <a href="https://www.linkedin.com/company/augmentedxtm" target="_blank" class="linkedin-icon-link">
+            <img src="logos/LinkedIn.png" alt="LinkedIn">
+        </a>
+      </div>
+      <div class="footer-col left-col">
+        <h2 class="contact-title">
+          <span class="lang-en">Let's get in touch</span>
+          <span class="lang-fr">Contactez-nous</span>
+        </h2>
+        <a href="mailto:contact@augmentedxtm.com" class="email-link">
+          contact@augmentedxtm.com
+        </a>
+      </div>
+      <div class="footer-col right-col">
         <img src="logos/AV.png" alt="Augmented Vision" class="footer-logo">
-      </a>
-      <p class="footer-tagline">
-        <span class="lang-en">The Digital Safety Net for Advanced Air Mobility.</span>
-        <span class="lang-fr">Le Safety Net numérique pour la mobilité aérienne avancée.</span>
-      </p>
+        <p class="footer-tagline">
+          <span class="lang-en">The Digital Safety Net for Advanced Air Mobility.</span>
+          <span class="lang-fr">Le Safety Net numérique pour la mobilité aérienne avancée.</span>
+        </p>
+      </div>
     </div>
+    <div class="footer-bottom">
+      <span class="lang-en">&copy; 2026 Augmented xTM. All rights reserved.</span>
+      <span class="lang-fr">&copy; 2026 Augmented xTM. Tous droits réservés.</span>
     </div>
   </footer>
 
@@ -536,12 +530,6 @@
           top: 0,
           behavior: "smooth"
         });
-
-        // 2. Refresh/Restart the top video
-        if (logoVideo) {
-          logoVideo.currentTime = 0;
-          logoVideo.play();
-        }
       });
     }
 
@@ -557,15 +545,32 @@
       });
     });
 
+    let wasAtTop = true; // Assume we start at the top (video already playing via autoplay)
+
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 400) {
+      const footer = document.getElementById('contact');
+      const footerRect = footer.getBoundingClientRect();
+      const footerVisible = footerRect.top <= window.innerHeight;
+
+      // Sticky logo logic (hide/show)
+      const shouldShowLogo = window.scrollY > 400 && !footerVisible;
+      if (shouldShowLogo) {
         stickyLogo.classList.add("visible");
-        if(logoVideo) logoVideo.style.opacity = 0; 
+        if (logoVideo) logoVideo.style.opacity = 0;
       } else {
         stickyLogo.classList.remove("visible");
-        if(logoVideo) logoVideo.style.opacity = 0.8; 
+        if (logoVideo) logoVideo.style.opacity = 0.8;
       }
-      
+
+      // --- NEW: Play video when reaching the top ---
+      const atTop = window.scrollY <= 5; // small threshold (5px) to avoid flickering
+      if (atTop && !wasAtTop && logoVideo) {
+        logoVideo.currentTime = 0;   // restart from beginning
+        logoVideo.play();            // ensure it's playing
+      }
+      wasAtTop = atTop; // update the flag
+
+      // Reveal-on-scroll animations (unchanged)
       const reveals = document.querySelectorAll(".reveal-on-scroll");
       reveals.forEach(reveal => {
         const windowHeight = window.innerHeight;
@@ -704,15 +709,16 @@
       defaultText.classList.add('active');
     });
   });
-
-  document.querySelectorAll('a[href="#top"]').forEach(link => {
-  link.addEventListener('click', () => {
-    if (logoVideo) {
-      logoVideo.currentTime = 0;
-      logoVideo.play();
-      }
+  const footerLogo = document.querySelector('.footer-logo');
+  if (footerLogo) {
+    footerLogo.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
-  });
+  }
 </script>
 
 </body>

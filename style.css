@@ -313,8 +313,8 @@ html.fr-mode .lang-btn[data-lang="fr"] {
   position: relative;
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(10px);
-  padding: 60px 0 20px 0;
-  margin-top: 50px;
+  padding: 20px 0 20px 0;
+  margin-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   color: white;
 }
@@ -340,7 +340,7 @@ html.fr-mode .lang-btn[data-lang="fr"] {
   border-bottom: 1px solid rgba(255,255,255,0.3);
   transition: all 0.3s ease;
   display: inline-block;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .email-link:hover { color: #03989e; border-color: #03989e; }
 .linkedin-icon-link img { width: 150px; height: auto; transition: transform 0.3s ease; }
@@ -385,7 +385,8 @@ html.fr-mode .lang-btn[data-lang="fr"] {
   flex-direction: column;
   align-items: flex-end;
 }
-.footer-logo { width: 120px; height: auto; margin-bottom: 15px; }
+
+.footer-logo { width: 90px; height: auto; margin-bottom: 10px; }
 .scroll-link {
   text-decoration: none;
   display: block;
@@ -408,7 +409,7 @@ html.fr-mode .lang-btn[data-lang="fr"] {
 }
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.15);
-  margin: 40px auto 0 auto;
+  margin: 20px auto 0 auto;
   padding-top: 20px;
   text-align: center;
   font-size: 14px;
@@ -986,8 +987,14 @@ html.fr-mode .lang-btn[data-lang="fr"] {
 
 /* --- SPARROW SECTION STYLES --- */
 
-#sparrow {
-  padding-bottom: 80px;
+#sparrow {padding-bottom: 80px;}
+#sparrow h1 {text-align: center;}
+#sparrow h1::first-letter {color: #03989e;}
+#sparrow .description-container {
+  text-align: center;
+  max-width: 1600px;      /* optional: keeps lines readable */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .sparrow-intro {
@@ -1152,24 +1159,24 @@ html.fr-mode .lang-btn[data-lang="fr"] {
   opacity: 0.8;
 }
 
-.sparrow-bg-icon {
-  position: absolute; /* Or fixed/relative depending on need */
-  top: 50%;           /* Adjust as needed */
-  left: 50%;
-  width: 100%;       /* Give it a defined size */
-  height: auto;
-  z-index: -10;        /* Ensure it's on top of background layers */
-  transform: translate(-50%, -50%);
-  opacity: 0.2;
+.spec-card.is-sparrow {
+  position: relative; /* needed for absolute positioning of the icon */
 }
 
-/* Ensure the image fills the container */
-.sparrow-bg-icon img {
-  width: 100%;
+.sparrow-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;                /* adjust size as needed – 70% of the card */
   height: auto;
-  display: block;
-  filter: invert(44%) sepia(75%) saturate(1836%) hue-rotate(152deg) brightness(96%) contrast(101%);
+  opacity: 0.15;             /* optional: make it more subtle in the background */
+  filter: brightness(0) saturate(100%) invert(39%) sepia(98%) saturate(1598%) hue-rotate(152deg) brightness(99%) contrast(101%);
+  z-index: -1;               /* places it behind the text */
+  pointer-events: none;      /* ensures clicks pass through to the card content */
 }
+
+.footer-logo {cursor: pointer;}
 
 /* --- DESKTOP: FIXED SIZE WINDOW --- */
 @media (min-width: 901px) {
