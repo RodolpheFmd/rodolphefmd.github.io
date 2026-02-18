@@ -1267,21 +1267,6 @@ html.fr-mode .lang-btn[data-lang="fr"] {
   font-weight: 600;
 }
 
- /* --- TIMELINE DIAGRAM (Fixed Window Version) --- */
-.timeline-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 95%;
-  max-width: 1600px;
-  margin: 40px auto;
-  gap: 15px;
-  /* Reserve exactly enough space for the fixed window at the bottom */
-  padding: 30px 30px 160px 30px; 
-  position: relative; 
-}
-
 /* --- STEP & ICON STYLES --- */
 .timeline-step {
   display: flex;
