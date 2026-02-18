@@ -49,9 +49,7 @@
       <span class="bar"></span>
     </div>
     <div class="nav-links">
-      <a href="#sparrow" class="sparrow-link">
-        <span class="first-letter">S</span>parrow
-      </a>
+      <a href="#sparrow">Sparrow</a>
       <a href="#about">
         <span class="lang-en">About Us</span>
         <span class="lang-fr">À Propos</span>
@@ -84,8 +82,6 @@
         </div>
       </a>
     </div>
-
-
   </section>
 
   <img src="pics/background/ATC_tower.png" class="bg-img atctower-pic independent-bg" alt="">
@@ -258,10 +254,10 @@
   <div class="immersive-viewport" id="imm-viewport">
     <img src="pics/ForWhom.jpg" id="imm-image" alt="Augmented Airspace">
     
-    <div class="imm-hotspot" style="top: 50%; left: 18%;" data-target="institutions"></div>
-    <div class="imm-hotspot" style="top: 30%; left: 50%;" data-target="ats"></div>
-    <div class="imm-hotspot" style="top: 70%; left: 80.5%;" data-target="academia"></div>
-    <div class="imm-hotspot" style="top: 79%; left: 88.3%;" data-target="labs"></div>
+    <div class="imm-hotspot" data-target="institutions"></div>
+    <div class="imm-hotspot" data-target="ats"></div>
+    <div class="imm-hotspot" data-target="academia"></div>
+    <div class="imm-hotspot" data-target="labs"></div>
 
     <div id="imm-details-display" class="imm-details-box">
       <div class="detail-content active" id="default-text">
@@ -422,7 +418,6 @@
   <section class="section-content" id="sparrow">
     <div class="content-wrapper wide-wrapper">
         <h1>Sparrow</h1>
-        
         <div class="description-container">
             <p class="lang-en">Sparrow is our first prototype and initial service offering. It demonstrates breakthrough innovation using AI and forward-thinking design. Despite being an MVP, it showcases high-quality UI, rigor, and agility, proving that deep expertise allows even a small entity to deliver a ready-to-use system.</p>
             <p class="lang-fr">Sparrow est notre premier prototype et notre offre de service initiale. Il démontre une innovation de rupture grâce à l'IA et une conception avant-gardiste. Bien qu'étant un MVP, il présente une interface de haute qualité, prouvant que l'expertise permet de livrer un système prêt à l'emploi avec rigueur et agilité.</p>
@@ -432,6 +427,9 @@
                     <h3 class="lang-en">What is Sparrow</h3>
                     <h3 class="lang-fr">Ce qu'est Sparrow</h3>
                     <ul class="spec-list">
+                        <div class="sparrow-bg-icon">
+                          <img src="logos/sparrow-icon.svg" alt="">
+                        </div>
                         <li>
                             <span class="lang-en"><strong>AI Safety Net:</strong> Cloud-based tactical conflict resolution to prevent NMAC during cruise phase (Mixed UTM/ATM).</span>
                             <span class="lang-fr"><strong>Filet de sécurité IA :</strong> Résolution tactique des conflits sur le cloud pour prévenir les NMAC en phase de croisière (Mixte UTM/ATM).</span>
