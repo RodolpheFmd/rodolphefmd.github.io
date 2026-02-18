@@ -779,10 +779,10 @@ html.fr-mode .lang-btn[data-lang="fr"] {
   box-shadow: 0 0 15px #00f2ff;
 }
 
-.imm-hotspot[data-target="institutions"] { top: 54vw; left: 18%; }
-.imm-hotspot[data-target="ats"] { top: 30vw; left: 50%; }
-.imm-hotspot[data-target="academia"] { top: 56vw; left: 80.5%; }
-.imm-hotspot[data-target="labs"] { top: 59vw; left: 88.3%; }
+.imm-hotspot[data-target="institutions"] { top: 74%; left: 18%; }
+.imm-hotspot[data-target="ats"] { top: 40%; left: 50%; }
+.imm-hotspot[data-target="academia"] { top: 75%; left: 80.5%; }
+.imm-hotspot[data-target="labs"] { top: 79.5%; left: 88.3%; }
 
 .imm-hotspot::after {
   content: '';
@@ -1229,15 +1229,28 @@ html.fr-mode .lang-btn[data-lang="fr"] {
 
 @media (max-width: 1025px) {
   #mission_statement { margin-top: -90px; }
-  .sticky-logo {top: 4%; right: 5%; width: 55px;}}
-@media (max-width: 990px) {.top_logo_video { margin-top: 125px !important;}}
+  .sticky-logo {top: 4%; right: 5%; width: 55px;}
+  .imm-hotspot[data-target="institutions"] { top: 71%;}
+  .imm-hotspot[data-target="ats"] { top: 43%;  }
+  .imm-hotspot[data-target="academia"] { top: 73%; }
+  .imm-hotspot[data-target="labs"] { top: 76.5%; }}
+
+@media (max-width: 990px) {.top_logo_video { margin-top: 125px !important;}
+  .imm-hotspot[data-target="institutions"] { top: 65%;}
+  .imm-hotspot[data-target="ats"] { top: 46%;  }
+  .imm-hotspot[data-target="academia"] { top: 65%; }
+  .imm-hotspot[data-target="labs"] { top: 68.5%; }}
 /* --- SMARTPHONE SETUP < 900 PX --- */
 @media (max-width: 900px) {
+  .imm-hotspot[data-target="institutions"] { top: 64%;}
+  .imm-hotspot[data-target="ats"] { top: 47%;  }
+  .imm-hotspot[data-target="academia"] { top: 67%; }
+  .imm-hotspot[data-target="labs"] { top: 69%; }
   .lang-switch {font-size: 16px;}
   .top_logo_video { margin-top: 95px !important;}
   .sticky-logo { top: 3%; right: 8%; width: 30px;}
   #mission_statement { margin-top: -350px; }
-  .footer-flex { flex-direction: column; text-align: center; gap: 40px; }
+  .footer-flex {text-align: center; gap: 40px; }
   .left-col, .right-col { text-align: center; align-items: center; }
   .mid-col { order: 3; }
   .timeline-container {
@@ -1352,6 +1365,19 @@ html.fr-mode .lang-btn[data-lang="fr"] {
     border-right: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
   }
+  .imm-hotspot[data-target="institutions"] { top: 62%;}
+  .imm-hotspot[data-target="ats"] { top: 49.2%;  }
+  .imm-hotspot[data-target="academia"] { top: 61.8%; }
+  .imm-hotspot[data-target="labs"] { top: 62%; }
+
+  .imm-hotspot { width: 10px; height: 10px;}
+
+  .footer-logo { width: 40px; height: auto; margin-bottom: 10px; }
+  .scroll-top-btn { width: 20px; height: 20px;}
+  .contact-title {font-size: 18px;}
+  .email-link {font-size: 16px; margin-bottom: 10px;}
+  .linkedin-icon-link img { width: 40px; height: auto; transition: transform 0.3s ease; }
+  .footer-tagline {font-size: 0px; }
 
   }
 /* --- SMARTPHONE SETUP < 770 PX - END --- */
