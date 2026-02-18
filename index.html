@@ -33,7 +33,7 @@
     </script>
 </head>
 
-<body>
+<body id="top">
   <a href="#" class="sticky-logo">
     <img src="logos/AV.png" alt="Augmented Vision">
   </a>
@@ -76,12 +76,16 @@
         <span class="lang-fr">Le Safety Net digital pour la mobilité aérienne avancée</span>
       </div>
 
-      <div class="scroll-indicator">
-        <span class="lang-en">Learn more</span>
-        <span class="lang-fr">En savoir plus</span>
-        <div class="arrow"></div>
-      </div>
+      <a href="#mission_statement" class="scroll-link">
+        <div class="scroll-indicator">
+          <span class="lang-en">Learn more</span>
+          <span class="lang-fr">En savoir plus</span>
+          <div class="arrow"></div>
+        </div>
+      </a>
     </div>
+
+
   </section>
 
   <img src="pics/background/ATC_tower.png" class="bg-img atctower-pic independent-bg" alt="">
@@ -480,32 +484,37 @@
 
  <!-- My footer :) -->
  <footer id="contact" class="main-footer">
-    <div class="content-wrapper footer-flex">
-      <div class="social-wrapper">
-        <a href="https://www.linkedin.com/company/augmentedxtm" target="_blank" class="linkedin-icon-link">
-            <img src="logos/LinkedIn.png" alt="LinkedIn">
-        </a>
-      </div>
-      <div class="footer-col left-col">
-        <h2 class="contact-title">
-          <span class="lang-en">Let's get in touch</span>
-          <span class="lang-fr">Contactez-nous</span>
-        </h2>
-        <a href="mailto:contact@augmentedxtm.com" class="email-link">
-          contact@augmentedxtm.com
-        </a>
-      </div>
-      <div class="footer-col right-col">
-        <img src="logos/AV.png" alt="Augmented Vision" class="footer-logo">
-        <p class="footer-tagline">
-          <span class="lang-en">The Digital Safety Net for Advanced Air Mobility.</span>
-          <span class="lang-fr">Le Safety Net numérique pour la mobilité aérienne avancée.</span>
-        </p>
-      </div>
+  <div class="content-wrapper footer-flex">
+    <div class="social-wrapper">
+      <a href="https://www.linkedin.com/company/augmentedxtm" target="_blank" class="linkedin-icon-link">
+          <img src="logos/LinkedIn.png" alt="LinkedIn">
+      </a>
     </div>
-    <div class="footer-bottom">
-      <span class="lang-en">&copy; 2026 Augmented xTM. All rights reserved.</span>
-      <span class="lang-fr">&copy; 2026 Augmented xTM. Tous droits réservés.</span>
+    <div class="footer-col left-col">
+      <h2 class="contact-title">
+        <span class="lang-en">Let's get in touch</span>
+        <span class="lang-fr">Contactez-nous</span>
+      </h2>
+      <a href="mailto:contact@augmentedxtm.com" class="email-link">
+        contact@augmentedxtm.com
+      </a>
+    </div>
+
+    <div class="footer-col mid-col">
+      <a href="#top" class="scroll-top-btn" aria-label="Back to top">
+        <div class="arrow-up"></div>
+      </a>
+    </div>
+
+    <div class="footer-col right-col">
+      <a href="#top" class="footer-logo-link">
+        <img src="logos/AV.png" alt="Augmented Vision" class="footer-logo">
+      </a>
+      <p class="footer-tagline">
+        <span class="lang-en">The Digital Safety Net for Advanced Air Mobility.</span>
+        <span class="lang-fr">Le Safety Net numérique pour la mobilité aérienne avancée.</span>
+      </p>
+    </div>
     </div>
   </footer>
 
@@ -695,6 +704,15 @@
       // Return to default text or hide all
       details.forEach(d => d.classList.remove('active'));
       defaultText.classList.add('active');
+    });
+  });
+
+  document.querySelectorAll('a[href="#top"]').forEach(link => {
+  link.addEventListener('click', () => {
+    if (logoVideo) {
+      logoVideo.currentTime = 0;
+      logoVideo.play();
+      }
     });
   });
 </script>
