@@ -1,0 +1,93 @@
+/* --- TEAM SECTION STYLES --- */
+
+.office-pic {
+    opacity: 0.15;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+  }
+
+  .independent-bg {
+    position: absolute;
+    top: 25%;           /* Changed from 100vh to 0 to start at the top */
+    left: 0;
+    width: 100%;
+    height: auto; 
+    object-fit: cover;
+    z-index: -1;      /* Keeps it behind the content */
+    margin-top: 0;    /* Removed the 120px margin */
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+    width: 100%;
+  }
+  
+  .team-card {
+    background: rgba(0, 0, 0, 0.4); /* Consistent with your .text-block */
+    border: 2px solid #03989e;      /* Consistent with your .step-detail */
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(5px);
+  }
+  
+  .team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(3, 152, 158, 0.3);
+  }
+  
+  .member-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-bottom: 2px solid #03989e;
+  }
+  
+  .member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(30%);
+    transition: filter 0.3s ease;
+  }
+  
+  .team-card:hover .member-image img {
+    filter: grayscale(0%);
+  }
+  
+  .member-info {
+    padding: 25px;
+    text-align: center;
+  }
+  
+  .member-info h3 {
+    font-size: 24px;
+    margin-bottom: 5px;
+    color: #03989e; /* Consistent with your h2 color */
+  }
+  
+  .member-info .role {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+  }
+  
+  .member-info .bio {
+    font-size: 16px;
+    line-height: 1.4;
+    opacity: 0.9;
+    margin-bottom: 20px;
+  }
+  
+  /* Mobile Adjustments */
+  @media (max-width: 768px) {
+    .team-grid {
+      grid-template-columns: 1fr;
+      padding: 0 20px;
+    }
+  }
