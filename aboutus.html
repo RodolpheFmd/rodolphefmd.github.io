@@ -7,22 +7,26 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="aboutus_style.css">
   <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+  <script type="module" src="/js/main.js"></script>
 </head>
 
 <body class="about-page">
   <a href="index.html" class="sticky-logo visible">
     <img src="logos/AV.png" alt="Augmented Vision">
   </a>
+  <nav class="side-nav" style="min-height: auto;">
+    <div class="lang-switch">
+      <span class="lang-btn" data-lang="en" role="button" tabindex="0">EN</span>
+      <span>|</span>
+      <span class="lang-btn" data-lang="fr" role="button" tabindex="0">FR</span>
+    </div>
+  </nav>
 
-  
   <section class="section-content">
     <div class="content-wrapper wide-wrapper">
       <div class="text-block">
-        <h1 class="lang-en">About the Team</h1>
-        <p class="lang-en">
-          Bridging the gap between academic excellence and industrial reality. 
-          Our team is composed of experts dedicated to revolutionizing air traffic safety.
-        </p>
+        <h1 data-i18n="about.title"></h1>
+        <p data-i18n="about.intro"></p>
       </div>
     </div>
     <img src="pics/background/AugmentedEmptyOffice.png" class="bg-img office-pic independent-bg" alt="">

@@ -16,6 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
   <title>Augmented xTM</title>
   <link rel="stylesheet" href="style.css">
+  <script type="module" src="/js/main.js"></script>
 
   <script type="application/ld+json">
     {
@@ -52,14 +53,8 @@
       <a href="#sparrow" class="sparrow-link">
         <span class="first-letter">S</span>parrow
       </a>
-      <a href="#about">
-        <span class="lang-en">About Us</span>
-        <span class="lang-fr">À Propos</span>
-      </a>
-      <a href="#contact">
-        <span class="lang-en">Contact</span>
-        <span class="lang-fr">Contact</span>
-      </a>
+      <a href="#about"><span data-i18n="nav.about"></span></a>
+      <a href="#contact"><span data-i18n="nav.contact"></span></a>
     </div>
   </nav>
 
@@ -72,13 +67,11 @@
       </video>
       
       <div class="intro-box">
-        <span class="lang-en">The Digital Safety Net for Advanced Air Mobility</span>
-        <span class="lang-fr">Le Safety Net digital pour la mobilité aérienne avancée</span>
+        <span data-i18n="hero.tagline"></span>
       </div>
 
       <div class="scroll-indicator">
-        <span class="lang-en">Learn more</span>
-        <span class="lang-fr">En savoir plus</span>
+        <span data-i18n="hero.learnMore"></span>
         <div class="arrow"></div>
       </div>
     </div>
@@ -89,17 +82,10 @@
   <section class="section-content" id="mission_statement">
     <div class="content-wrapper wide-wrapper">
       <div class="text-block reveal-on-scroll">
-        <h1>
-          <span class="lang-en">Mission Statement</span>
-          <span class="lang-fr">Notre Mission</span>
-        </h1>
-        <div class="lang-en">
-          <p>Augmented is on a mission to revolutionise air traffic safety for new drones and eVTOL operators in the low airspace through human-centric, AI-driven separation assurance. By leveraging Sparrow, the first but not the least breakthrough solver, we provide highly scalable, cloud-hosted safety net designed to resolve complex conflicts in real-time.</p>
-          <p>Our goal is to bridge the gap between academic excellence and industrial reality, reducing operator workload and facilitating a safe, transparent transition toward the future of digital aviation.</p>
-      </div>
-        <div class="lang-fr">
-          <p>Augmented a pour mission de révolutionner la sécurité du trafic aérien pour les opérations émergentes à très basse altitude grâce à une assurance de séparation centrée sur l'humain et pilotée par l'IA. Grâce à Sparrow, notre solveur révolutionnaire, nous fournissons un Safety Net hébergé dans le cloud, hautement évolutifs et conçus pour résoudre des conflits multi-agents complexes en temps réel.</p>
-          <p>Notre objectif est de combler le fossé entre l'excellence académique et la réalité industrielle, en réduisant la charge de travail des opérateurs et en facilitant une transition sûre et transparente vers l'avenir de l'aviation autonome.</p>
+        <h1><span data-i18n="mission.title"></span></h1>
+        <div>
+          <p data-i18n="mission.p1"></p>
+          <p data-i18n="mission.p2"></p>
         </div>
       </div>
     </div>
@@ -108,20 +94,11 @@
   <section class="section-content" id="safety_nets">
     <div class="content-wrapper wide-wrapper">
       <div class="text-block reveal-on-scroll">
-        <h1>
-          <span class="lang-en">What is a Safety Net ?</span>
-          <span class="lang-fr">Qu'est-ce qu'un Safety Net ?</span>
-        </h1>
-        <div class="lang-en">
-          <p>Aviation is the safest mode of transportation. As we introduce new operations in low-level airspace over urban, suburban, and rural areas, we must not only comply with this standard but improve it.</p>
-          <p>Safety nets play a major role after departure in preventing imminent or actual hazardous situations. They are a critical link in the global safety chain. In current Air Traffic Management, systems like the Short-Term Conflict Alert support controllers by warning of potential conflicts.</p>
-          <p>Augmented takes this further. We are developing a tool that does not just alert, but actively proposes solutions up to 2 minutes before hazards. Designed for increasingly complex environments, it features a real-time interface with trajectory preview to ensure total situational awareness.</p>
-        </div>
-
-        <div class="lang-fr">
-          <p>L'aviation est le moyen de transport le plus sûr. L'introduction de nouvelles opérations à basse altitude au-dessus des zones urbaines, périurbaines et rurales doit non seulement respecter cette norme, mais l'améliorer.</p>
-          <p>Les Safety Nets jouent un rôle majeur après le décollage pour prévenir les situations dangereuses imminentes ou réelles. Ils constituent un maillon essentiel de la chaîne de sécurité. Dans la gestion actuelle du trafic aérien, des outils comme l'Alerte de Conflit à Court Terme (STCA) assistent les contrôleurs en signalant les conflits potentiels ou avérés.</p>
-          <p>Augmented va plus loin. Nous développons un outil qui ne se contente pas d'alerter, mais qui propose des solutions jusqu'à 2 min avant l'incident. Conçu pour des environnements de plus en plus complexes, il offre une interface temps réel avec prévisualisation des trajectoires.</p>
+        <h1><span data-i18n="safetyNet.title"></span></h1>
+        <div>
+          <p data-i18n="safetyNet.p1"></p>
+          <p data-i18n="safetyNet.p2"></p>
+          <p data-i18n="safetyNet.p3"></p>
         </div>
 
         <div class="timeline-container">
@@ -135,11 +112,9 @@
               </svg>
             </div>
             <div class="step-content">
-              <h3 class="lang-en">Conflict Detection</h3>
-              <h3 class="lang-fr">Détection de Conflit</h3>
+              <h3 data-i18n="timeline.conflictDetection.title"></h3>
               <div class="step-detail">
-                <p class="lang-en">Continuous monitoring of trajectories to identify potential separation losses up to 2 minutes before a potential hazard. Data are filtered and compared with previous states to minimise false alerts and maximise both conflict detection accuracy.</p>
-                <p class="lang-fr">Surveillance continue des trajectoires pour identifier les pertes de séparation jusqu'à 2 minutes avant un danger potentiel. Les données sont filtrées et comparées aux états précédents afin de minimiser les fausses alertes tout en maximisant la précision de détection.</p>
+                <p data-i18n="timeline.conflictDetection.desc"></p>
               </div>
             </div>
           </div>
@@ -158,11 +133,9 @@
               </svg>
             </div>
             <div class="step-content">
-              <h3 class="lang-en">Process</h3>
-              <h3 class="lang-fr">Traitement</h3>
+              <h3 data-i18n="timeline.process.title"></h3>
               <div class="step-detail">
-                <p class="lang-en">Sparrow computes conflict states in milliseconds, handling multiple global or localised encounters simultaneously. It aggregates data over a 25-second window to maintain detection and decision-making capabilities, even during traffic communication losses or brief service interruptions.</p>
-                <p class="lang-fr">Sparrow calcule les situations de conflit en quelques millisecondes, qu'il s'agisse de rencontres multiples, globales ou localisées. Il agrège les données sur une fenêtre de 25 secondes pour assurer la continuité de la détection et de la prise de décision, même en cas de perte de communication avec le trafic ou de brève interruption du service.</p>
+                <p data-i18n="timeline.process.desc"></p>
               </div>
             </div>
           </div>
@@ -179,11 +152,9 @@
               </svg>
             </div>
             <div class="step-content">
-              <h3 class="lang-en">Decision Making</h3>
-              <h3 class="lang-fr">Prise de Décision</h3>
+              <h3 data-i18n="timeline.decisionMaking.title"></h3>
               <div class="step-detail">
-                <p class="lang-en">Sparrow proposes a solution with visual support, a deconfliction preview, and humanly-sound instructions.</p>
-                <p class="lang-fr">Sparrow propose une solution avec support visuel, prévisualisation de la résolution et instructions adaptées à l'opérateur.</p>
+                <p data-i18n="timeline.decisionMaking.desc"></p>
               </div>
             </div>
           </div>
@@ -197,12 +168,10 @@
               </svg>
             </div>
             <div class="step-content">
-              <h3 class="lang-en">Instruction</h3>
-              <h3 class="lang-fr">Instruction</h3>
+              <h3 data-i18n="timeline.instruction.title"></h3>
               <div class="step-detail">
-                <p class="lang-en">Sparrow accounts for manoeuvre latency due to human cognition, decision-making, and instruction execution using an operational time window and a predictive trajectory cone. At any time, the user may resend a request and repeat the previous step.</p>
-                <p class="lang-fr">Sparrow prend en compte la latence de manœuvre liée à la cognition, à la décision et à l'exécution des instructions via une fenêtre opérationnelle et un cône de trajectoire prédictif. À tout moment, l'utilisateur peut relancer une requête et réitérer l'étape précédente.</p>
-            </div>
+                <p data-i18n="timeline.instruction.desc"></p>
+              </div>
             </div>
           </div>
           <div class="timeline-arrow">→</div>
@@ -216,11 +185,9 @@
                 </svg>
               </div>
               <div class="step-content">
-                <h3 class="lang-en">Manoeuvre</h3>
-                <h3 class="lang-fr">Manœuvre</h3>
+                <h3 data-i18n="timeline.manoeuvre.title"></h3>
                 <div class="step-detail">
-                  <p class="lang-en">The user interface shows real-time deconfliction and the status of the conflict, in addition to monitoring any deviation from the decision.</p>
-                  <p class="lang-fr">L'interface utilisateur affiche la résolution en temps réel et le statut du conflit, tout en surveillant les éventuels écarts par rapport à la décision prise.</p>
+                  <p data-i18n="timeline.manoeuvre.desc"></p>
                 </div>
               </div>
             </div>
@@ -234,10 +201,9 @@
                 </svg>
               </div>
               <div class="step-content">
-                <h3 class="lang-en">Follow-up<br><span style="font-size:0.8em; font-weight:normal;">(Real-time Preview)</span></h3>
+                <h3 data-i18n-html="timeline.followup.title"></h3>
                 <div class="step-detail">
-                  <p class="lang-en">Real-time confirmation of full conflict resolution.</p>
-                  <p class="lang-fr">Confirmation en temps réel de la résolution totale du conflit.</p>
+                  <p data-i18n="timeline.followup.desc"></p>
                 </div>
               </div>
             </div>
@@ -247,10 +213,7 @@
   </section>
 
   <section id="for-whom-immersive">
-  <h1>
-    <span class="lang-en">For Whom?</span>
-    <span class="lang-fr">Pour Qui?</span>
-  </h1>
+  <h1><span data-i18n="forWhom.title"></span></h1>
   <div class="immersive-viewport" id="imm-viewport">
     <img src="pics/ForWhom.jpg" id="imm-image" alt="Augmented Airspace">
     
@@ -261,43 +224,27 @@
 
     <div id="imm-details-display" class="imm-details-box">
       <div class="detail-content active" id="default-text">
-        <span class="lang-en">Hover over a point to learn more.</span>
-        <span class="lang-fr">Survolez un point pour en savoir plus.</span>
+        <span data-i18n="forWhom.hoverHint"></span>
       </div>
 
       <div class="detail-content" id="desc-institutions">
-        <div class="imm-title">Institutions</div>
-        <div class="imm-desc">
-          <span class="lang-en">Supporting regulatory bodies with data-driven safety experience, recommendations, and policy validation.</span>
-          <span class="lang-fr">Soutenir les organismes de réglementation grâce à une expertise en matière de sécurité basée sur les données...</span>   
-        </div>
+        <div class="imm-title" data-i18n="forWhom.institutions.title"></div>
+        <div class="imm-desc" data-i18n="forWhom.institutions.desc"></div>
       </div>
 
       <div class="detail-content" id="desc-ats">
-        <div class="imm-title">
-          <span class="lang-en">Air Traffic Services</span>
-          <span class="lang-fr">Services du Trafic Aérien</span>
-        </div>
-        <div class="imm-desc">
-          <span class="lang-en">Empowering future controllers with AI-driven conflict resolution for high-density traffic.</span>
-          <span class="lang-fr">Offrir aux futurs contrôleurs une résolution de conflit basée sur l'IA...</span>
-        </div>
+        <div class="imm-title" data-i18n="forWhom.ats.title"></div>
+        <div class="imm-desc" data-i18n="forWhom.ats.desc"></div>
       </div>
 
       <div class="detail-content" id="desc-academia">
-        <div class="imm-title">Academia</div>
-        <div class="imm-desc">
-          <span class="lang-en">Providing a benchmark for comparing new algorithms and high-performance simulation.</span>
-          <span class="lang-fr">Fournir une base de référence pour comparer de nouveaux algorithmes...</span>
-        </div>
+        <div class="imm-title" data-i18n="forWhom.academia.title"></div>
+        <div class="imm-desc" data-i18n="forWhom.academia.desc"></div>
       </div>
 
       <div class="detail-content" id="desc-labs">
-        <div class="imm-title">Laboratories R&D</div>
-        <div class="imm-desc">
-          <span class="lang-en">Complementing existing systems as a headless module for real-world experimentation.</span>
-          <span class="lang-fr">Compléter les systèmes existants en tant que module autonome...</span>
-        </div>
+        <div class="imm-title" data-i18n="forWhom.labs.title"></div>
+        <div class="imm-desc" data-i18n="forWhom.labs.desc"></div>
       </div>
     </div>
   </div>  
@@ -309,50 +256,53 @@
       <div class="text-block split-container">
         <div class="split-left" id="dynamic-left-panel">
           <div class="default-content">
-              <h1>
-              <span class="lang-en">Why Augmented?</span>
-              <span class="lang-fr">Pourquoi Augmented ?</span>
-              </h1>
-              <p class="subtitle">
-                  <span class="lang-en">Choose the best available solution for tactical conflict resolution in the extended airspace.</span>
-                  <span class="lang-fr">Choisissez la meilleure solution disponible de résolution tactique de conflit dans l'espace aérien étendu.</span>
-              </p>
+              <h1><span data-i18n="whyAugmented.title"></span></h1>
+              <p class="subtitle"><span data-i18n="whyAugmented.subtitle"></span></p>
           </div>
         </div>
         <div class="split-right">
-          <div class="interaction-hint">
-            <span class="lang-en">↓ Click for more details ↓</span>
-            <span class="lang-fr">↓ Cliquez pour plus de détails ↓</span>
-          </div>
+          <div class="interaction-hint"><span data-i18n="whyAugmented.clickHint"></span></div>
           <div class="scrolling-window">
             <ul class="benefit-list">
               <li class="clickable-item" role="button" tabindex="0">
-                <span class="item-title lang-en">Deep Expertise in AI/ML & Aviation Safety</span>
-                <span class="item-title lang-fr">Expertise de Pointe en IA/ML & Sécurité Aérienne</span>
+                <span class="item-title" data-i18n="whyAugmented.expertise.title"></span>
                 <div class="details-content">
-                  <h2 class="lang-en">Deep Expertise in AI/ML & Aviation</h2>
-                  <h2 class="lang-fr">Expertise de Pointe en IA/ML & Sécurité Aérienne</h2>
-                  <p class="lang-en">Augmented is the maturation of four years of intensive innovation in AI/ML-based tactical conflict resolution for the next generation of air traffic management. Our work is rooted in scientific integrity, with core algorithms validated through peer-reviewed research and presented in top-tier journals, magazines, and leading global aviation conferences.</p>
-                  <p class="lang-fr">Augmented est la maturation de quatre années d'innovation intensive dans la résolution tactique des conflits fondée sur l'IA/ML pour la gestion du trafic aérien de demain. Nos travaux s'appuient sur une intégrité scientifique rigoureuse, avec des algorithmes validés par les pairs et publiés dans des revues de premier plan ainsi que lors de conférences aéronautiques mondiales.</p>
+                  <h2 data-i18n="whyAugmented.expertise.h2"></h2>
+                  <p data-i18n="whyAugmented.expertise.p"></p>
                 </div>
               </li>
               <li class="clickable-item" role="button" tabindex="0">
-                <span class="item-title lang-en">Proven Operational Impact & Integration</span>
-                <span class="item-title lang-fr">Validation Opérationnelle & Intégration</span>
+                <span class="item-title" data-i18n="whyAugmented.integration.title"></span>
                 <div class="details-content">
-                  <h2 class="lang-en">Proven Operational Impact & Integration</h2>
-                  <h2 class="lang-fr">Validation Opérationnelle & Intégration Système</h2>
-                  <p class="lang-en">Beyond academic contributions, we pioneer and proof-test our algorithms within major European and UK research projects. Our expertise extends across diverse advanced air traffic environments, focusing on the harmonisation and integration of digital solutions with existing legacy systems to ensure a safe transition for the industry.</p>
-                  <p class="lang-fr">Au-delà de nos contributions académiques, nous testons et validons nos algorithmes au sein de projets de recherche européens et britanniques majeurs. Notre expertise s'étend à divers systèmes de gestion du trafic aérien de pointe, avec un accent particulier sur l'harmonisation et l'intégration fluide des solutions digitales avec les systèmes existants.</p>
+                  <h2 data-i18n="whyAugmented.integration.h2"></h2>
+                  <p data-i18n="whyAugmented.integration.p"></p>
                 </div>
               </li>
               <li class="clickable-item" role="button" tabindex="0">
-                <span class="item-title lang-en">Disruptive Performance</span>
-                <span class="item-title lang-fr">Performances Disruptives</span>
+                <span class="item-title" data-i18n="whyAugmented.performance.title"></span>
                 <div class="details-content">
-                  <h2 class="lang-en">Disruptive Performance</h2>
-                  <h2 class="lang-fr">Performances Disruptives</h2>
-                  <p class="lang-en">Augmented's solutions deliver unmatched performance by resolving simultaneous, multi-threat global and local conflicts in split seconds. While optimised for low-altitude operations, they masterfully navigate the diverse dynamics of General and Commercial Aviation, generating instructions that minimise manoeuvres. Built for extreme resilience, our platform excels in degraded data environments and maintains integrity even during connection losses of up to 30 seconds, also providing operators with real-time visual validation to ensure decisions are always up to date.</p>
+                  <h2 data-i18n="whyAugmented.performance.h2"></h2>
+                  <p data-i18n="whyAugmented.performance.p"></p>
+                </div>
+              </li>
+              <li class="clickable-item" role="button" tabindex="0">
+                <span class="item-title" data-i18n="whyAugmented.validation.title"></span>
+                <div class="details-content">
+                  <h2 data-i18n="whyAugmented.validation.h2"></h2>
+                  <p data-i18n="whyAugmented.validation.p"></p>
+                </div>
+              </li>
+              <li class="clickable-item" role="button" tabindex="0">
+                <span class="item-title" data-i18n="whyAugmented.simplicity.title"></span>
+                <div class="details-content">
+                  <h2 data-i18n="whyAugmented.simplicity.h2"></h2>
+                  <p data-i18n="whyAugmented.simplicity.p"></p>
+                </div>
+              </li>
+              <li class="clickable-item" role="button" tabindex="0" style="display:none"><!-- removed duplicate -->
+                <span class="item-title lang-en">Simplicity</span>
+                <div class="details-content">
+                  <p class="lang-en">Augmented's interface is more than just intuitively designed While optimised for low-altitude operations, they masterfully navigate the diverse dynamics of General and Commercial Aviation, generating instructions that minimise manoeuvres. Built for extreme resilience, our platform excels in degraded data environments and maintains integrity even during connection losses of up to 30 seconds, also providing operators with real-time visual validation to ensure decisions are always up to date.</p>
                   <p class="lang-fr">Les solutions d'Augmented offrent des performances inégalées en résolvant des conflits globaux et locaux multi-menaces en une fraction de seconde. Bien qu'optimisées pour les opérations à basse altitude, elles gèrent avec brio les dynamiques de l'Aviation Générale et Commerciale, générant des instructions qui minimisent les manœuvres. Conçue pour une résilience extrême, notre plateforme excelle en environnement dégradé et maintient son intégrité même en cas de perte de connexion allant jusqu'à 30 secondes, offrant également aux opérateurs une validation visuelle en temps réel pour garantir des décisions toujours à jour.</p>
                 </div>
               </li>
@@ -377,26 +327,28 @@
                 </div>
               </li>
               <li class="clickable-item" role="button" tabindex="0">
-                <span class="item-title lang-en">Open Access & Community Innovation</span>
-                <span class="item-title lang-fr">Libre Accès & Innovation Collaborative</span>
+                <span class="item-title" data-i18n="whyAugmented.openAccess.title"></span>
                 <div class="details-content">
-                  <h2 class="lang-en">Open Access & Community Innovation</h2>
-                  <h2 class="lang-fr">Libre Accès & Innovation Collaborative</h2>
-                  <p class="lang-en">We are committed to democratising airspace safety. At this stage, we offer <strong>free access to a ready-to-use version of our Sparrow solver</strong> because we want to show the world the power of our technology. Most importantly, <strong>we are listening</strong>. This phase is about transparency and collaboration; it allows innovators and researchers to experience our disruptive solution firsthand while providing the feedback we need to evolve.</p>
-                  <p class="lang-fr">Nous nous engageons à démocratiser la sécurité de l'espace aérien. À ce stade, nous proposons un <strong>accès gratuit à une version prête à l'emploi de notre solveur Sparrow</strong> car nous voulons démontrer au monde la puissance de notre technologie. Plus important encore : <strong>nous sommes à votre écoute</strong>. Cette phase est placée sous le signe de la transparence et de la collaboration ; elle permet aux innovateurs et aux chercheurs de tester nos performances disruptives tout en nous transmettant les retours nécessaires pour évoluer ensemble.</p>
+                  <h2 data-i18n="whyAugmented.openAccess.h2"></h2>
+                  <p data-i18n-html="whyAugmented.openAccess.p"></p>
                 </div>
               </li>
               <li class="clickable-item" role="button" tabindex="0">
-                <span class="item-title lang-en">Unmatched Pricing</span>
-                <span class="item-title lang-fr">Performance Optimale & Tarification Inégalée</span>
+                <span class="item-title" data-i18n="whyAugmented.pricing.title"></span>
                 <div class="details-content">
-                  <h2 class="lang-en">Unmatched Pricing</h2>
-                  <h2 class="lang-fr">Performance Optimale & Tarification Inégalée</h2>
-                  <p class="lang-en">For those looking to integrate our technology into commercial operations or complex industrial systems, Augmented stands at the intersection of operational agility and cost-efficiency. By maintaining a lean and reasonable, expert-driven team at this stage of the extended low-altitude airspace maturation, we foster direct communication and rapid innovation while eliminating the heavy overhead of legacy incumbents. This "human-sized" approach allows us to offer state-of-the-art solutions at unrivaled pricing, making elite safety technology accessible to everyone without compromising on precision or support.</p>
-                  <p class="lang-fr">Pour ceux qui souhaitent intégrer notre technologie dans des opérations commerciales ou des systèmes industriels complexes, Augmented se situe à l'intersection de l'agilité opérationnelle et de l'efficience économique. En maintenant une équipe d'experts restreinte et agile à ce stade de maturation de l'espace aérien étendu à basse altitude, nous favorisons une communication directe et une innovation rapide tout en éliminant les lourds frais de structure des acteurs historiques. Cette approche à taille humaine nous permet de proposer des solutions de pointe à des tarifs défiant toute concurrence, rendant les technologies de sécurité d'élite accessibles à tous sans compromis sur la précision ou l'accompagnement.</p>
+                  <h2 data-i18n="whyAugmented.pricing.h2"></h2>
+                  <p data-i18n="whyAugmented.pricing.p"></p>
                 </div>
               </li>
               <li class="clickable-item" role="button" tabindex="0">
+                <span class="item-title" data-i18n="whyAugmented.partnership.title"></span>
+                <div class="details-content">
+                  <h2 data-i18n="whyAugmented.partnership.h2"></h2>
+                  <p data-i18n-html="whyAugmented.partnership.p"></p>
+                  <p class="signature-line"><strong data-i18n="whyAugmented.partnership.signature"></strong></p>
+                </div>
+              </li>
+              <li class="clickable-item" role="button" tabindex="0" style="display:none"><!-- duplicate removed -->
                 <span class="item-title lang-en">Global Partnership for the Future</span>
                 <span class="item-title lang-fr">Un Partenariat Global pour le Futur</span>
                 <div class="details-content">
@@ -488,10 +440,7 @@
         </a>
       </div>
       <div class="footer-col left-col">
-        <h2 class="contact-title">
-          <span class="lang-en">Let's get in touch</span>
-          <span class="lang-fr">Contactez-nous</span>
-        </h2>
+        <h2 class="contact-title" data-i18n="footer.contactTitle"></h2>
         <a href="mailto:contact@augmentedxtm.com" class="email-link">
           contact@augmentedxtm.com
         </a>
@@ -505,8 +454,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span class="lang-en">&copy; 2026 Augmented xTM. All rights reserved.</span>
-      <span class="lang-fr">&copy; 2026 Augmented xTM. Tous droits réservés.</span>
+      <span data-i18n="footer.copyright"></span>
     </div>
   </footer>
 
@@ -582,36 +530,6 @@
       });
     });
 
-    // --- LANGUAGE SWITCHER ---
-    const langBtns = document.querySelectorAll(".lang-btn");
-    const htmlTag = document.documentElement;
-
-    // Check localStorage
-    const savedLang = localStorage.getItem("aug-lang") || "en";
-    setLanguage(savedLang);
-
-    langBtns.forEach(btn => {
-      btn.addEventListener("click", () => {
-        const lang = btn.getAttribute("data-lang");
-        setLanguage(lang);
-      });
-      // Accessibility
-      btn.addEventListener("keydown", (e) => {
-        if (e.key === 'Enter') setLanguage(btn.getAttribute("data-lang"));
-      });
-    });
-
-    function setLanguage(lang) {
-      if(lang === "fr") {
-        htmlTag.classList.add("fr-mode");
-        htmlTag.setAttribute("lang", "fr");
-      } else {
-        htmlTag.classList.remove("fr-mode");
-        htmlTag.setAttribute("lang", "en");
-      }
-      localStorage.setItem("aug-lang", lang);
-    }
-
     // --- IMMERSIVE HOTSPOTS ---
     const hotspots = document.querySelectorAll('.imm-hotspot');
     hotspots.forEach(spot => {
@@ -663,6 +581,7 @@
             leftPanel.style.opacity = 0;
             setTimeout(() => {
                 leftPanel.innerHTML = originalLeftContent;
+                if (window.i18nUpdateContent) window.i18nUpdateContent();
                 leftPanel.style.opacity = 1;
             }, 300);
         }
